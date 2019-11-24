@@ -19,3 +19,8 @@
     - https://sora.shiguredo.jp/react-native-webrtc-kit-doc/
 - [pixiv/webrtc](https://github.com/pixiv/webrtc/blob/branch-heads/pixiv-m77/README.pixiv.md)
     - [WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside](https://inside.pixiv.blog/nekomanma/7920)
+
+
+## 古いドキュメント
+
+[WebRTC SFU サービス Sora Lite の使い方](https://gist.github.com/voluntas/fb4cdc1626c941443e41a5a39050eb33)
