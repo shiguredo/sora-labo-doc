@@ -21,6 +21,14 @@
     - [WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside](https://inside.pixiv.blog/nekomanma/7920)
 
 
+## 今後
+
+- TURN-TCP 利用強制機能
+- TURN-TLS 利用強制機能
+- 帯域制限機能
+- パケロス機能
+
+
 ## 古いドキュメント
 
 [WebRTC SFU サービス Sora Lite の使い方](https://gist.github.com/voluntas/fb4cdc1626c941443e41a5a39050eb33)
