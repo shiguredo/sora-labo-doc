@@ -1,6 +1,6 @@
 # WebRTC SFU Testing Service Sora Labo ドキュメント
 
-これは時雨堂が提供している WebRTC SFU Testing Service Sora Labo のドキュメントです。
+これは時雨堂が提供している [WebRTC SFU Testing Service Sora Labo](https://sora-labo.shiguredo.jp/) のドキュメントです。
 
 ## Discord
 
@@ -67,6 +67,10 @@ https://discord.gg/k68nkRR
 
 ## 今後
 
+「うまくいかない環境」を気軽に利用できるような仕組みを追加していく予定です。
+うまくいかない環境というのは、
+帯域が細かったり、パケロスが多かったり、TLS しか通らなかったりと理不尽なネットワーク環境です。
+
 ### TURN-TCP 利用強制機能
 
 指定した接続が TURN-TCP を利用するように強制可能にする機能です。
@@ -87,4 +91,4 @@ https://discord.gg/k68nkRR
 
 ドキュメントに移行予定です。
 
-[WebRTC SFU サービス Sora Lite の使い方](https://gist.github.com/voluntas/fb4cdc1626c941443e41a5a39050eb33)
+[WebRTC SFU Testing Service Sora Labo の使い方](https://gist.github.com/voluntas/fb4cdc1626c941443e41a5a39050eb33)
