@@ -1,5 +1,7 @@
 # WebRTC SFU Testing Service Sora Labo ドキュメント
 
+- [QA](QA.md)
+
 ## Sora Labo で利用可能な SDK やクライアント、ライブラリ
 
 - [WebRTC SFU Sora JavaScript SDK](https://github.com/shiguredo/sora-js-sdk)
