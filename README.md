@@ -2,6 +2,10 @@
 
 これは時雨堂が提供している WebRTC SFU Testing Service Sora Labo のドキュメントです。
 
+## 開発ログ
+
+[時雨堂 WebRTC SFU Testing Serivce 「Sora Labo」 開発ログ](https://gist.github.com/voluntas/99bfcefc3b63f481941ae91584916a79)
+
 ## Discord
 
 なにか不明点などある場合はこちらでどうぞ。
@@ -62,10 +66,14 @@ https://discord.gg/k68nkRR
     - 提供しません
 - メンテナンス告知は行いますか？
     - Discord にて行います
+- WebRTC SFU Sora のバージョンは何を使っていますか
+    - 開発版を利用しているため商用版とは異なります
 
 不明点は Discord にてお問い合わせ下さい。
 
 ## 今後
+
+今後 Sora Labo に搭載予定の機能です。
 
 ### TURN-TCP 利用強制機能
 
