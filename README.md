@@ -1,6 +1,6 @@
-# Sora Labo ドキュメント
+# WebRTC SFU Testing Service Sora Labo ドキュメント
 
-## WebRTC SFU Testing Service Sora Labo で利用できる SDK やクライアント、ライブラリ
+## Sora Labo で利用可能な SDK やクライアント、ライブラリ
 
 - [WebRTC SFU Sora JavaScript SDK](https://github.com/shiguredo/sora-js-sdk)
     - [Sora JavaScript SDK ドキュメント](https://sora.shiguredo.jp/js-sdk-doc/)
@@ -20,15 +20,26 @@
 - [pixiv/webrtc](https://github.com/pixiv/webrtc/blob/branch-heads/pixiv-m77/README.pixiv.md)
     - [WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside](https://inside.pixiv.blog/nekomanma/7920)
 
-
 ## 今後
 
-- TURN-TCP 利用強制機能
-- TURN-TLS 利用強制機能
-- 帯域制限機能
-- パケロス機能
+### TURN-TCP 利用強制機能
 
+指定した接続が TURN-TCP を利用するように強制可能にする機能です。
+
+### TURN-TLS 利用強制機能
+
+指定した接続が TURN-TLS を利用するように強制可能にする機能です。
+
+### 帯域制限機能
+
+指定した接続の帯域を制限する機能です。
+
+### パケロス機能
+
+指定した接続のパケロスの割合を指定する機能です。
 
 ## 古いドキュメント
+
+ドキュメントに移行予定です。
 
 [WebRTC SFU サービス Sora Lite の使い方](https://gist.github.com/voluntas/fb4cdc1626c941443e41a5a39050eb33)
