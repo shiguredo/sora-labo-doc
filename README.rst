@@ -67,20 +67,26 @@ QA
 
   - `Sora JavaScript SDK ドキュメント <https://sora.shiguredo.jp/js-sdk-doc/>`_
 - `WebRTC SFU Sora iOS SDK <https://github.com/shiguredo/sora-ios-sdk>`_
-    - `Sora iOS SDK ドキュメント <https://sora.shiguredo.jp/ios-sdk-doc/>`_
-    - `WebRTC SFU Sora iOS SDK クイックスタート <https://github.com/shiguredo/sora-ios-sdk-quickstart>`_
-    - `WebRTC SFU Sora iOS SDK サンプル集 <https://github.com/shiguredo/sora-ios-sdk-samples>`_
+
+  - `Sora iOS SDK ドキュメント <https://sora.shiguredo.jp/ios-sdk-doc/>`_
+  - `WebRTC SFU Sora iOS SDK クイックスタート <https://github.com/shiguredo/sora-ios-sdk-quickstart>`_
+  - `WebRTC SFU Sora iOS SDK サンプル集 <https://github.com/shiguredo/sora-ios-sdk-samples>`_
 - `WebRTC SFU Sora Android SDK <https://github.com/shiguredo/sora-android-sdk>`_
-    - `Sora Android SDK ドキュメント <https://sora.shiguredo.jp/android-sdk-doc/>`_
-    - `WebRTC SFU Sora Android SDK クイックスタート](https://github.com/shiguredo/sora-android-sdk-quickstart>`_
-    - `WebRTC SFU Sora Android SDK サンプル集](https://github.com/shiguredo/sora-android-sdk-samples>`_
+
+  - `Sora Android SDK ドキュメント <https://sora.shiguredo.jp/android-sdk-doc/>`_
+  - `WebRTC SFU Sora Android SDK クイックスタート](https://github.com/shiguredo/sora-android-sdk-quickstart>`_
+  - `WebRTC SFU Sora Android SDK サンプル集](https://github.com/shiguredo/sora-android-sdk-samples>`_
 - `WebRTC SFU Sora Unity SDK <https://github.com/shiguredo/sora-unity-sdk>`_
-    - `WebRTC SFU Sora Unity SDK サンプル集 <https://github.com/shiguredo/sora-unity-sdk-samples>`_
+
+  - `WebRTC SFU Sora Unity SDK サンプル集 <https://github.com/shiguredo/sora-unity-sdk-samples>`_
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
 - `React Native 用 WebRTC ライブラリ <https://github.com/shiguredo/react-native-webrtc-kit>`_
-    - https://sora.shiguredo.jp/react-native-webrtc-kit-doc/
+
+  - https://sora.shiguredo.jp/react-native-webrtc-kit-doc/
 - `pixiv/webrtc <https://github.com/pixiv/webrtc/blob/branch-heads/pixiv-m77/README.pixiv.md>`_
-    - `WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside <https://inside.pixiv.blog/nekomanma/7920>`_
+
+  - `WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside <https://inside.pixiv.blog/nekomanma/7920>`_
+
 
 認証方法
 ========
@@ -172,8 +178,8 @@ GitHub Username が shiguredo で、 チャネル ID が sora-labo-test の場�
         wss://sora-labo.shiguredo.jp/signaling shiguredo@sora-labo-test --multistream \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
-機能
-====
+検証向け機能
+============
 
 TURN-TCP 利用強制機能
 ---------------------
