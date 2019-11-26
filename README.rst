@@ -11,6 +11,11 @@ Discord
 
 https://discord.gg/k68nkRR
 
+注意
+============
+
+- 長時間接続の検証を行う場合は事前に Discord でご連絡ください
+
 QA
 ==
 
