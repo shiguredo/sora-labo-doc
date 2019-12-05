@@ -130,7 +130,7 @@ https://discord.gg/k68nkRR
 利用可能な SDK やクライアント、ライブラリ
 =========================================
 
-- `WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk`_
+- `WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
 
   - `Sora JavaScript SDK ドキュメント <https://sora.shiguredo.jp/js-sdk-doc/>`_
 - `WebRTC SFU Sora iOS SDK <https://github.com/shiguredo/sora-ios-sdk>`_
@@ -262,7 +262,7 @@ metadata 指定時に ``{"recording": true}`` を指定して下さい。
 - 録画したファイルはダッシュボードで視聴またはダウンロードできます
 - 録画したファイルは録画完了時から 30 分経過するとアクセスできなくなります
 - 録画したファイルは 30 分単位でのバッチで録画完了時から 30 分経過していると自動で削除されます
-  
+
   - 自動削除はまだ実装していません、そのうちやります
 - シングルストリーム送信とマルチストリーム送受信で試せます
 
