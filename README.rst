@@ -159,43 +159,6 @@ https://discord.gg/k68nkRR
 
   - `WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside <https://inside.pixiv.blog/nekomanma/7920>`_
 
-
-認証方法
-========
-
-チャネル ID を決める
---------------------
-
-シグナリングキーを利用してチャネルに認証をかけてみます。
-
-まずチャネル ID は GitHub アカウントの Username を先頭に指定する必要があります。
-
-shiguredo という GitHub Username であれば。 その後 @ を間に挟んでチャネル ID を指定してください。
-
-以下は sora-labo-test というチャネル ID に shiguredo という Github Username を指定した例です
-
-チャネル ID 例::
-
-    shiguredo@sora-labo-test
-
-metadata に signaling_key を指定する
-------------------------------------
-
-Sora の SDK は metadata をシグナリング時に指定できます。metadata に ``signaling_key`` を指定して下さい。
-これで利用可能になります。
-
-::
-
-    {"signaling_key": "<ここにシグナリングキーを指定する>"}
-
-
-Sora Labo のアカウントを削除する
---------------------------------
-
-もし今後、 Sora Labo を利用しないのであればアカウントを削除できます。
-
-サインインした一番したにアカウントの削除があります。
-
 利用方法
 ========
 
@@ -250,6 +213,45 @@ GitHub Username が shiguredo で、 チャネル ID が sora-labo-test の場�
         --role sendrecv --multistream --video-codec VP8 --video-bitrate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
+認証方法
+========
+
+チャネル ID を決める
+--------------------
+
+シグナリングキーを利用してチャネルに認証をかけてみます。
+
+まずチャネル ID は GitHub アカウントの Username を先頭に指定する必要があります。
+
+shiguredo という GitHub Username であれば。 その後 @ を間に挟んでチャネル ID を指定してください。
+
+以下は sora-labo-test というチャネル ID に shiguredo という Github Username を指定した例です
+
+チャネル ID 例::
+
+    shiguredo@sora-labo-test
+
+metadata に signaling_key を指定する
+------------------------------------
+
+Sora の SDK は metadata をシグナリング時に指定できます。metadata に ``signaling_key`` を指定して下さい。
+これで利用可能になります。
+
+シグナリングキーが ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` の場合
+
+.. code-block:: javascript
+
+    {"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}
+
+
+Sora Labo のアカウントを削除する
+--------------------------------
+
+もし今後、 Sora Labo を利用しないのであればアカウントを削除できます。
+
+サインインした一番したにアカウントの削除があります。
+
+
 検証向け機能
 ============
 
@@ -301,7 +303,7 @@ metadata 指定時に ``{"turn_tls_only": true}`` を指定して下さい。
 トークン機能
 ---------------
 
-利用時間制限があるトークンを発行する機能です。シグナリングキーの代わりに利用できます。
+24 時間だけ利用可能なトークンを発行する機能です。シグナリングキーの代わりに利用できます。
 
 帯域制限機能
 ----------------
