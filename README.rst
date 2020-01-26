@@ -165,7 +165,7 @@ https://discord.gg/k68nkRR
 
 ダッシュボードページにシグナリングキーを埋め込んであるサンプルを用意してありますので、気軽に確認できます。
 
-.. image:: https://i.gyazo.com/91bd05efd051a4a5a659df65a0472fb6.png
+.. image:: https://i.gyazo.com/28ab069fed1aa2fb638fad58b1b6754a.png
 
 .. image:: https://i.gyazo.com/02876da53264379d8592e8b2383c657f.png
 
