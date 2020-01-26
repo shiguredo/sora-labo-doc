@@ -167,7 +167,7 @@ https://discord.gg/k68nkRR
 
 .. image:: https://i.gyazo.com/91bd05efd051a4a5a659df65a0472fb6.png
 
-.. image:: https://i.gyazo.com/40ae6057883d6de85b453ccdb2b099f7.png
+.. image:: https://i.gyazo.com/02876da53264379d8592e8b2383c657f.png
 
 Sora JS SDK を利用する
 ------------------------
