@@ -202,14 +202,20 @@ WebRTC Native Client Momo で Sora を利用する
 Momo で Sora が利用できます。
 
 - チャネル ID を ``<自分の GitHub Username>@<好きな Room ID>`` のように指定してください
+
+  - ここでは GitHub Username を ``shiguredo`` としています
 - 自分のシグナリングキーを --metadata で指定してください
+
+  - ここではシグナリグキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 
 GitHub Username が shiguredo で、 チャネル ID が sora-labo-test の場合::
 
-    ./momo --resolution VGA --no-audio --port 0 --use-sdl --show-me \
-        sora --auto wss://sora-labo.shiguredo.jp/signaling shiguredo@sora-labo-test \
-        --role sendrecv --multistream --video-codec VP8 --video-bitrate 2500 \
+    ./momo --resolution VGA --no-audio --port 0 \
+        sora --auto wss://sora-labo.shiguredo.jp/signaling shiguredo@sora-labo \
+        --role sendonly --multistream --video-codec VP8 --video-bitrate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
+
+https://sora-labo.shiguredo.jp/multi_recvonly を開いてみてください。
 
 認証方法
 ========
@@ -311,3 +317,4 @@ metadata 指定時に ``{"turn_tls_only": true}`` を指定して下さい。
 ----------------
 
 指定した接続のパケロスの割合を指定する機能です。
+
