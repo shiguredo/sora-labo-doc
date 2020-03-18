@@ -225,7 +225,9 @@ GitHub Username が shiguredo で、 チャネル ID が sora-labo-test の場�
         --role sendonly --multistream --video-codec VP8 --video-bitrate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
-https://sora-labo.shiguredo.jp/multi_recvonly を開いてみてください。
+Sora Labo のシングルストリーム受信を開いて接続してみてください。その際にコーデックを合わせるのを忘れないでください。
+
+.. image:: https://i.gyazo.com/6665d90f7e241ae21c5c525a965ce178.png
 
 認証方法
 ========
@@ -312,11 +314,6 @@ metadata 指定時に ``{"turn_tls_only": true}`` を指定して下さい。
 「うまくいかない環境」を気軽に利用できるような仕組みを追加していく予定です。
 うまくいかない環境というのは、
 帯域が細かったり、パケロスが多かったり、TLS しか通らなかったりと理不尽なネットワーク環境です。
-
-アクセストークン機能
---------------------
-
-24 時間だけ利用可能なトークンを発行する機能です。シグナリングキーの代わりに利用できます。
 
 帯域制限機能
 ----------------
