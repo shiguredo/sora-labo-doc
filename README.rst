@@ -30,14 +30,15 @@ QA
   - 制限はありません
 - Sora Labo は同時接続制限がありますか？
 
-  - あります
-  - 片方向の最大同時接続数は 10 までです
-  - 双方向の最大同時接続数は 5 までです
+  - 制限はあります
+  - 1 チャンネルあたりの片方向の最大同時接続数は 10 までです
+  - 1 チャンネルあたりの双方向の最大同時接続数は 5 までです
 - Sora Labo は映像ビットレートの制限はありますか？
 
   - 制限はありません
 - Sora Labo の接続時間制限はありますか？
 
+  - 制限はあります
   - 60 分間で切断されます
 - Sora Labo は TURN-TCP や TURN-TLS を提供していますか？
 
@@ -148,15 +149,15 @@ Sora をご購入いただいているお客様
 
 - `WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
 
-  - `Sora JavaScript SDK ドキュメント <https://sora.shiguredo.jp/js-sdk-doc/>`_
+  - `Sora JavaScript SDK ドキュメント <https://sora-js-sdk.shiguredo.jp//>`_
 - `WebRTC SFU Sora iOS SDK <https://github.com/shiguredo/sora-ios-sdk>`_
 
-  - `Sora iOS SDK ドキュメント <https://sora.shiguredo.jp/ios-sdk-doc/>`_
+  - `Sora iOS SDK ドキュメント <https://sora-ios-sdk.shiguredo.jp/>`_
   - `WebRTC SFU Sora iOS SDK クイックスタート <https://github.com/shiguredo/sora-ios-sdk-quickstart>`_
   - `WebRTC SFU Sora iOS SDK サンプル集 <https://github.com/shiguredo/sora-ios-sdk-samples>`_
 - `WebRTC SFU Sora Android SDK <https://github.com/shiguredo/sora-android-sdk>`_
 
-  - `Sora Android SDK ドキュメント <https://sora.shiguredo.jp/android-sdk-doc/>`_
+  - `Sora Android SDK ドキュメント <https://sora-android-sdk.shiguredo.jp/>`_
   - `WebRTC SFU Sora Android SDK クイックスタート <https://github.com/shiguredo/sora-android-sdk-quickstart>`_
   - `WebRTC SFU Sora Android SDK サンプル集 <https://github.com/shiguredo/sora-android-sdk-samples>`_
 - `WebRTC SFU Sora Unity SDK <https://github.com/shiguredo/sora-unity-sdk>`_
@@ -165,7 +166,7 @@ Sora をご購入いただいているお客様
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
 - `React Native 用 WebRTC ライブラリ <https://github.com/shiguredo/react-native-webrtc-kit>`_
 
-  - `React Native WebRTC Kit ドキュメント <https://sora.shiguredo.jp/react-native-webrtc-kit-doc/>`_
+  - `React Native WebRTC Kit ドキュメント <https://react-native-webrtc-kit.shiguredo.jp/>`_
 - `pixiv/webrtc <https://github.com/pixiv/webrtc/blob/branch-heads/pixiv-m77/README.pixiv.md>`_
 
   - `WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside <https://inside.pixiv.blog/nekomanma/7920>`_
