@@ -30,14 +30,15 @@ QA
   - 制限はありません
 - Sora Labo は同時接続制限がありますか？
 
-  - あります
-  - 片方向の最大同時接続数は 10 までです
-  - 双方向の最大同時接続数は 5 までです
+  - 制限はあります
+  - 1 チャンネルあたりの片方向の最大同時接続数は 10 までです
+  - 1 チャンネルあたりの双方向の最大同時接続数は 5 までです
 - Sora Labo は映像ビットレートの制限はありますか？
 
   - 制限はありません
 - Sora Labo の接続時間制限はありますか？
 
+  - 制限はあります
   - 60 分間で切断されます
 - Sora Labo は TURN-TCP や TURN-TLS を提供していますか？
 
@@ -61,7 +62,8 @@ QA
   - 提供しません
 - メンテナンス告知は行いますか？
 
-  - Discord にてのみ行います
+  - 時雨堂の営業時間である平日の 10:00-17:00 の間に行う場合のみ Discord にて通知します
+  - それ以外はサイレントで行います
 - Sora Labo の Sora のバージョンはいくつですか？
 
   - 開発版です
@@ -69,7 +71,12 @@ QA
 Discord
 =======
 
-なにか不明点などある場合は Discord でどうぞ。
+サポート
+  しません
+アドバイス
+  します
+フィードバック
+  歓迎します
 
 https://discord.gg/k68nkRR
 
@@ -98,6 +105,7 @@ https://discord.gg/k68nkRR
 また、長時間接続を行いたい場合も申請をお願いします。
 
 下記の必要事項を記入の上 sora-labo at shiguredo.jp までお送りください。
+(このメールアドレスへの特定電子メールの送信を拒否いたします)
 
 法人/個人事業主
 ---------------
@@ -132,21 +140,39 @@ https://discord.gg/k68nkRR
 - 利用期間 (YYYY/MM/DD ~ YYYY/MM/DD)
 - 何に利用するか (140 文字以内で)
 
+Sora をご購入いただいているお客様
+------------------------------------
+
+サポートメールアドレスまで **利用する GitHub アカウント一覧** をお送りください。
+
+商用利用について
+=========================================
+
+Sora Labo は商用利用は許可していませんので、商用利用したい場合は ２ つ手段があります。
+
+- 時雨堂とライセンス契約をする
+  
+  - 自前で頑張りたい
+- さくらインターネットさんの ImageFlux Live Stremaing を契約する
+
+  - 運用全部任せたい
+
+ImageFlux Live Streaming はマネージド Sora + HLS 変換サービスで、 Sora だけも利用可能です。
 
 利用可能な SDK やクライアント、ライブラリ
 =========================================
 
 - `WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
 
-  - `Sora JavaScript SDK ドキュメント <https://sora.shiguredo.jp/js-sdk-doc/>`_
+  - `Sora JavaScript SDK ドキュメント <https://sora-js-sdk.shiguredo.jp//>`_
 - `WebRTC SFU Sora iOS SDK <https://github.com/shiguredo/sora-ios-sdk>`_
 
-  - `Sora iOS SDK ドキュメント <https://sora.shiguredo.jp/ios-sdk-doc/>`_
+  - `Sora iOS SDK ドキュメント <https://sora-ios-sdk.shiguredo.jp/>`_
   - `WebRTC SFU Sora iOS SDK クイックスタート <https://github.com/shiguredo/sora-ios-sdk-quickstart>`_
   - `WebRTC SFU Sora iOS SDK サンプル集 <https://github.com/shiguredo/sora-ios-sdk-samples>`_
 - `WebRTC SFU Sora Android SDK <https://github.com/shiguredo/sora-android-sdk>`_
 
-  - `Sora Android SDK ドキュメント <https://sora.shiguredo.jp/android-sdk-doc/>`_
+  - `Sora Android SDK ドキュメント <https://sora-android-sdk.shiguredo.jp/>`_
   - `WebRTC SFU Sora Android SDK クイックスタート <https://github.com/shiguredo/sora-android-sdk-quickstart>`_
   - `WebRTC SFU Sora Android SDK サンプル集 <https://github.com/shiguredo/sora-android-sdk-samples>`_
 - `WebRTC SFU Sora Unity SDK <https://github.com/shiguredo/sora-unity-sdk>`_
@@ -155,7 +181,7 @@ https://discord.gg/k68nkRR
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
 - `React Native 用 WebRTC ライブラリ <https://github.com/shiguredo/react-native-webrtc-kit>`_
 
-  - `React Native WebRTC Kit ドキュメント <https://sora.shiguredo.jp/react-native-webrtc-kit-doc/>`_
+  - `React Native WebRTC Kit ドキュメント <https://react-native-webrtc-kit.shiguredo.jp/>`_
 - `pixiv/webrtc <https://github.com/pixiv/webrtc/blob/branch-heads/pixiv-m77/README.pixiv.md>`_
 
   - `WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside <https://inside.pixiv.blog/nekomanma/7920>`_
@@ -218,7 +244,23 @@ GitHub Username が shiguredo で、 チャネル ID が sora-labo-test の場�
         --role sendonly --multistream --video-codec VP8 --video-bitrate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
-https://sora-labo.shiguredo.jp/multi_recvonly を開いてみてください。
+Sora Labo のシングルストリーム受信を開いて接続してみてください。その際にコーデックを合わせるのを忘れないでください。
+
+.. image:: https://i.gyazo.com/6665d90f7e241ae21c5c525a965ce178.png
+
+AV1 を利用する
+-------------------------------
+
+Momo の最新版を利用することで AV1 を試すことが可能です。
+
+`Sora と Momo で WebRTC の AV1 を試す <https://gist.github.com/voluntas/db82783b6a3f012977e6de641a16181e>`_
+
+H.265 を利用する
+-------------------------------
+
+Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効にすることで H.265 を試すことが可能です。
+
+`Sora で WebRTC の H.265 を試す <https://gist.github.com/voluntas/c271462d273285377593521dcb6dd6a5>`_
 
 認証方法
 ========
@@ -305,11 +347,6 @@ metadata 指定時に ``{"turn_tls_only": true}`` を指定して下さい。
 「うまくいかない環境」を気軽に利用できるような仕組みを追加していく予定です。
 うまくいかない環境というのは、
 帯域が細かったり、パケロスが多かったり、TLS しか通らなかったりと理不尽なネットワーク環境です。
-
-アクセストークン機能
---------------------
-
-24 時間だけ利用可能なトークンを発行する機能です。シグナリングキーの代わりに利用できます。
 
 帯域制限機能
 ----------------
