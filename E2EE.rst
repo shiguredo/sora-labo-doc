@@ -9,7 +9,7 @@ E2EE マルチストリーム送受信
 
 Sora Labo ダッシュボードのサンプルからお試しください
 
-.. iamge:: https://i.gyazo.com/73a33a59eb9f9db524fa780c075414fd.png
+.. image:: https://i.gyazo.com/73a33a59eb9f9db524fa780c075414fd.png
 
 ::
 
