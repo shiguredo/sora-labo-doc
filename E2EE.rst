@@ -11,9 +11,9 @@ Sora Labo ダッシュボードのサンプルからお試しください
 
 .. image:: https://i.gyazo.com/73a33a59eb9f9db524fa780c075414fd.png
 
-::
+参考例::
 
-    https://sora-labo.shiguredo.jp/e2ee_multi_sendrecv?channelId=shiguredo@sora-labo&signalingKey=-txMSRv1mSawsCE0xmLx6f7-fjkUjrrA4MdpHrG6Tp6SSZzy#secret
+    https://sora-labo.shiguredo.jp/e2ee_multi_sendrecv?channelId=shiguredo@sora-labo&signalingKey=v#secret
 
 URL ハッシュの後ろの文字列が E2EE 用のパスワードで、デフォルトは secret です。
 
@@ -23,3 +23,7 @@ Sora JavaScript SDK での利用
 ============================
 
 現時点ではまだ Sora JS SDK が非対応なので、お待ち下さい。
+
+以下で、開発中です。
+
+`shiguredo/sora-e2ee: WebRTC SFU Sora 向け JavaScript E2EE ライブラリ <https://github.com/shiguredo/sora-e2ee>`_
