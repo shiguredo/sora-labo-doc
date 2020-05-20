@@ -22,8 +22,6 @@ secret の部分を変更することで、共通鍵を変更できます。今�
 Sora JavaScript SDK での利用
 ============================
 
-現時点ではまだ Sora JS SDK が非対応なので、お待ち下さい。
+develop ブランチではすでに利用可能です。
 
-以下で、開発中です。
-
-`shiguredo/sora-e2ee: WebRTC SFU Sora 向け JavaScript E2EE ライブラリ <https://github.com/shiguredo/sora-e2ee>`_
+`shiguredo/sora-js-sdk: WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
