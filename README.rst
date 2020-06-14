@@ -200,9 +200,10 @@ ImageFlux Live Streaming はマネージド Sora + HLS 変換サービスで、 
 
   - `WebRTC SFU Sora Unity SDK サンプル集 <https://github.com/shiguredo/sora-unity-sdk-samples>`_
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
-- `React Native 用 WebRTC ライブラリ <https://github.com/shiguredo/react-native-webrtc-kit>`_
+- `React Native 用 WebRTC ライブラリ <https://github.com/react-native-webrtc-kit/react-native-webrtc-kit>`_
 
   - `React Native WebRTC Kit ドキュメント <https://react-native-webrtc-kit.shiguredo.jp/>`_
+  - `React Native WebRTC Kit のサンプルアプリケーション <https://github.com/react-native-webrtc-kit/react-native-webrtc-kit-samples>`_
 - `pixiv/webrtc <https://github.com/pixiv/webrtc/blob/branch-heads/pixiv-m77/README.pixiv.md>`_
 
   - `WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside <https://inside.pixiv.blog/nekomanma/7920>`_
