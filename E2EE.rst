@@ -20,6 +20,6 @@ secret の部分を変更することで、共通鍵を変更できます。今�
 Sora JavaScript SDK での利用
 ============================
 
-develop ブランチではすでに利用可能です。
+`Sora JavaScript SDK 2020.1 <https://github.com/shiguredo/sora-js-sdk/releases/tag/2020.1.0>`_ から利用可能です。
 
 `shiguredo/sora-js-sdk: WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
