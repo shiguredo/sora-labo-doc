@@ -122,7 +122,7 @@ https://discord.gg/k68nkRR
 
 個人以外の方で申請した場合の利用期間は最長 1 ヶ月で、延長は行いません。
 
-長期間の検証されたい場合は ImageFlux Live Streaming を利用される事をおすすめします。
+長期間の検証されたい場合は `ImageFlux Live Streaming <https://www.sakura.ad.jp/services/imageflux/livestreaming/>`_ を利用される事をおすすめします。
 
 法人/個人事業主
 ---------------
