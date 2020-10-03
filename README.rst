@@ -11,7 +11,7 @@ Sora Labo で利用している Sora
 -----------------------------
 
 - 2020 年 12 月リリース予定の開発版を利用しているため、製品版とは異なります
-- Erlang/OTP 24.0 に含まれる予定の JIT を有効にした Erlang VM 利用しているため、製品版とは異なります
+- 2021 年 5 月リリース予定の JIT を有効にした Erlang VM 利用しているため、製品版とは異なります
 
 Sora 評価版について
 -------------------
@@ -302,7 +302,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-labo-test の場�
 
     ./momo --resolution VGA --no-audio --port 0 \
         sora --auto wss://sora-labo.shiguredo.jp/signaling shiguredo@sora-labo \
-        --role sendonly --multistream --video-codec VP8 --video-bitrate 2500 \
+        --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
 Sora Labo のシングルストリーム受信を開いて接続してみてください。その際にコーデックを合わせるのを忘れないでください。
