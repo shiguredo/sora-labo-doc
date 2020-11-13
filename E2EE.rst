@@ -20,7 +20,7 @@ Chrome M87 または Edge 87 から正式対応となります。
 Sora JavaScript SDK での利用
 ============================
 
-2020 年 12 月にリリース予定の Sora 2020.3 と `Sora JavaScript SDK 2020.5.0-canary.2 <https://github.com/shiguredo/sora-js-sdk/releases/tag/2020.5.0-canary.2>`_ が必要です。
+2020 年 12 月にリリース予定の Sora 2020.3 と `Sora JavaScript SDK 2020.5.0-canary.2 <https://github.com/shiguredo/sora-js-sdk/releases/tag/2020.5.0-canary.2>`_ 以降が必要です。
 
 Sora の E2EE 実装については以下をご確認ください。
 
