@@ -7,19 +7,21 @@ E2EE マルチストリーム送受信
 
 Sora Labo ダッシュボードのサンプルからお試しください
 
-.. image:: https://i.gyazo.com/acf1e51a439c3f9978c53e9979ca8858.png
+.. image:: https://i.gyazo.com/97b75295e361c69c85389db9e08d96e1.png
 
-参考例::
+利用方法
+================
 
-    https://sora-labo.shiguredo.jp/e2ee_multi_sendrecv?channelId=shiguredo@sora-labo&signalingKey=v#secret
+Chrome M87 または Edge 87 から正式対応となります。
 
-URL ハッシュの後ろの文字列が E2EE 用のパスワードで、デフォルトは secret です。
+ただし Origin Trial を申請しているので Chrome M86 でも動作します。
 
-secret の部分を変更することで、共通鍵を変更できます。今の所、動的な変更には対応していません。
 
 Sora JavaScript SDK での利用
 ============================
 
-`Sora JavaScript SDK 2020.1 <https://github.com/shiguredo/sora-js-sdk/releases/tag/2020.1.0>`_ から利用可能です。
+2020 年 12 月にリリース予定の Sora 2020.3 と `Sora JavaScript SDK 2020.5.0-canary.2 <https://github.com/shiguredo/sora-js-sdk/releases/tag/2020.5.0-canary.2>`_ が必要です。
 
-`shiguredo/sora-js-sdk: WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
+Sora の E2EE 実装については以下をご確認ください。
+
+https://sora-e2ee.shiguredo.jp/
