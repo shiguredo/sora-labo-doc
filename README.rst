@@ -249,9 +249,6 @@ ImageFlux Live Streaming はマネージド Sora + HLS 変換サービスで、 
 
   - `React Native WebRTC Kit ドキュメント <https://react-native-webrtc-kit.shiguredo.jp/>`_
   - `React Native WebRTC Kit のサンプルアプリケーション <https://github.com/react-native-webrtc-kit/react-native-webrtc-kit-samples>`_
-- `pixiv/webrtc <https://github.com/pixiv/webrtc/blob/branch-heads/pixiv-m77/README.pixiv.md>`_
-
-  - `WebRTC ♥ \.NET ー WebRTCの\.NETバインディング \- pixiv inside <https://inside.pixiv.blog/nekomanma/7920>`_
 
 利用方法
 ========
