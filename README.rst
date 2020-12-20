@@ -24,6 +24,7 @@ Sora Labo で利用している Sora
 
 **詳細はダッシュボードをご確認ください**
 
+- `SSD VPS Servers, Cloud Servers and Cloud Hosting by Vultr - Vultr.com <https://www.vultr.com/>`_
 - Vultr は月間の転送量が制限が 5T ありますが、帯域制限がありません
 - ダッシュボードにあるサンプルは Vultr の Sora を用意しています
 
