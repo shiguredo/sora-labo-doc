@@ -141,7 +141,7 @@ Discord
 :アドバイス: します
 :フィードバック: 歓迎します
 
-https://discord.gg/k68nkRR
+https://discord.gg/shiguredo
 
 #sora-labo へどうぞ。
 
