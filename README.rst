@@ -355,6 +355,15 @@ Sora Labo のアカウントを削除する
 
 ダッシュボードの一番下にアカウントの削除があります。
 
+Sora DevTools を利用する
+==========================================
+
+Sora Labo のシグナリングキーを利用する事で Sora DevTools を利用する事ができます。
+
+[![Image from Gyazo](https://i.gyazo.com/0a46b2e5aab5fccbfe1970cc4865c4f0.png)](https://gyazo.com/0a46b2e5aab5fccbfe1970cc4865c4f0)
+
+必要な情報を設定したら、右上の CopyURL を押して、別タブをに貼り付けて利用して下さい。
+
 検証向け機能
 ============
 
