@@ -11,8 +11,6 @@ Sora Labo ドキュメント
 サンプル廃止と Sora DevTools 採用
 ---------------------------------
 
-2021 年 10 月 29 日より適用
-
 サンプルを廃止して https://sora-devtools.shiguredo.jp/ を利用するようにしました。
 
 DataChannel メッセージング利用
@@ -277,7 +275,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
 
 .. code-block:: javascript
 
-    const channelId = "shiguredo@sora-labo-js";
+    const channelId = "shiguredo@sora-devtools";
     const debug = false;
     const sora = connection("wss://sora-labo.shiguredo.jp/signaling", debug);
     const metadata = {
@@ -302,16 +300,16 @@ Momo で Sora が利用できます。
 
   - ここではシグナリグキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 
-GitHub Username が shiguredo で、 チャネル ID が sora-labo-test の場合::
+GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
     ./momo --resolution VGA --no-audio --port 0 \
-        sora --auto wss://sora-labo.shiguredo.jp/signaling shiguredo@sora-labo \
+        sora --auto wss://sora-labo.shiguredo.jp/signaling shiguredo@sora-devtools \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
-Sora Labo のシングルストリーム受信を開いて接続してみてください。その際にコーデックを合わせるのを忘れないでください。
+Sora DevTools のマルチストリーム受信を開いて接続してみてください。
 
-.. image:: https://i.gyazo.com/6665d90f7e241ae21c5c525a965ce178.png
+.. image:: https://i.gyazo.com/c0a807f72f7dad00084c3cd90970ca7b.png
 
 AV1 を利用する
 -------------------------------
@@ -335,15 +333,17 @@ Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効
 
 シグナリングキーを利用してチャネルに認証をかけてみます。
 
-まずチャネル ID は GitHub アカウントの Username を先頭に指定する必要があります。
+チャネル ID は GitHub アカウントのユーザ名を先頭に指定する必要があります。
 
-shiguredo という GitHub Username であれば。 その後 @ を間に挟んでチャネル ID を指定してください。
+shiguredo という GitHub ユーザ名であれば。 その後 @ を間に挟んでチャネル名を指定してください。
 
-以下は sora-labo-test というチャネル ID に shiguredo という Github Username を指定した例です
+``チャンネル ID = {GitHubユーザ名}@{チャネル名}``
+
+以下は shiguredo という Github ユーザ名に sora-devtools というチャネル名 を指定した例です
 
 チャネル ID 例::
 
-    shiguredo@sora-labo-test
+    shiguredo@sora-devtools
 
 metadata に signaling_key を指定する
 ------------------------------------
@@ -360,6 +360,8 @@ Sora の SDK は metadata をシグナリング時に指定できます。metada
 
 Sora Labo のアカウントを削除する
 --------------------------------
+
+**アカウントは削除しますが、ログは削除しないためアカウントを削除したとしても利用時間はリセットされません**
 
 もし今後、 Sora Labo を利用しないのであればアカウントを削除できます。
 
@@ -386,9 +388,10 @@ metadata 指定時に ``{"recording": true}`` を指定して下さい。
   - 自動削除はまだ実装していません、そのうちやります
 - シングルストリーム送信とマルチストリーム送受信で試せます
 
-.. image:: https://i.gyazo.com/f23f2c45fda9a727eddd74ece2946509.png
+以下は Sora DevTools 利用時の ``{"recording": true}`` 指定例です。
 
-.. image:: https://i.gyazo.com/42fb6ea6a76dd0d958332f0a1186aa5c.png
+.. images:: https://i.gyazo.com/3c563b6a50d4085078a6fc753cdcb19d.png
+
 
 TURN-TCP 利用強制機能
 ---------------------
