@@ -390,8 +390,7 @@ metadata 指定時に ``{"recording": true}`` を指定して下さい。
 
 以下は Sora DevTools 利用時の ``{"recording": true}`` 指定例です。
 
-.. images:: https://i.gyazo.com/3c563b6a50d4085078a6fc753cdcb19d.png
-
+.. image:: https://i.gyazo.com/3c563b6a50d4085078a6fc753cdcb19d.png
 
 TURN-TCP 利用強制機能
 ---------------------
