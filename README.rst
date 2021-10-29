@@ -8,6 +8,13 @@ Sora Labo ドキュメント
 お知らせ
 ========
 
+サンプル廃止と Sora DevTools 採用
+---------------------------------
+
+2021 年 10 月 29 日より適用
+
+サンプルを廃止して https://sora-devtools.shiguredo.jp/ を利用するようにしました。
+
 DataChannel メッセージング利用
 -------------------------------
 
@@ -244,14 +251,17 @@ ImageFlux Live Streaming はマネージド Sora + HLS 変換サービスで、 
 利用方法
 ========
 
-サンプルを利用する
--------------------
+Sora DevTools を利用する
+------------------------
 
-ダッシュボードページにシグナリングキーを埋め込んであるサンプルを用意してありますので、気軽に確認できます。
+Sora DevTools という開発者ツールを https://sora-devtools.shiguredo.jp/ で公開しています。
 
-.. image:: https://i.gyazo.com/28ab069fed1aa2fb638fad58b1b6754a.png
+ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
+チャネル ID とシグナリングキーとシグナリング URL 埋め込んである URL を用意してあります。
 
-.. image:: https://i.gyazo.com/02876da53264379d8592e8b2383c657f.png
+.. image:: https://i.gyazo.com/94f6bdad62e94a9e7782c6f800dfa52f.png
+
+.. image:: https://i.gyazo.com/a2b431ab75476e1011391aad6ca098ce.png
 
 Sora JS SDK を利用する
 ------------------------
@@ -355,15 +365,6 @@ Sora Labo のアカウントを削除する
 
 ダッシュボードの一番下にアカウントの削除があります。
 
-Sora DevTools を利用する
-==========================================
-
-Sora Labo のシグナリングキーを利用する事で Sora DevTools を利用する事ができます。
-
-.. image:: https://i.gyazo.com/0a46b2e5aab5fccbfe1970cc4865c4f0.png
-
-必要な情報を設定したら、右上の CopyURL を押して、別タブをに貼り付けて利用して下さい。
-
 検証向け機能
 ============
 
@@ -419,3 +420,4 @@ metadata 指定時に ``{"turn_tls_only": true}`` を指定して下さい。
 ----------------
 
 指定した接続のパケロスの割合を指定する機能です。
+
