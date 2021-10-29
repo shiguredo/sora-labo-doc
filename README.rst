@@ -11,6 +11,8 @@ Sora Labo ドキュメント
 サンプル廃止と Sora DevTools 採用
 ---------------------------------
 
+2021 年 10 月 29 日より適用
+
 サンプルを廃止して https://sora-devtools.shiguredo.jp/ を利用するようにしました。
 
 DataChannel メッセージング利用
