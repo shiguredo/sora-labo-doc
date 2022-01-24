@@ -2,13 +2,25 @@
 Sora Labo ドキュメント
 ######################
 
-これは時雨堂が提供している `Sora Labo <https://sora-labo.shiguredo.jp/>`_ のドキュメントです。
+これは時雨堂が提供している `Sora Labo <https://sora-labo.shiguredo.app/>`_ のドキュメントです。
 ご利用前にかならずご確認いただきます様、お願いいたします。
 
 お知らせ
 ========
 
-クラスター対応 Sora の提供開始
+Sora Labo ドメインの変更およびサービス全体での最大同時接続数の変更
+------------------------------------------------------------
+
+:日時: 2022-02-01
+
+- Sora Labo のドメイン変更を行いました
+  - Sora Labo に関するすべてのドメインが ``sora-labo.shiguredo.jp`` から ``sora-labo.shiguredo.app`` へ変更されました
+  - シグナリング URL も変更となります。Sora Labo サイトをご確認のうえ変更をお願いします
+
+- Sora の 1 ノード最大同時接続数は 100 です
+  - Sora Labo は Sora 5 台でクラスターを構成しているため、サービス全体での最大同時接続数の変更は 500 となります
+
+録画機能の削除
 ---------------------------------
 
 :日時: 2021-12-06
@@ -16,7 +28,7 @@ Sora Labo ドキュメント
 - 録画機能を削除しました
 - クラスター対応 Sora のみを提供するようにしました
 
-  - 今まで ``wss://sora-labo.shiguredo.jp/signaling`` を利用されていた方は変更をお願いします。
+  - 今まで ``wss://sora-labo.shiguredo.jp/signaling`` を利用されていた方は変更をお願いします
 
 クラスター対応 Sora の提供開始
 ---------------------------------
@@ -181,7 +193,7 @@ https://discord.gg/shiguredo
 - Sora の **HTTP API は利用できません**
 - Sora の **ウェブフック機能は利用できません**
 - Sora Labo は Sora SDK 以外での利用を想定していません
-- サービス全体での最大同時接続数は 600 です
+- サービス全体での最大同時接続数は 500 です
 - 1 チャネルに接続できる最大の数は 10 です
 - ビットレートの最大値は 15 Mbps です
 
@@ -296,7 +308,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
 
     const channelId = "shiguredo@sora-devtools";
     const debug = false;
-    const sora = connection("wss://sora-labo.shiguredo.jp/signaling", debug);
+    const sora = connection("wss://node-01.sora-labo.shiguredo.app/signaling", debug);
     const metadata = {
       signaling_key: "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"
     };
@@ -322,7 +334,7 @@ Momo で Sora が利用できます。
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
     ./momo --resolution VGA --no-audio --port 0 \
-        sora --auto wss://sora-labo.shiguredo.jp/signaling shiguredo@sora-devtools \
+        sora --auto wss://node-01.sora-labo.shiguredo.app/signaling shiguredo@sora-devtools \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
