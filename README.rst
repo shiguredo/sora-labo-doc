@@ -332,7 +332,7 @@ gradle.properties の作成::
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
-    signaling_endpoint = wss://sora-labo.shiguredo.jp/signaling
+    signaling_endpoint = wss://node-01.canary.sora-labo.shiguredo.app/signaling
     channel_id         = shiguredo@sora-devtools
 
     # Setting Signaling Metadata.
