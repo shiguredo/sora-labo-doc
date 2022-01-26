@@ -316,7 +316,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
 
     const channelId = "shiguredo@sora-devtools";
     const debug = false;
-    const sora = connection("wss://node-01.sora-labo.shiguredo.app/signaling", debug);
+    const sora = connection("wss://node-01.canary.sora-labo.shiguredo.app/signaling", debug);
     const metadata = {
       signaling_key: "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"
     };
@@ -337,12 +337,12 @@ Momo で Sora が利用できます。
   - ここでは GitHub Username を ``shiguredo`` としています
 - 自分のシグナリングキーを --metadata で指定してください
 
-  - ここではシグナリグキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+  - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
     ./momo --resolution VGA --no-audio --port 0 \
-        sora --auto wss://node-01.sora-labo.shiguredo.app/signaling shiguredo@sora-devtools \
+        sora --auto wss://node-01.canary.sora-labo.shiguredo.app/signaling shiguredo@sora-devtools \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
