@@ -325,6 +325,42 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
     };
     const publisher = sora.publisher(channelId, metadata, options);
 
+Sora Android SDK を利用する
+-------------------------------
+
+`shiguredo/sora-android-sdk: WebRTC SFU Sora Android SDK <https://github.com/shiguredo/sora-android-sdk>`_
+
+Sora Android SDK のクイックスタートまたはサンプル集を利用して Sora Labo に接続できます。
+
+- `WebRTC SFU Sora Android SDK クイックスタート <https://github.com/shiguredo/sora-android-sdk-quickstart>`_
+- `WebRTC SFU Sora Android SDK サンプル集 <https://github.com/shiguredo/sora-android-sdk-samples>`_
+
+クイックスタートまたはサンプル集のディレクトリトップの ``gradle.properties.example`` を元に ``gradle.properties`` を作成します。
+
+gradle.properties の作成::
+
+  $ cp gradle.properties.example gradle.properties
+
+``gradle.properties`` に Sora Labo への接続情報を設定します。
+
+- ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください
+- ``channel_id`` に ``<自分の GitHub Username>@<好きな Room ID>`` を指定してください
+- ``signaling_metadata`` に自分のシグナリングキーを指定してください
+
+  - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+
+gradle.properties への設定例::
+
+    # Setting Sora's signaling endpoint and channel_id
+    signaling_endpoint = wss://node-01.canary.sora-labo.shiguredo.app/signaling
+    channel_id         = shiguredo@sora-devtools
+
+    # Setting Signaling Metadata.
+    # Quotes must be double escaped.
+    # e.g.) signaling_metadata = {\\"spam\\":\\"egg\\"}
+    # This setting is required. If you do not want to use it, set it to blank.
+    signaling_metadata = {\\"signaling_key\\":\\"jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa\\"}
+
 WebRTC Native Client Momo で Sora を利用する
 --------------------------------------------
 
