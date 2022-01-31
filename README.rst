@@ -282,10 +282,6 @@ ImageFlux Live Streaming はマネージド Sora + HLS 変換サービスで、 
 
   - `WebRTC SFU Sora Unity SDK サンプル集 <https://github.com/shiguredo/sora-unity-sdk-samples>`_
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
-- `React Native 用 WebRTC ライブラリ <https://github.com/react-native-webrtc-kit/react-native-webrtc-kit>`_
-
-  - `React Native WebRTC Kit ドキュメント <https://react-native-webrtc-kit.shiguredo.jp/>`_
-  - `React Native WebRTC Kit のサンプルアプリケーション <https://github.com/react-native-webrtc-kit/react-native-webrtc-kit-samples>`_
 
 利用方法
 ========
@@ -318,7 +314,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
 
     const channelId = "shiguredo@sora-devtools";
     const debug = false;
-    const sora = connection("wss://node-01.canary.sora-labo.shiguredo.app/signaling", debug);
+    const sora = connection("wss://<IPv4Address>.<ClusterType>.sora.sora-labo.shiguredo.app/signaling", debug);
     const metadata = {
       signaling_key: "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"
     };
@@ -354,7 +350,7 @@ gradle.properties の作成::
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
-    signaling_endpoint = wss://node-01.canary.sora-labo.shiguredo.app/signaling
+    signaling_endpoint = wss://<IPv4Address>.<ClusterType>.sora.sora-labo.shiguredo.app/signaling
     channel_id         = shiguredo@sora-devtools
 
     # Setting Signaling Metadata.
@@ -380,7 +376,7 @@ Momo で Sora が利用できます。
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
     ./momo --resolution VGA --no-audio --port 0 \
-        sora --auto wss://node-01.canary.sora-labo.shiguredo.app/signaling shiguredo@sora-devtools \
+        sora --auto wss://<IPv4Address>.<ClusterType>.sora.sora-labo.shiguredo.app/signaling shiguredo@sora-devtools \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
