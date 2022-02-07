@@ -272,7 +272,7 @@ Sora Android SDK のクイックスタートまたはサンプル集を利用し
 - `WebRTC SFU Sora Android SDK サンプル集 <https://github.com/shiguredo/sora-android-sdk-samples>`_
 
 1. gradle.properties の作成
-++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 クイックスタートまたはサンプル集のディレクトリトップの ``gradle.properties.example`` を元に ``gradle.properties`` を作成します。
 
@@ -281,7 +281,7 @@ gradle.properties の作成::
   $ cp gradle.properties.example gradle.properties
 
 2. 接続情報の設定
-++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^
 
 ``gradle.properties`` に Sora Labo への接続情報を設定します。
 
@@ -316,7 +316,7 @@ Sora iOS SDK のクイックスタートまたはサンプル集を利用して 
 - `WebRTC SFU Sora iOS SDK サンプル集 <https://github.com/shiguredo/sora-ios-sdk-samples>`_
 
 1. Environment.swift の作成
-++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 クイックスタートまたはサンプル集の ``Environment.example.swift`` を元に ``Environment.swift`` を作成します。
 
@@ -325,7 +325,7 @@ Environment.swift の作成::
   $ cp Environment.example.swift Environment.swift
 
 2. 接続情報の設定
-+++++++++++++++++
+^^^^^^^^^^^^^^^^^^^
 
 ``Environment.swift`` に Sora Labo への接続情報を設定します。
 
@@ -349,7 +349,7 @@ Environment.swift への設定例::
     static let signalingConnectMetadata = ["signaling_key" : "7jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"]
 
 3. 接続設定の追加
-+++++++++++++++++
+^^^^^^^^^^^^^^^^^^
 
 接続設定に ``Environment.swift`` で指定した ``signalingConnectMetadata`` を追加します
 
