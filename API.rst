@@ -5,7 +5,7 @@ Sora Labo における Sora API ドキュメント
 概要
 ====
 
-Sora Labo では特定の協力者に対して一部 Sora API を利用可能にしています。
+Sora Labo では一部のユーザに対して Sora API の利用を解放しています。
 
 このドキュメントでは Sora Labo での Sora API について解説します。
 
@@ -81,15 +81,13 @@ Sora Labo で利用可能な Sora API
 利用方法
 ===================
 
-Sora API が利用可能なアカウントではダッシュボードに以下のように Sora API 用の API キーが表示されています。
+Sora API が解放されているアカウントではダッシュボードに Sora API 用の API キーが表示されています。
 
-.. image:: https://i.gyazo.com/8df2f5eebfa9f80d8d132d205df14b42.png
-
+- API URL は ``https://sora-api.sora-labo.shiguredo.app/`` です
 - API キーを Bearer 認証のトークンとして利用します
 
   - ``Authorization:Bearer qPBaW3XI32S6lR_Bw_D8NTDLfaO8YlCaTfzm2_khpBuVowKcWYEM2X8SvgJnMWur`` のように指定します
-- API の実行先は ``https://sora-api.sora-labo.shiguredo.app/`` になります
-- x-sora-release-channel で stable / canary どちらのクラスターへの API を実行するか指定します
+- ``x-sora-release-channel`` で stable / canary どちらのクラスターへの API を実行するか指定します
 
   - 現時点では canary のみ対応しています
 
