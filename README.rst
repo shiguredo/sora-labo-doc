@@ -5,6 +5,11 @@ Sora Labo ドキュメント
 これは時雨堂が提供している `Sora Labo <https://sora-labo.shiguredo.app/>`_ のドキュメントです。
 ご利用前にかならずご確認いただきます様、お願いいたします。
 
+ステータスページ
+=====================
+
+https://shiguredo.statusflare.app/
+
 お知らせ
 ========
 
@@ -266,19 +271,27 @@ Sora Android SDK のクイックスタートまたはサンプル集を利用し
 - `WebRTC SFU Sora Android SDK クイックスタート <https://github.com/shiguredo/sora-android-sdk-quickstart>`_
 - `WebRTC SFU Sora Android SDK サンプル集 <https://github.com/shiguredo/sora-android-sdk-samples>`_
 
+1. gradle.properties の作成
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 クイックスタートまたはサンプル集のディレクトリトップの ``gradle.properties.example`` を元に ``gradle.properties`` を作成します。
 
 gradle.properties の作成::
 
   $ cp gradle.properties.example gradle.properties
 
+2. 接続情報の設定
+^^^^^^^^^^^^^^^^^^^^^
+
 ``gradle.properties`` に Sora Labo への接続情報を設定します。
 
-- ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください
-- ``channel_id`` に ``<自分の GitHub Username>@<好きな Room ID>`` を指定してください
-- ``signaling_metadata`` に自分のシグナリングキーを指定してください
+  - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください
+  - ``channel_id`` に ``<自分の GitHub Username>@<好きな Room ID>`` を指定してください
+  
+    - ここでは GitHub Username を ``shiguredo`` としています
+  - ``signaling_metadata`` に自分のシグナリングキーを指定してください
 
-  - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+    - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 
 gradle.properties への設定例::
 
@@ -291,6 +304,77 @@ gradle.properties への設定例::
     # e.g.) signaling_metadata = {\\"spam\\":\\"egg\\"}
     # This setting is required. If you do not want to use it, set it to blank.
     signaling_metadata = {\\"signaling_key\\":\\"jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa\\"}
+
+Sora iOS SDK を利用する
+-------------------------------
+
+`shiguredo/sora-ios-sdk: WebRTC SFU Sora iOS SDK <https://github.com/shiguredo/sora-ios-sdk>`_
+
+Sora iOS SDK のクイックスタートまたはサンプル集を利用して Sora Labo に接続できます。
+
+- `WebRTC SFU Sora iOS SDK クイックスタート <https://github.com/shiguredo/sora-ios-sdk-quickstart>`_
+- `WebRTC SFU Sora iOS SDK サンプル集 <https://github.com/shiguredo/sora-ios-sdk-samples>`_
+
+1. Environment.swift の作成
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+クイックスタートまたはサンプル集の ``Environment.example.swift`` を元に ``Environment.swift`` を作成します。
+
+Environment.swift の作成::
+
+  $ cp Environment.example.swift Environment.swift
+
+2. 接続情報の設定
+^^^^^^^^^^^^^^^^^^^
+
+``Environment.swift`` に Sora Labo への接続情報を設定します。
+
+  - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください
+  - ``channel_id`` に ``<自分の GitHub Username>@<好きな Room ID>`` を指定してください
+  
+    - ここでは GitHub Username を ``shiguredo`` としています
+  - ``signalingConnectMetadata`` に自分のシグナリングキーを**追加の上**指定してください
+
+    - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+
+Environment.swift への設定例::
+
+    // 接続するサーバーのシグナリング URL
+    static let urls = [URL(string: "wss://<IPv4Address>.<ClusterType>.sora.sora-labo.shiguredo.app/signaling")!]
+
+    // チャネル ID
+    static let channelId = "shiguredo@sora-devtools"
+
+    // metadata
+    static let signalingConnectMetadata = ["signaling_key" : "7jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"]
+
+3. 接続設定の追加
+^^^^^^^^^^^^^^^^^^
+
+接続設定に ``Environment.swift`` で指定した ``signalingConnectMetadata`` を追加します
+
+クイックスタートの Environment.swift への設定例::
+
+    func connect() {
+        // 接続の設定を行います。
+        let config = Configuration(url: Environment.url,
+                                   channelId: Environment.channelId,
+                                   role: .sendrecv,
+                                   multistreamEnabled: true)
+
+        // signalingConnectMetadata の設定を行います。
+        config.signalingConnectMetadata = Environment.signalingConnectMetadata
+
+サンプル集の SoraSDKManager.swift.swift への設定例::
+
+        // Configurationを生成して、接続設定を行います。
+        // 必須となる設定はurl, channelId, roleのみです。
+        // その他の設定にはデフォルト値が指定されていますが、ここで必要に応じて自由に調整することが可能です。
+        var configuration = Configuration(urlCandidates: Environment.urls, channelId: channelId, role: role,
+                                          multistreamEnabled: multistreamEnabled)
+
+        // signalingConnectMetadata の設定を行います。
+        configuration.signalingConnectMetadata = Environment.signalingConnectMetadata
 
 WebRTC Native Client Momo で Sora を利用する
 --------------------------------------------
