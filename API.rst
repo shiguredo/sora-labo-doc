@@ -87,16 +87,16 @@ Sora API が解放されているアカウントではダッシュボードに S
 - API キーを Bearer 認証のトークンとして利用します
 
   - ``Authorization:Bearer qPBaW3XI32S6lR_Bw_D8NTDLfaO8YlCaTfzm2_khpBuVowKcWYEM2X8SvgJnMWur`` のように指定します
-- ``x-sora-release-channel`` で stable / canary どちらのクラスターへの API を実行するか指定します
+- ``x-sora-labo-cluster-name`` どのクラスターの API を実行するか指定します
 
-  - 現時点では canary のみ対応しています
+  - 現時点では ``canary`` のみ対応しています
 
 ListChannelConnections の例::
 
     $ http POST https://sora-api.sora-labo.shiguredo.app/ \
         x-sora-target:Sora_20201013.ListChannelConnections \
         Authorization:Bearer qPBaW3XI32S6lR_Bw_D8NTDLfaO8YlCaTfzm2_khpBuVowKcWYEM2X8SvgJnMWur \
-        x-sora-release-channel:canary \
+        x-sora-labo-cluster-name:canary \
         channel_id=voluntas@sora-devtools \
         -vvv
 
@@ -109,7 +109,7 @@ ListChannelConnections の例::
     Content-Type: application/json
     Host: sora-api.sora-labo.shiguredo.app
     User-Agent: HTTPie/3.0.2
-    x-sora-release-channel: canary
+    x-sora-labo-cluster-name: canary
     x-sora-target: Sora_20201013.ListChannelConnections
 
     {
@@ -150,3 +150,4 @@ ListChannelConnections の例::
             }
         }
     ]
+
