@@ -261,13 +261,13 @@ gradle.properties の作成::
 
 ``gradle.properties`` に Sora Labo への接続情報を設定します。
 
-  - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください
-  - ``channel_id`` に ``<自分の GitHub Username>@<好きな Room ID>`` を指定してください
-  
-    - ここでは GitHub Username を ``shiguredo`` としています
-  - ``signaling_metadata`` に自分のシグナリングキーを指定してください
+- ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください
+- ``channel_id`` に ``<自分の GitHub Username>@<好きな Room ID>`` を指定してください
 
-    - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+  - ここでは GitHub Username を ``shiguredo`` としています
+- ``signaling_metadata`` に自分のシグナリングキーを指定してください
+
+  - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 
 gradle.properties への設定例::
 
@@ -461,6 +461,8 @@ metadata 指定時に ``{"turn_tls_only": true}`` を指定して下さい。
 
 **予定は未定**
 
+- access_token 認証
+    - API キーを利用して署名したトークを利用
 - Sora HTTP API 利用
 - Sora ウェブフック利用
 - Discord 連携
@@ -482,3 +484,4 @@ metadata 指定時に ``{"turn_tls_only": true}`` を指定して下さい。
 ----------
 
 - 利用枠直近 7 日間 100 分から直近 30 日間 1000 分 へ拡大
+
