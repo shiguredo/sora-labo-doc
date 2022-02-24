@@ -197,6 +197,40 @@ ImageFlux Live Streaming はマネージド Sora + HLS 変換サービスで、 
   - `WebRTC SFU Sora Unity SDK サンプル集 <https://github.com/shiguredo/sora-unity-sdk-samples>`_
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
 
+
+認証方法
+========
+
+チャネル ID を決める
+--------------------
+
+シグナリングキーを利用してチャネルに認証をかけてみます。
+
+チャネル ID は GitHub アカウントのユーザ名を先頭に指定する必要があります。
+
+shiguredo という GitHub ユーザ名であれば。 その後 @ を間に挟んでチャネル名を指定してください。
+
+``チャンネル ID = {GitHubユーザ名}@{チャネル名}``
+
+以下は shiguredo という Github ユーザ名に sora-devtools というチャネル名 を指定した例です
+
+チャネル ID 例::
+
+    shiguredo@sora-devtools
+
+metadata に signaling_key を指定する
+------------------------------------
+
+Sora の SDK は metadata をシグナリング時に指定できます。metadata に ``signaling_key`` を指定して下さい。
+これで利用可能になります。
+
+シグナリングキーが ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` の場合
+
+.. code-block:: javascript
+
+    {"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}
+
+
 利用方法
 ========
 
@@ -425,7 +459,7 @@ Sora の SDK は metadata をシグナリング時に指定できます。metada
 
 
 Sora Labo のアカウントを削除する
---------------------------------
+========================================
 
 **アカウントは削除しますが、ログは削除しないためアカウントを削除したとしても利用時間はリセットされません**
 
