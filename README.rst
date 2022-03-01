@@ -244,7 +244,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
 
     const channelId = "shiguredo@sora-devtools";
     const debug = false;
-    const sora = connection("wss://<IPv4Address>.<ClusterType>.sora.sora-labo.shiguredo.app/signaling", debug);
+    const sora = connection("wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling", debug);
     const metadata = {
       signaling_key: "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"
     };
@@ -288,7 +288,7 @@ gradle.properties の作成::
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
-    signaling_endpoint = wss://<IPv4Address>.<ClusterType>.sora.sora-labo.shiguredo.app/signaling
+    signaling_endpoint = wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling
     channel_id         = shiguredo@sora-devtools
 
     # Setting Signaling Metadata.
@@ -332,7 +332,7 @@ Environment.swift の作成::
 Environment.swift への設定例::
 
     // 接続するサーバーのシグナリング URL
-    static let urls = [URL(string: "wss://<IPv4Address>.<ClusterType>.sora.sora-labo.shiguredo.app/signaling")!]
+    static let urls = [URL(string: "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling")!]
 
     // チャネル ID
     static let channelId = "shiguredo@sora-devtools"
@@ -385,7 +385,7 @@ Momo で Sora が利用できます。
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
     ./momo --resolution VGA --no-audio --port 0 \
-        sora --auto wss://<IPv4Address>.<ClusterType>.sora.sora-labo.shiguredo.app/signaling shiguredo@sora-devtools \
+        sora --auto wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling shiguredo@sora-devtools \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
@@ -495,3 +495,4 @@ Sora Labo のアカウントを削除する
   - API キーを利用して署名したトークを利用
 - Sora HTTP API 利用
 - Sora ウェブフック利用
+
