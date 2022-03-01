@@ -384,8 +384,12 @@ Momo で Sora が利用できます。
 
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
-    ./momo --resolution VGA --no-audio --port 0 \
-        sora --auto wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling shiguredo@sora-devtools \
+    ./momo --resolution VGA --no-audio-device sora --auto \
+        --signaling-url \
+            wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling \
+            wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling \
+            wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling \
+        --channel-id shiguredo@sora-devtools \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
