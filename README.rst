@@ -70,9 +70,9 @@ FAQ
 
   - 商用目的では利用できません
   - Sora Labo は Sora の検証以外の目的や用途では利用できません
-- Sora Labo をサービスに利用できますか？
+- Sora Labo を不特定多数向けのサービスに利用できますか？
 
-  - サービスには利用できません
+  - 不特定多数向けのサービスには利用できません
   - Sora Labo は Sora の検証以外の目的や用途では利用できません
 - Sora Labo は法人で利用できますか？
 
@@ -85,7 +85,7 @@ FAQ
   - 利用できません
 - Sora Labo サービス全体での転送量制限がありますか？
 
-  - 1 Sora サーバで 1 TB の転送制限があります
+  - 1 Sora サーバ (1 クラスターノード) で 1 TB の転送制限があります
   - 極端に転送量の多い配信をされると他の利用者に影響しますので、ご配慮をお願いします
 - Sora Labo サービス全体での帯域制限はありますか？
 
@@ -98,7 +98,7 @@ FAQ
   - 最大 15 Mbps です
 - Sora Labo の合計接続時間制限はありますか？
 
-  - 1000 分です
+  - 2000 分です
 - Sora Labo の連続接続時間制限はありますか？
 
   - 60 分です。60 分経過すると接続は切断されます
@@ -116,19 +116,19 @@ FAQ
   - 対応しています
 - Sora Labo の SLA はいくつですか？
 
-  - 保証はありません。
+  - 保証はありません
 - Sora Labo はウェブフック機能を提供しますか？
 
-  - 提供しません。評価版をご利用ください。
+  - 一般提供はしていません。Sora の評価版をご検討ください
 - Sora Labo は Sora の HTTP API を提供しますか？
 
-  - 提供しません。評価版をご利用ください。
-- Sora Labo はサポートを提供しますか？
+  - 一般提供はしていません。Sora の評価版をご検討ください
+- Sora Labo はサポートを提供していますか？
 
-  - 提供しません。
-- Sora SDK のサポートは提供しますか？
+  - 提供していません
+- Sora SDK のサポートは提供していますか？
 
-  - 提供しません。
+  - 提供していません
 - 変更などの告知は行いますか？
 
   - すべて時雨堂 Discord の #sora-labo にて通知します
@@ -138,13 +138,14 @@ FAQ
   - それ以外は事前の告知なく行うことがあります
 - Sora Labo の Sora のバージョンはいくつですか？
 
-  - 今後リリースを予定している最新の Sora の開発版です。製品版とは異なります
+  - Canary は今後リリースを予定している最新の Sora の開発版で、製品版とは異なります
+  - Stable は現在リリースしている最新の Sora の正式版で、製品版と同じものです
 - 認証エラー理由に ``PLEASE-CONTACT-US`` が出ました
 
   - いずれかの制限または禁止項目に当てはまっている可能性があります。Discord にてご連絡ください
 - 認証エラー理由に ``CONNECTION-LIMIT`` が出ました
 
-  - 直近 30 日間の利用が 1000 分を超えると利用できなくなります
+  - 直近 30 日間の利用が 2000 分を超えると利用できなくなります
 
 Discord
 =======
@@ -164,16 +165,17 @@ https://discord.gg/shiguredo
 
 - 1 接続の連続接続時間は 60 分です
 - 最大合計接続時間は 1000 分です
-- Sora の **HTTP API は利用できません**
-- Sora の **ウェブフック機能は利用できません**
-- Sora Labo は Sora SDK 以外での利用を想定していません
+- Sora の **HTTP API は一般提供していません**
+- Sora の **ウェブフック機能は一般提供していません**
+- Sora Labo は Sora SDK と Momo 以外での利用を想定していません
 - サービス全体での最大同時接続数は 500 です
 - 1 チャネルに接続できる最大の数は 10 です
-- ビットレートの最大値は 15 Mbps です
+- 1 接続のビットレートの最大値は 15 Mbps です
 
 禁止
 ====
 
+- アカデミックでの利用
 - 商用目的での利用
 - 同業他社の利用
 - 負荷試験ツールの利用
@@ -235,6 +237,7 @@ Sora JS SDK を利用する
 
 - チャネル ID を ``<自分の GitHub Username>@<好きなチャネル名>`` のように指定してください
 - 自分のシグナリングキーを metadata で指定してください
+- Sora Labo は Sora クラスターとなっているためクラスター向けに用意されているシグナリング URL をすべて指定してください
 
 https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
 
@@ -244,7 +247,9 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
 
     const channelId = "shiguredo@sora-devtools";
     const debug = false;
-    const sora = connection("wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling", debug);
+    const sora = connection(["wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling",
+                             "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling",
+                             "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling"], debug);
     const metadata = {
       signaling_key: "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"
     };
@@ -381,6 +386,7 @@ Momo で Sora が利用できます。
 - 自分のシグナリングキーを --metadata で指定してください
 
   - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+- Sora Labo は Sora クラスターとなっているためクラスター向けに用意されているシグナリング URL をすべて指定してください
 
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
@@ -476,6 +482,7 @@ Sora Labo のアカウントを削除する
 
 - Discord 連携
 - 同時接続数制限の緩和
+- ダッシュボードでの利用帯域閲覧
 - ダッシュボードでの Sora 監視情報の閲覧
 - ダッシュボードでの Sora HTTP API 回数閲覧
 - ダッシュボードでの Sora HTTP API ログ閲覧
@@ -499,4 +506,5 @@ Sora Labo のアカウントを削除する
   - API キーを利用して署名したトークを利用
 - Sora HTTP API 利用
 - Sora ウェブフック利用
+
 
