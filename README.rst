@@ -237,7 +237,7 @@ Sora JS SDK を利用する
 
 - チャネル ID を ``<自分の GitHub Username>@<好きなチャネル名>`` のように指定してください
 - 自分のシグナリングキーを metadata で指定してください
-- Sora Labo は Sora クラスターとなっているためクラスター向けに用意されているシグナリング URL をすべて指定してください
+- Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
 https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
 
@@ -386,7 +386,7 @@ Momo で Sora が利用できます。
 - 自分のシグナリングキーを --metadata で指定してください
 
   - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
-- Sora Labo は Sora クラスターとなっているためクラスター向けに用意されているシグナリング URL をすべて指定してください
+- Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
@@ -483,7 +483,7 @@ Sora Labo のアカウントを削除する
 - Discord 連携
 - 同時接続数制限の緩和
 - ダッシュボードでの利用帯域閲覧
-- ダッシュボードでの Sora 監視情報の閲覧
+- ダッシュボードでの Sora 監視情報閲覧
 - ダッシュボードでの Sora HTTP API 回数閲覧
 - ダッシュボードでの Sora HTTP API ログ閲覧
 - ダッシュボードでの Sora 統計情報閲覧
@@ -498,8 +498,8 @@ Sora Labo のアカウントを削除する
 対応済み
 ----------
 
-- 利用枠直近 7 日間 100 分から直近 30 日間 1000 分 へ拡大
 - 利用枠直近 30 日間 2000 分 へ拡大
+- 利用枠直近 7 日間 100 分から直近 30 日間 1000 分 へ拡大
 - アカデミックでの利用禁止
 - access_token 認証
 
