@@ -282,7 +282,7 @@ gradle.properties の作成::
 
 ``gradle.properties`` に Sora Labo への接続情報を設定します。
 
-- ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください
+- ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください。カンマ区切りですべてのシグナリング URL を指定をしてください。
 - ``channel_id`` に ``<自分の GitHub Username>@<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
@@ -293,7 +293,7 @@ gradle.properties の作成::
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
-    signaling_endpoint = wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling
+    signaling_endpoint = wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling, wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling, wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling
     channel_id         = shiguredo@sora-devtools
 
     # Setting Signaling Metadata.
@@ -326,52 +326,26 @@ Environment.swift の作成::
 
 ``Environment.swift`` に Sora Labo への接続情報を設定します。
 
-- ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください
+- ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を全て指定してください
 - ``channel_id`` に ``<自分の GitHub Username>@<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
-- ``signalingConnectMetadata`` に自分のシグナリングキーを**追加の上**指定してください
+- ``signalingConnectMetadata`` に自分のシグナリングキーを指定してください
 
   - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 
 Environment.swift への設定例::
 
     // 接続するサーバーのシグナリング URL
-    static let urls = [URL(string: "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling")!]
+    static let urls = [URL(string: "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling")!,
+                       URL(string: "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling")!,
+                       URL(string: "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling")!]
 
     // チャネル ID
     static let channelId = "shiguredo@sora-devtools"
 
     // metadata
     static let signalingConnectMetadata = ["signaling_key" : "7jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"]
-
-3. 接続設定の追加
-^^^^^^^^^^^^^^^^^^
-
-接続設定に ``Environment.swift`` で指定した ``signalingConnectMetadata`` を追加します
-
-クイックスタートの Environment.swift への設定例::
-
-    func connect() {
-        // 接続の設定を行います。
-        let config = Configuration(url: Environment.url,
-                                   channelId: Environment.channelId,
-                                   role: .sendrecv,
-                                   multistreamEnabled: true)
-
-        // signalingConnectMetadata の設定を行います。
-        config.signalingConnectMetadata = Environment.signalingConnectMetadata
-
-サンプル集の SoraSDKManager.swift.swift への設定例::
-
-        // Configurationを生成して、接続設定を行います。
-        // 必須となる設定はurl, channelId, roleのみです。
-        // その他の設定にはデフォルト値が指定されていますが、ここで必要に応じて自由に調整することが可能です。
-        var configuration = Configuration(urlCandidates: Environment.urls, channelId: channelId, role: role,
-                                          multistreamEnabled: multistreamEnabled)
-
-        // signalingConnectMetadata の設定を行います。
-        configuration.signalingConnectMetadata = Environment.signalingConnectMetadata
 
 WebRTC Native Client Momo で Sora を利用する
 --------------------------------------------
