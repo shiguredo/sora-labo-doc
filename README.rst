@@ -13,6 +13,23 @@ https://shiguredo.statusflare.app/
 お知らせ
 ========
 
+stable 版 devtools へのリンクを追加
+------------------------------------------------------
+
+:日時: 2022-04-08
+
+canary 版 sora-devtools へのリンク以外に、stable 版 sora-devtools へのリンクを追加しました。
+
+multistream: false 無効化
+------------------------------------------------------
+
+:日時: 2022-04-08
+
+canary / stable で ``multistream: false`` を無効化しました。
+
+マルチストリームへの一本化を検討するためのとなります。
+
+
 multistream_auto_sharing_video_bit_rate = false に変更
 ------------------------------------------------------------------------------------
 
@@ -490,5 +507,6 @@ Sora Labo のアカウントを削除する
   - API キーを利用して署名したトークを利用
 - Sora HTTP API 利用
 - Sora ウェブフック利用
+
 
 
