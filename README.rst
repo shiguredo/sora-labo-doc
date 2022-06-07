@@ -260,7 +260,7 @@ Sora DevTools という開発者ツールを https://sora-devtools.shiguredo.jp/
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
 チャネル ID とシグナリングキーとシグナリング URL 埋め込んである URL を用意してあります。
 
-.. image:: https://i.gyazo.com/a22c998d50c93ac386abaa9ac7ebcfec.png
+.. image:: https://i.gyazo.com/73d9c05e391df37542580a48e5cb7caa.png
 
 Sora JS SDK を利用する
 ------------------------
