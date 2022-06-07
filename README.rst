@@ -407,7 +407,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
 
 Sora DevTools のマルチストリーム受信を開いて接続してみてください。
 
-.. image:: https://i.gyazo.com/c0a807f72f7dad00084c3cd90970ca7b.png
+.. image:: https://i.gyazo.com/ade1532c1536d36cf890e533b9185289.png
 
 AV1 を利用する
 -------------------------------
