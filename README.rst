@@ -148,13 +148,13 @@ FAQ
   - 対応しています
 - Sora Labo の SLA はいくつですか？
 
-  - 保証はありません
+  - SLA はありません
 - Sora Labo はウェブフック機能を提供しますか？
 
-  - 一般提供はしていません。Sora の評価版をご検討ください
+  - 提供はしていません。Sora の評価版または Tobi のトライアルをご検討ください
 - Sora Labo は Sora の HTTP API を提供しますか？
 
-  - 一般提供はしていません。Sora の評価版をご検討ください
+  - 提供はしていません。Sora の評価版または Tobi のトライアルをご検討ください
 - Sora Labo はサポートを提供していますか？
 
   - 提供していません
@@ -196,9 +196,9 @@ https://discord.gg/shiguredo
 ====
 
 - 1 接続の連続接続時間は 60 分です
-- 最大合計接続時間は 1000 分です
-- Sora の **HTTP API は一般提供していません**
-- Sora の **ウェブフック機能は一般提供していません**
+- 最大合計接続時間は 2000 分です
+- Sora の **HTTP API は提供していません**
+- Sora の **ウェブフック機能は提供していません**
 - Sora Labo は Sora SDK と Momo 以外での利用を想定していません
 - サービス全体での最大同時接続数は 500 です
 - 1 チャネルに接続できる最大の数は 10 です
@@ -219,14 +219,15 @@ https://discord.gg/shiguredo
 
 Sora Labo は商用利用は許可しておりませんので、以下をご検討ください。
 
-- 時雨堂とライセンス契約をする
+- 時雨堂と `WebRTC SFU Sora <https://sora.shiguredo.jp/>`_ を契約をする
 
   - 自前で頑張りたい
-- さくらインターネットさんの ImageFlux Live Stremaing を契約する
+- 時雨堂と `Sora as a Service Tobi <https://tobi.shiguredo.jp/>`_ を契約をする
 
   - 運用全部任せたい
+- さくらインターネットさんの ImageFlux Live Stremaing を契約する
 
-ImageFlux Live Streaming はマネージド Sora + HLS 変換サービスで、 Sora だけでも利用可能です。
+  - HLS 変換したい
 
 利用可能な SDK やクライアント、ライブラリ
 =========================================
@@ -247,6 +248,9 @@ ImageFlux Live Streaming はマネージド Sora + HLS 変換サービスで、 
 - `WebRTC SFU Sora Unity SDK <https://github.com/shiguredo/sora-unity-sdk>`_
 
   - `WebRTC SFU Sora Unity SDK サンプル集 <https://github.com/shiguredo/sora-unity-sdk-samples>`_
+- `WebRTC SUF Sora C++ SDK <https://github.com/shiguredo/sora-cpp-sdk>`_
+
+  - `WebRTC SFU Sora C++ SDK サンプル集 <https://github.com/shiguredo/sora-cpp-sdk-samples>`_
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
 
 利用方法
@@ -496,9 +500,7 @@ Sora Labo のアカウントを削除する
 - ダッシュボードでの Kohaku 統計情報閲覧
 - ダッシュボードでのクライアント問題解析機能
 - ダッシュボードでの Sora ログ閲覧
-- 録画合成機能
 - Sora Prebuilt UI 組み込み機能
-- チケット機能
 
 対応済み
 ----------
@@ -511,6 +513,3 @@ Sora Labo のアカウントを削除する
   - API キーを利用して署名したトークを利用
 - Sora HTTP API 利用
 - Sora ウェブフック利用
-
-
-
