@@ -511,5 +511,3 @@ Sora Labo のアカウントを削除する
 - access_token 認証
 
   - API キーを利用して署名したトークを利用
-- Sora HTTP API 利用
-- Sora ウェブフック利用
