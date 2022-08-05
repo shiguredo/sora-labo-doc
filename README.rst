@@ -283,7 +283,7 @@ Sora JS SDK を利用する
 - 自分のシグナリングキーを metadata で指定してください
 - Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
-https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
+https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
 双方向のサンプルの一部です。
 
@@ -300,7 +300,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/multistream.html
     const options = {
       multistream: true
     };
-    const publisher = sora.publisher(channelId, metadata, options);
+    const sendrecv1 = sora.sendrecv(channelId, null, options);
 
 Sora Android SDK を利用する
 -------------------------------
