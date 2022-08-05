@@ -300,7 +300,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
     const options = {
       multistream: true
     };
-    const sendrecv1 = sora.sendrecv(channelId, null, options);
+    const sendrecv1 = sora.sendrecv(channelId, metadata, options);
 
 Sora Android SDK を利用する
 -------------------------------
