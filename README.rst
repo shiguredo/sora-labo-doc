@@ -175,7 +175,7 @@ FAQ
 - メンテナンス告知は行いますか？
 
   - 時雨堂の営業時間である平日の 10:00-17:00 の間にメンテナンスを行う場合のみ Discord にて通知します
-  - それ以外は事前の告知なく行うことがあります
+  - それ以外は事前の告知なく行います
 - Sora Labo の Sora のバージョンはいくつですか？
 
   - Canary は今後リリースを予定している最新の Sora の開発版で、製品版とは異なります
@@ -267,7 +267,7 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
 Sora DevTools を利用する
 ------------------------
 
-Sora DevTools という開発者ツールを https://sora-devtools.shiguredo.jp/ で公開しています。
+[Sora DevTools](https://github.com/shiguredo/sora-devtools) という開発者ツールを https://sora-devtools.shiguredo.jp/ にデプロイして公開しています。
 
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
 チャネル ID とシグナリングキーとシグナリング URL 埋め込んである URL を用意してあります。
@@ -502,8 +502,6 @@ Sora Labo のアカウントを削除する
 - 同時接続数制限の緩和
 - ダッシュボードでの利用帯域閲覧
 - ダッシュボードでの Sora 監視情報閲覧
-- ダッシュボードでの Sora HTTP API 回数閲覧
-- ダッシュボードでの Sora HTTP API ログ閲覧
 - ダッシュボードでの Sora 統計情報閲覧
 - ダッシュボードでの Kohaku 統計情報閲覧
 - ダッシュボードでのクライアント問題解析機能
@@ -519,4 +517,3 @@ Sora Labo のアカウントを削除する
 - access_token 認証
 
   - API キーを利用して署名したトークを利用
-
