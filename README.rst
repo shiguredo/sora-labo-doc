@@ -264,13 +264,23 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
 利用方法
 ========
 
+アクセストークンを生成する
+----------------------------------------------
+
+- シークレットキーを利用して JWT (HS256) で生成してください
+- exp は必須です。nbf から 30 日以下である必要があります
+- iss は必須です。GitHub ID と等しい必要があります
+- iat は必須です
+- nbf は必須です 
+- jti はオプションです
+
 Sora DevTools を利用する
 ------------------------
 
 [Sora DevTools](https://github.com/shiguredo/sora-devtools) という開発者ツールを https://sora-devtools.shiguredo.jp/ にデプロイして公開しています。
 
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
-チャネル ID とシグナリングキーとシグナリング URL 埋め込んである URL を用意してあります。
+チャネル ID とアクセストークンとシグナリング URL 埋め込んである URL を用意してあります。
 
 .. image:: https://i.gyazo.com/73d9c05e391df37542580a48e5cb7caa.png
 
@@ -280,7 +290,7 @@ Sora JS SDK を利用する
 `shiguredo/sora-js-sdk: WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
 
 - チャネル ID を ``<自分の GitHub Username>@<好きなチャネル名>`` のように指定してください
-- 自分のシグナリングキーを metadata で指定してください
+- 自分のアクセストークンを metadata で指定してください
 - Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
 https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
@@ -295,7 +305,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
                              "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling",
                              "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling"], debug);
     const metadata = {
-      signaling_key: "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"
+      access_token: "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"
     };
     const options = {
       multistream: true
@@ -330,9 +340,9 @@ gradle.properties の作成::
 - ``channel_id`` に ``<自分の GitHub Username>@<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
-- ``signaling_metadata`` に自分のシグナリングキーを指定してください
+- ``signaling_metadata`` に自分のアクセストークンを指定してください
 
-  - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+  - ここではアクセストークンを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 
 gradle.properties への設定例::
 
@@ -344,7 +354,7 @@ gradle.properties への設定例::
     # Quotes must be double escaped.
     # e.g.) signaling_metadata = {\\"spam\\":\\"egg\\"}
     # This setting is required. If you do not want to use it, set it to blank.
-    signaling_metadata = {\\"signaling_key\\":\\"jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa\\"}
+    signaling_metadata = {\\"access_token\\":\\"jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa\\"}
 
 Sora iOS SDK を利用する
 -------------------------------
@@ -374,9 +384,9 @@ Environment.swift の作成::
 - ``channel_id`` に ``<自分の GitHub Username>@<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
-- ``signalingConnectMetadata`` に自分のシグナリングキーを指定してください
+- ``signalingConnectMetadata`` に自分のアクセストークンを指定してください
 
-  - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+  - ここではアクセストークンを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 
 Environment.swift への設定例::
 
@@ -389,7 +399,7 @@ Environment.swift への設定例::
     static let channelId = "shiguredo@sora-devtools"
 
     // metadata
-    static let signalingConnectMetadata = ["signaling_key" : "7jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"]
+    static let signalingConnectMetadata = ["access_token" : "7jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"]
 
 WebRTC Native Client Momo で Sora を利用する
 --------------------------------------------
@@ -401,9 +411,9 @@ Momo で Sora が利用できます。
 - チャネル ID を ``<自分の GitHub Username>@<好きな Room ID>`` のように指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
-- 自分のシグナリングキーを --metadata で指定してください
+- 自分のアクセストークンを --metadata で指定してください
 
-  - ここではシグナリングキーを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+  - ここではアクセストークンを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
 - Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
@@ -415,7 +425,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
             wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling \
         --channel-id shiguredo@sora-devtools \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
-        --metadata '{"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
+        --metadata '{"access_token": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
 
 Sora DevTools のマルチストリーム受信を開いて接続してみてください。
 
@@ -441,7 +451,7 @@ Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効
 チャネル ID を決める
 --------------------
 
-シグナリングキーを利用してチャネルに認証をかけてみます。
+アクセストークンを利用してチャネルに認証をかけてみます。
 
 チャネル ID は GitHub アカウントのユーザ名を先頭に指定する必要があります。
 
@@ -455,17 +465,17 @@ shiguredo という GitHub ユーザ名であれば。 その後 @ を間に挟�
 
     shiguredo@sora-devtools
 
-metadata に signaling_key を指定する
+metadata に access_token を指定する
 ------------------------------------
 
-Sora の SDK は metadata をシグナリング時に指定できます。metadata に ``signaling_key`` を指定して下さい。
+Sora の SDK は metadata をシグナリング時に指定できます。metadata に ``access_token`` を指定して下さい。
 これで利用可能になります。
 
-シグナリングキーが ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` の場合
+アクセストークンが ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` の場合
 
 .. code-block:: javascript
 
-    {"signaling_key": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}
+    {"access_token": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}
 
 検証向け機能
 ============
