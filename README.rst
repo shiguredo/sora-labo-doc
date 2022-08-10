@@ -265,7 +265,7 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
 比較表
 =========================
 
-Sora Labo は検証目的以外での利用はできません。それ以外は [Tobi](https://tobi.shiguredo.jp/) または [Sora](https://sora.shiguredo.jp/) をご検討ください。
+Sora Labo は検証目的以外での利用はできません。それ以外は `Tobi <https://tobi.shiguredo.jp>`_ または `Sora <https://sora.shiguredo.jp>`_ をご検討ください。
 
 .. list-table::
     :header-rows: 1
