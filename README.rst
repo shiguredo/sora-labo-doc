@@ -261,6 +261,52 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
   - `WebRTC SFU Sora C++ SDK サンプル集 <https://github.com/shiguredo/sora-cpp-sdk-samples>`_
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
 
+
+比較表
+=========================
+
+.. list-table:: 比較表
+    :widths: 10 10
+    :header-rows: 1
+
+    * - 機能
+      - Sora Labo
+      - Tobi
+      - Sora
+    * - 商用利用
+      - 不可、検証目的のみ
+      - 可
+      - 可
+    * - アカデミック利用
+      - 不可
+      - 可
+      - 可
+    * - API
+      - 不可
+      - 一部を除いて可
+      - 可
+    * - ウェブフック
+      - 不可
+      - 可
+      - 可
+    * - ウェブフック
+      - 不可
+      - 可
+      - 可
+    * - 録画
+      - 不可
+      - 可
+      - 可
+    * - 運用
+      - 不要
+      - 不要
+      - 必要
+    * - サポート
+      - 無し
+      - 有り(コミュニティ)
+      - 有り(メール)
+
+
 利用方法
 ========
 
@@ -517,3 +563,4 @@ Sora Labo のアカウントを削除する
 - access_token 認証
 
   - API キーを利用して署名したトークを利用
+
