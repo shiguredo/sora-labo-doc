@@ -37,7 +37,6 @@ canary / stable で ``multistream: false`` を無効化しました。
 
 マルチストリームへの一本化を検討するためのとなります。
 
-
 multistream_auto_sharing_video_bit_rate = false に変更
 ------------------------------------------------------------------------------------
 
@@ -203,10 +202,11 @@ https://discord.gg/shiguredo
 制限
 ====
 
-- 1 接続の連続接続時間は 60 分です
 - 最大合計接続時間は 2000 分です
+- 1 接続の連続接続時間は 60 分です
 - Sora の **HTTP API は提供していません**
 - Sora の **ウェブフック機能は提供していません**
+- Sora の **録画機能は提供していません**
 - Sora Labo は Sora SDK と Momo 以外での利用を想定していません
 - サービス全体での最大同時接続数は 500 です
 - 1 チャネルに接続できる最大の数は 10 です
@@ -227,12 +227,12 @@ https://discord.gg/shiguredo
 
 Sora Labo は商用利用は許可しておりませんので、以下をご検討ください。
 
-- 時雨堂と `WebRTC SFU Sora <https://sora.shiguredo.jp/>`_ を契約をする
-
-  - 自前で頑張りたい
 - 時雨堂と `Sora as a Service Tobi <https://tobi.shiguredo.jp/>`_ を契約をする
 
   - 運用全部任せたい
+- 時雨堂と `WebRTC SFU Sora <https://sora.shiguredo.jp/>`_ を契約をする
+
+  - 自前で頑張りたい
 - さくらインターネットさんの ImageFlux Live Stremaing を契約する
 
   - HLS 変換したい
@@ -557,13 +557,9 @@ Sora Labo のアカウントを削除する
 
 **予定は未定**
 
-- Discord 連携
-- 同時接続数制限の緩和
 - access_token 認証
 
   - シークレットキーを利用して署名したトークを利用
-- ダッシュボードでの利用帯域閲覧
-- Sora Prebuilt UI 組み込み機能
 
 対応済み
 ----------
@@ -571,5 +567,3 @@ Sora Labo のアカウントを削除する
 - 利用枠直近 30 日間 2000 分 へ拡大
 - 利用枠直近 7 日間 100 分から直近 30 日間 1000 分 へ拡大
 - アカデミックでの利用禁止
-
-
