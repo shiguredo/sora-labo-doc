@@ -13,6 +13,19 @@ https://shiguredo.statusflare.app/
 お知らせ
 ========
 
+シグナリングキーの廃止とアクセストークンの開始
+------------------------------------------------------
+
+:日時: 2022-08-DD
+
+シグナリングキーを廃止しました。今後はアクセストークンまたはシークレットキーを利用してください。
+
+- アクセストークンは JWT HS256 でシークレットキーを利用して生成してください
+- シークレットキーをアクセストークンとして利用可能です
+
+今までは ``metadata`` の ``signaling_key`` にシグナリングキーを指定する必要がありましたが、
+今後は ``metadata`` の ``access_token`` にアクセストークン、またはシークレットキーを指定する必要があります。
+
 canary 版のクラスターのノード追加
 ------------------------------------------------------
 
@@ -332,11 +345,13 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 ----------------------------------------------
 
 - シークレットキーを利用して JWT (HS256) で生成してください
-- exp は必須です。nbf から 30 日以下である必要があります
-- iss は必須です。GitHub ID と等しい必要があります
-- iat は必須です
-- nbf は必須です 
-- jti はオプションです
+- exp はオプションです
+- nbf はオプションです 
+- channel_id はオプションです
+
+  - channel_id クレームを指定するとチャネル ID が一致していないと認証に失敗します
+
+アクセストークンは [jwt.io](https://jwt.io/) などを利用して生成可能です。
 
 Sora DevTools を利用する
 ------------------------
@@ -365,11 +380,11 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
     const channelId = "shiguredo@sora-devtools";
     const debug = false;
-    const sora = connection(["wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling",
-                             "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling",
-                             "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling"], debug);
+    const sora = connection(["wss://0001.canary.sora-labo.shiguredo.app/signaling",
+                             "wss://0002.canary.sora-labo.shiguredo.app/signaling",
+                             "wss://0003.canary.sora-labo.shiguredo.app/signaling"], debug);
     const metadata = {
-      access_token: "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"
+      access_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk"
     };
     const options = {
       multistream: true
@@ -406,7 +421,7 @@ gradle.properties の作成::
   - ここでは GitHub Username を ``shiguredo`` としています
 - ``signaling_metadata`` に自分のアクセストークンを指定してください
 
-  - ここではアクセストークンを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` としています
 
 gradle.properties への設定例::
 
@@ -450,20 +465,20 @@ Environment.swift の作成::
   - ここでは GitHub Username を ``shiguredo`` としています
 - ``signalingConnectMetadata`` に自分のアクセストークンを指定してください
 
-  - ここではアクセストークンを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` としています
 
 Environment.swift への設定例::
 
     // 接続するサーバーのシグナリング URL
-    static let urls = [URL(string: "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling")!,
-                       URL(string: "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling")!,
-                       URL(string: "wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling")!]
+    static let urls = [URL(string: "wss://0001.canary.sora-labo.shiguredo.app/signaling")!,
+                       URL(string: "wss://0002.canary.sora-labo.shiguredo.app/signaling")!,
+                       URL(string: "wss://0003.canary.sora-labo.shiguredo.app/signaling")!]
 
     // チャネル ID
     static let channelId = "shiguredo@sora-devtools"
 
     // metadata
-    static let signalingConnectMetadata = ["access_token" : "7jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"]
+    static let signalingConnectMetadata = ["access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk"]
 
 WebRTC Native Client Momo で Sora を利用する
 --------------------------------------------
@@ -477,19 +492,19 @@ Momo で Sora が利用できます。
   - ここでは GitHub Username を ``shiguredo`` としています
 - 自分のアクセストークンを --metadata で指定してください
 
-  - ここではアクセストークンを ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` としています
+  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` としています
 - Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
 
     ./momo --resolution VGA --no-audio-device sora --auto \
         --signaling-url \
-            wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling \
-            wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling \
-            wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling \
+            wss://0001.canary.sora-labo.shiguredo.app/signaling \
+            wss://0002.canary.sora-labo.shiguredo.app/signaling \
+            wss://0003.canary.sora-labo.shiguredo.app/signaling \
         --channel-id shiguredo@sora-devtools \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
-        --metadata '{"access_token": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}'
+        --metadata '{"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk"}'
 
 Sora DevTools のマルチストリーム受信を開いて接続してみてください。
 
@@ -535,11 +550,11 @@ metadata に access_token を指定する
 Sora の SDK は metadata をシグナリング時に指定できます。metadata に ``access_token`` を指定して下さい。
 これで利用可能になります。
 
-アクセストークンが ``jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa`` の場合
+アクセストークンが ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` の場合
 
 .. code-block:: javascript
 
-    {"access_token": "jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa"}
+    {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk"}
 
 検証向け機能
 ============
@@ -572,13 +587,12 @@ Sora Labo のアカウントを削除する
 
 **予定は未定**
 
-- access_token 認証
-
-  - シークレットキーを利用して署名したトークを利用
-
 対応済み
 ----------
 
+- access_token 認証
+
+  - シークレットキーを利用して署名したトークを利用
 - 利用枠直近 30 日間 2000 分 へ拡大
 - 利用枠直近 7 日間 100 分から直近 30 日間 1000 分 へ拡大
 - アカデミックでの利用禁止
