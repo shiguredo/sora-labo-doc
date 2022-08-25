@@ -25,7 +25,7 @@ https://shiguredo.statusflare.app/
 - GitHub ID とは GitHub アカウントに紐付けられている変更できないユニークな数値です
 - GitHub Username とは GitHub アカウント名で、自由に変更が可能です
 
-例えばチャネル名が sora 、 GitHub ID が 0 、 GitHubUsername が shiguredo の場合は ```sora@shiguredo#0`` となります。
+例えばチャネル名が sora 、 GitHub ID が 0 、 GitHubUsername が shiguredo の場合は ``sora@shiguredo#0`` となります。
 
 シグナリングキーの廃止とアクセストークンの開始
 ------------------------------------------------------
