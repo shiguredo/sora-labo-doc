@@ -13,6 +13,20 @@ https://shiguredo.statusflare.app/
 お知らせ
 ========
 
+チャネル ID の方式変更
+------------------------------------------------------
+
+:日時: 2022-08-DD
+
+チャネル ID の方式を変更しました。
+
+いままでは <github-username>@<好きな文字列> でしたが、これを <好きな文字列>@<github-username>#<github-id> に変更します。
+
+- GitHub ID とは GitHub アカウントに紐付けられている変更できないユニークな数値です
+- GitHub Username とは GitHub アカウント名で、自由に変更が可能です
+
+例えばチャネル名が sora 、 GitHub ID が 0 、 GitHubUsername が shiguredo の場合は ```sora@shiguredo#0`` となります。
+
 シグナリングキーの廃止とアクセストークンの開始
 ------------------------------------------------------
 
@@ -351,12 +365,12 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 
   - channel_id クレームを指定するとチャネル ID が一致していないと認証に失敗します
 
-アクセストークンは [jwt.io](https://jwt.io/) などを利用して生成可能です。
+アクセストークンは `jwt.io <https://jwt.io/>`_ などを利用して生成可能です。
 
 Sora DevTools を利用する
 ------------------------
 
-[Sora DevTools](https://github.com/shiguredo/sora-devtools) という開発者ツールを https://sora-devtools.shiguredo.jp/ にデプロイして公開しています。
+`Sora DevTools <https://github.com/shiguredo/sora-devtools>`_ という開発者ツールを https://sora-devtools.shiguredo.jp/ にデプロイして公開しています。
 
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
 チャネル ID とアクセストークンとシグナリング URL 埋め込んである URL を用意してあります。
@@ -378,7 +392,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
 .. code-block:: javascript
 
-    const channelId = "shiguredo@sora-devtools";
+    const channelId = "sora-devtools@shiguredo#0";
     const debug = false;
     const sora = connection(["wss://0001.canary.sora-labo.shiguredo.app/signaling",
                              "wss://0002.canary.sora-labo.shiguredo.app/signaling",
@@ -416,9 +430,10 @@ gradle.properties の作成::
 ``gradle.properties`` に Sora Labo への接続情報を設定します。
 
 - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください。カンマ区切りですべてのシグナリング URL を指定をしてください。
-- ``channel_id`` に ``<自分の GitHub Username>@<好きなチャネル名>`` を指定してください
+- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
+  - ここでは GitHub ID を ``0`` としています
 - ``signaling_metadata`` に自分のアクセストークンを指定してください
 
   - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` としています
@@ -427,7 +442,7 @@ gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
     signaling_endpoint = wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling, wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling, wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling
-    channel_id         = shiguredo@sora-devtools
+    channel_id         = @sora-devtools@shiguredo#0
 
     # Setting Signaling Metadata.
     # Quotes must be double escaped.
