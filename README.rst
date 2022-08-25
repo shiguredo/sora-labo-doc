@@ -318,21 +318,25 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
       - 不可
       - 可
       - 可
+    * - 同時接続
+      - 1 チャネル 10 程度
+      - 5000 程度
+      - ライセンスに依存
     * - 帯域
       - 制限あり
-      - 最大 1 Gbps
+      - 最大 20 Gbps
       - 自由
+    * - 認証
+      - アクセストークン
+      - アクセストークン
+      - 自由
+    * - ウェブフック
+      - 不可
+      - 可
+      - 可
     * - API
       - 不可
       - 一部を除いて可
-      - 可
-    * - ウェブフック
-      - 不可
-      - 可
-      - 可
-    * - ウェブフック
-      - 不可
-      - 可
       - 可
     * - 録画
       - 不可
@@ -366,6 +370,11 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
   - channel_id クレームを指定するとチャネル ID が一致していないと認証に失敗します
 
 アクセストークンは `jwt.io <https://jwt.io/>`_ などを利用して生成可能です。
+
+シークレットキーをアクセストークンとして利用する
+------------------------------------------------
+
+アクセストークンを生成せずに、シークレットキーをそのままアクセストークンとしても利用可能です。
 
 Sora DevTools を利用する
 ------------------------
@@ -441,14 +450,14 @@ gradle.properties の作成::
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
-    signaling_endpoint = wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling, wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling, wss://<IPv4Address>.<ClusterName>.sora.sora-labo.shiguredo.app/signaling
-    channel_id         = @sora-devtools@shiguredo#0
+    signaling_endpoint = wss://0001.canary.sora-labo.shiguredo.app/signaling
+    channel_id         = shiguredo@sora-devtools
 
     # Setting Signaling Metadata.
     # Quotes must be double escaped.
     # e.g.) signaling_metadata = {\\"spam\\":\\"egg\\"}
     # This setting is required. If you do not want to use it, set it to blank.
-    signaling_metadata = {\\"access_token\\":\\"jGTYhHBYhIF0IvzTTvPub0aO8qsmshksqACOCou2GrcOSNTa\\"}
+    signaling_metadata = {\\"access_token\\":\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk\\"}
 
 Sora iOS SDK を利用する
 -------------------------------
@@ -611,3 +620,5 @@ Sora Labo のアカウントを削除する
 - 利用枠直近 30 日間 2000 分 へ拡大
 - 利用枠直近 7 日間 100 分から直近 30 日間 1000 分 へ拡大
 - アカデミックでの利用禁止
+
+
