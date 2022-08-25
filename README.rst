@@ -30,7 +30,7 @@ https://shiguredo.statusflare.app/
 シグナリングキーの廃止とアクセストークンの開始
 ------------------------------------------------------
 
-:日時: 2022-08-DD
+:日時: 2022-08-25
 
 シグナリングキーを廃止しました。今後はアクセストークンまたはシークレットキーを利用してください。
 
@@ -388,7 +388,7 @@ Sora DevTools を利用する
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
 チャネル ID とアクセストークンとシグナリング URL 埋め込んである URL を用意してあります。
 
-.. image:: https://i.gyazo.com/73d9c05e391df37542580a48e5cb7caa.png
+.. image:: https://i.gyazo.com/e538e1e4841a0465d01b1131cbf58952.png
 
 Sora JS SDK を利用する
 ------------------------
@@ -454,7 +454,7 @@ gradle.properties の作成::
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
-    signaling_endpoint = wss://0001.canary.sora-labo.shiguredo.app/signaling
+    signaling_endpoint = wss://0001.canary.sora-labo.shiguredo.app/signaling, wss://0002.canary.sora-labo.shiguredo.app/signaling, wss://0003.canary.sora-labo.shiguredo.app/signaling
     channel_id         = sora@shiguredo#0
 
     # Setting Signaling Metadata.
