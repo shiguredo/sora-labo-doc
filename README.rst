@@ -13,6 +13,20 @@ https://shiguredo.statusflare.app/
 お知らせ
 ========
 
+チャネル ID の方式変更
+------------------------------------------------------
+
+:日時: 2022-08-DD
+
+チャネル ID の方式を変更しました。
+
+いままでは <github-username>@<好きな文字列> でしたが、これを <好きな文字列>@<github-username>#<github-id> に変更します。
+
+- GitHub ID とは GitHub アカウントに紐付けられている変更できないユニークな数値です
+- GitHub Username とは GitHub アカウント名で、自由に変更が可能です
+
+例えばチャネル名が sora 、 GitHub ID が 0 、 GitHubUsername が shiguredo の場合は ``sora@shiguredo#0`` となります。
+
 シグナリングキーの廃止とアクセストークンの開始
 ------------------------------------------------------
 
@@ -357,6 +371,10 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 
 アクセストークンは `jwt.io <https://jwt.io/>`_ などを利用して生成可能です。
 
+以下は例です。
+
+https://jwt.io/#debugger-io?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is
+
 シークレットキーをアクセストークンとして利用する
 ------------------------------------------------
 
@@ -377,7 +395,7 @@ Sora JS SDK を利用する
 
 `shiguredo/sora-js-sdk: WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
 
-- チャネル ID を ``<自分の GitHub Username>@<好きなチャネル名>`` のように指定してください
+- チャネル ID を ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` のように指定してください
 - 自分のアクセストークンを metadata で指定してください
 - Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
@@ -387,13 +405,13 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
 .. code-block:: javascript
 
-    const channelId = "shiguredo@sora-devtools";
+    const channelId = "sora@shiguredo#0";
     const debug = false;
     const sora = connection(["wss://0001.canary.sora-labo.shiguredo.app/signaling",
                              "wss://0002.canary.sora-labo.shiguredo.app/signaling",
                              "wss://0003.canary.sora-labo.shiguredo.app/signaling"], debug);
     const metadata = {
-      access_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk"
+      access_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"
     };
     const options = {
       multistream: true
@@ -425,24 +443,25 @@ gradle.properties の作成::
 ``gradle.properties`` に Sora Labo への接続情報を設定します。
 
 - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください。カンマ区切りですべてのシグナリング URL を指定をしてください。
-- ``channel_id`` に ``<自分の GitHub Username>@<好きなチャネル名>`` を指定してください
+- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
+  - ここでは GitHub ID を ``0`` としています
 - ``signaling_metadata`` に自分のアクセストークンを指定してください
 
-  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` としています
+  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is`` としています
 
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
     signaling_endpoint = wss://0001.canary.sora-labo.shiguredo.app/signaling, wss://0002.canary.sora-labo.shiguredo.app/signaling, wss://0003.canary.sora-labo.shiguredo.app/signaling
-    channel_id         = shiguredo@sora-devtools
+    channel_id         = sora@shiguredo#0
 
     # Setting Signaling Metadata.
     # Quotes must be double escaped.
     # e.g.) signaling_metadata = {\\"spam\\":\\"egg\\"}
     # This setting is required. If you do not want to use it, set it to blank.
-    signaling_metadata = {\\"access_token\\":\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk\\"}
+    signaling_metadata = {\\"access_token\\":\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is\\"}
 
 Sora iOS SDK を利用する
 -------------------------------
@@ -469,12 +488,13 @@ Environment.swift の作成::
 ``Environment.swift`` に Sora Labo への接続情報を設定します。
 
 - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を全て指定してください
-- ``channel_id`` に ``<自分の GitHub Username>@<好きなチャネル名>`` を指定してください
+- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
+  - ここでは GitHub ID を ``0`` としています
 - ``signalingConnectMetadata`` に自分のアクセストークンを指定してください
 
-  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` としています
+  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is`` としています
 
 Environment.swift への設定例::
 
@@ -484,10 +504,10 @@ Environment.swift への設定例::
                        URL(string: "wss://0003.canary.sora-labo.shiguredo.app/signaling")!]
 
     // チャネル ID
-    static let channelId = "shiguredo@sora-devtools"
+    static let channelId = "sora@shiguredo#0"
 
     // metadata
-    static let signalingConnectMetadata = ["access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk"]
+    static let signalingConnectMetadata = ["access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"]
 
 WebRTC Native Client Momo で Sora を利用する
 --------------------------------------------
@@ -496,12 +516,13 @@ WebRTC Native Client Momo で Sora を利用する
 
 Momo で Sora が利用できます。
 
-- チャネル ID を ``<自分の GitHub Username>@<好きな Room ID>`` のように指定してください
+- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
+  - ここでは GitHub ID を ``0`` としています
 - 自分のアクセストークンを --metadata で指定してください
 
-  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` としています
+  - ここではアクセストークンを ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is`` としています
 - Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
 GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合::
@@ -511,9 +532,9 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
             wss://0001.canary.sora-labo.shiguredo.app/signaling \
             wss://0002.canary.sora-labo.shiguredo.app/signaling \
             wss://0003.canary.sora-labo.shiguredo.app/signaling \
-        --channel-id shiguredo@sora-devtools \
+        --channel-id sora@shiguredo#0 \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
-        --metadata '{"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk"}'
+        --metadata '{"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"}'
 
 Sora DevTools のマルチストリーム受信を開いて接続してみてください。
 
@@ -543,15 +564,15 @@ Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効
 
 チャネル ID は GitHub アカウントのユーザ名を先頭に指定する必要があります。
 
-shiguredo という GitHub ユーザ名であれば。 その後 @ を間に挟んでチャネル名を指定してください。
+``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` と指定する必要があります。
 
-``チャンネル ID = {GitHubユーザ名}@{チャネル名}``
-
-以下は shiguredo という Github ユーザ名に sora-devtools というチャネル名 を指定した例です
+以下はチャネル名 sora-devtools 、Github ユーザ名 shiguredo 、GitHub ID 0 を指定した例です。
 
 チャネル ID 例::
 
-    shiguredo@sora-devtools
+    sora@shiguredo#0
+
+@ 以降に指定する値はホーム画面にて確認可能です。
 
 metadata に access_token を指定する
 ------------------------------------
@@ -559,11 +580,11 @@ metadata に access_token を指定する
 Sora の SDK は metadata をシグナリング時に指定できます。metadata に ``access_token`` を指定して下さい。
 これで利用可能になります。
 
-アクセストークンが ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk`` の場合
+アクセストークンが ``eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is`` の場合
 
 .. code-block:: javascript
 
-    {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic2hpZ3VyZWRvQHNvcmEtZGV2dG9vbHMifQ.edAh05VR268CoSODI0y1cTYwI9_0sBi9iMiYyDIP-Rk"}
+    {"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"}
 
 検証向け機能
 ============
@@ -599,6 +620,9 @@ Sora Labo のアカウントを削除する
 対応済み
 ----------
 
+- channel_id 指定方法変更
+
+  - <好きな文字列>@<github-username>#<github-id>
 - access_token 認証
 
   - シークレットキーを利用して署名したトークを利用
