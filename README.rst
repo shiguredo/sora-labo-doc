@@ -8,7 +8,7 @@ Sora Labo ドキュメント
 ステータスページ
 =====================
 
-[Shiguredo Inc\. Status](https://shiguredo.onlineornot.com/)
+https://shiguredo.onlineornot.com
 
 お知らせ
 ========
