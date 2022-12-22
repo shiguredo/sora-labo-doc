@@ -198,10 +198,10 @@ FAQ
   - SLA はありません
 - Sora Labo はウェブフック機能を提供しますか？
 
-  - 提供はしていません。Sora の評価版または Tobi のトライアルをご検討ください
+  - 提供はしていません。Sora の評価版または Sora Cloud をご検討ください
 - Sora Labo は Sora の HTTP API を提供しますか？
 
-  - 提供はしていません。Sora の評価版または Tobi のトライアルをご検討ください
+  - 提供はしていません。Sora の評価版または Sora Cloud をご検討ください
 - Sora Labo はサポートを提供していますか？
 
   - 提供していません
@@ -267,7 +267,7 @@ https://discord.gg/shiguredo
 
 Sora Labo は商用利用は許可しておりませんので、以下をご検討ください。
 
-- 時雨堂と `Sora as a Service Tobi <https://tobi.shiguredo.jp/>`_ を契約をする
+- 時雨堂と `Sora Cloud <https://sora-cloud.shiguredo.jp/>`_ を契約をする
 
   - 運用全部任せたい
 - 時雨堂と `WebRTC SFU Sora <https://sora.shiguredo.jp/>`_ を契約をする
@@ -305,14 +305,14 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
 比較表
 =========================
 
-Sora Labo は検証目的以外での利用はできません。それ以外は `Tobi <https://tobi.shiguredo.jp>`_ または `Sora <https://sora.shiguredo.jp>`_ をご検討ください。
+Sora Labo は検証目的以外での利用はできません。それ以外は `Sora Cloud <https://sora-cloud.shiguredo.jp>`_ または `Sora <https://sora.shiguredo.jp>`_ をご検討ください。
 
 .. list-table::
     :header-rows: 1
 
     * - 機能
       - Sora Labo
-      - Tobi
+      - Sora Cloud
       - Sora
     * - タイプ
       - SaaS
