@@ -13,6 +13,17 @@ https://shiguredo.onlineornot.com
 お知らせ
 ========
 
+シグナリング URL 一本化
+------------------------------------------------------
+
+:日時: 2023-04-10
+
+Sora Labo の Canary 版 Sora のシグナリング URL を一本化しました。
+
+::
+
+    wss://canary.sora-labo.shiguredo.app/signaling
+
 マルチクラウド化
 ------------------------------------------------------
 
@@ -415,9 +426,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
     const channelId = "sora@shiguredo#0";
     const debug = false;
-    const sora = connection(["wss://0001.canary.sora-labo.shiguredo.app/signaling",
-                             "wss://0002.canary.sora-labo.shiguredo.app/signaling",
-                             "wss://0003.canary.sora-labo.shiguredo.app/signaling"], debug);
+    const sora = connection("wss://canary.sora-labo.shiguredo.app/signaling", debug);
     const metadata = {
       access_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"
     };
@@ -462,7 +471,7 @@ gradle.properties の作成::
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
-    signaling_endpoint = wss://0001.canary.sora-labo.shiguredo.app/signaling, wss://0002.canary.sora-labo.shiguredo.app/signaling, wss://0003.canary.sora-labo.shiguredo.app/signaling
+    signaling_endpoint = wss://canary.sora-labo.shiguredo.app/signaling
     channel_id         = sora@shiguredo#0
 
     # Setting Signaling Metadata.
@@ -507,9 +516,7 @@ Environment.swift の作成::
 Environment.swift への設定例::
 
     // 接続するサーバーのシグナリング URL
-    static let urls = [URL(string: "wss://0001.canary.sora-labo.shiguredo.app/signaling")!,
-                       URL(string: "wss://0002.canary.sora-labo.shiguredo.app/signaling")!,
-                       URL(string: "wss://0003.canary.sora-labo.shiguredo.app/signaling")!]
+    static let urls = [URL(string: "wss://canary.sora-labo.shiguredo.app/signaling")!]
 
     // チャネル ID
     static let channelId = "sora@shiguredo#0"
@@ -537,9 +544,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
 
     ./momo --resolution VGA --no-audio-device sora --auto \
         --signaling-url \
-            wss://0001.canary.sora-labo.shiguredo.app/signaling \
-            wss://0002.canary.sora-labo.shiguredo.app/signaling \
-            wss://0003.canary.sora-labo.shiguredo.app/signaling \
+            wss://canary.sora-labo.shiguredo.app/signaling \
         --channel-id sora@shiguredo#0 \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"}'
@@ -635,3 +640,4 @@ Sora Labo のアカウントを削除する
 - 利用枠直近 30 日間 2000 分 へ拡大
 - 利用枠直近 7 日間 100 分から直近 30 日間 1000 分 へ拡大
 - アカデミックでの利用禁止
+
