@@ -33,13 +33,15 @@ OBS の ``Bearer Token`` にはアクセストークンを指定してくださ�
 
 チャネル ID の方式を変更しました。
 
-いままでは <好きな文字列>@<github-username>#<github-id> でしたが、これを <好きな文字列>@<github-username>_<github-id> に変更します。
+いままでは ``<好きな文字列>@<github-username>#<github-id>`` でしたが、これを ``<github-username>_<github-id>_<好きな文字列>`` に変更します。
 
-- OBS (WHIP) 機能に伴い URL にチャネル ID を指定する必要が出てきたため # を _ に変更します
+- OBS (WHIP) 機能に伴い URL にチャネル ID を指定する必要が出てきたため ``#`` と ``@`` を ``_`` に変更します
+- 固有値を先頭に持ってくるため GitHub ユーザ名と ID を先頭に持ってきます
+- _ は GitHub ユーザ名には利用できないため、採用しました
 - GitHub ID とは GitHub アカウントに紐付けられている変更できないユニークな数値です
 - GitHub Username とは GitHub アカウント名で、自由に変更が可能です
 
-例えばチャネル名が sora 、 GitHub ID が 0 、 GitHubUsername が shiguredo の場合は ``sora@shiguredo_0`` となります。
+例えば GitHub ユーザ名が shiguredo で GitHub ID が 0 でチャネル名が sora の場合は ``shiguredo_0_sora`` となります。
 
 シグナリング URL 一本化
 ------------------------------------------------------
