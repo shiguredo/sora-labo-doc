@@ -330,7 +330,7 @@ Sora DevTools を利用する
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
 チャネル ID とアクセストークンとシグナリング URL 埋め込んである URL を用意してあります。
 
-.. image:: https://i.gyazo.com/e538e1e4841a0465d01b1131cbf58952.png
+.. image:: https://i.gyazo.com/a6ed59073da7d7773303ab17ecc68250.png
 
 Sora JS SDK を利用する
 ------------------------
