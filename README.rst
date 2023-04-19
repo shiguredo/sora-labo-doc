@@ -337,9 +337,11 @@ Sora JS SDK を利用する
 
 `shiguredo/sora-js-sdk: WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
 
-- チャネル ID を ``<好きなチャネル名>@<自分の GitHub Username>_<自分の GitHub ID>`` のように指定してください
+- チャネル ID を ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` のように指定してください
+
+  - ここでは GitHub Username を ``shiguredo`` としています
+  - ここでは GitHub ID を ``0`` としています
 - 自分のアクセストークンを metadata で指定してください
-- Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
 https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
@@ -347,7 +349,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
 .. code-block:: javascript
 
-    const channelId = "sora@shiguredo_0";
+    const channelId = "shiguredo_0_sora";
     const debug = false;
     const sora = connection("wss://canary.sora-labo.shiguredo.app/signaling", debug);
     const metadata = {
@@ -383,7 +385,7 @@ gradle.properties の作成::
 ``gradle.properties`` に Sora Labo への接続情報を設定します。
 
 - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください。カンマ区切りですべてのシグナリング URL を指定をしてください。
-- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>_<自分の GitHub ID>`` を指定してください
+- ``channel_id`` に ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
   - ここでは GitHub ID を ``0`` としています
@@ -395,7 +397,7 @@ gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
     signaling_endpoint = wss://canary.sora-labo.shiguredo.app/signaling
-    channel_id         = sora@shiguredo_0
+    channel_id         = shiguredo_0_sora
 
     # Setting Signaling Metadata.
     # Quotes must be double escaped.
@@ -428,7 +430,7 @@ Environment.swift の作成::
 ``Environment.swift`` に Sora Labo への接続情報を設定します。
 
 - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を全て指定してください
-- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>_<自分の GitHub ID>`` を指定してください
+- ``channel_id`` に ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
   - ここでは GitHub ID を ``0`` としています
@@ -442,7 +444,7 @@ Environment.swift への設定例::
     static let urls = [URL(string: "wss://canary.sora-labo.shiguredo.app/signaling")!]
 
     // チャネル ID
-    static let channelId = "sora@shiguredo_0"
+    static let channelId = "shiguredo_0_sora"
 
     // metadata
     static let signalingConnectMetadata = ["access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"]
@@ -454,7 +456,7 @@ WebRTC Native Client Momo で Sora を利用する
 
 Momo で Sora が利用できます。
 
-- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>_<自分の GitHub ID>`` を指定してください
+- ``channel_id`` に ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
   - ここでは GitHub ID を ``0`` としています
@@ -468,7 +470,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
     ./momo --resolution VGA --no-audio-device sora --auto \
         --signaling-url \
             wss://canary.sora-labo.shiguredo.app/signaling \
-        --channel-id sora@shiguredo_0 \
+        --channel-id shiguredo_0_sora \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"}'
 
@@ -500,15 +502,14 @@ Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効
 
 チャネル ID は GitHub アカウントのユーザ名を先頭に指定する必要があります。
 
-``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` と指定する必要があります。
+``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` と指定する必要があります。
 
 以下はチャネル名 sora-devtools 、Github ユーザ名 shiguredo 、GitHub ID 0 を指定した例です。
 
 チャネル ID 例::
 
-    sora@shiguredo_0
+    shiguredo_0_sora-devtools
 
-@ 以降に指定する値はホーム画面にて確認可能です。
 
 metadata に access_token を指定する
 ------------------------------------
