@@ -13,6 +13,36 @@ https://shiguredo.onlineornot.com
 お知らせ
 ========
 
+OBS (WebRTC) 対応
+------------------------------------------------------
+
+:日時: 2023-04-17
+
+OBS (WebRTC) での配信に対応しました。以下の URL で利用できます。
+OBS の ``Bearer Token`` にはアクセストークンを指定してください。
+
+::
+
+    https://canary.sora-labo.shiguredo.app/whip/{channel-id}
+
+
+チャネル ID の方式変更
+------------------------------------------------------
+
+:日時: 2023-04-17
+
+チャネル ID の方式を変更しました。
+
+いままでは ``<好きな文字列>@<github-username>#<github-id>`` でしたが、これを ``<github-username>_<github-id>_<好きな文字列>`` に変更します。
+
+- OBS (WHIP) 機能に伴い URL にチャネル ID を指定する必要が出てきたため ``#`` と ``@`` を ``_`` に変更します
+- 固有値を先頭に持ってくるため GitHub ユーザ名と ID を先頭に持ってきます
+- _ は GitHub ユーザ名には利用できないため、採用しました
+- GitHub ID とは GitHub アカウントに紐付けられている変更できないユニークな数値です
+- GitHub Username とは GitHub アカウント名で、自由に変更が可能です
+
+例えば GitHub ユーザ名が shiguredo で GitHub ID が 0 でチャネル名が sora の場合は ``shiguredo_0_sora`` となります。
+
 シグナリング URL 一本化
 ------------------------------------------------------
 
@@ -24,127 +54,11 @@ Sora Labo の Canary 版 Sora のシグナリング URL を一本化しました
 
     wss://canary.sora-labo.shiguredo.app/signaling
 
-マルチクラウド化
-------------------------------------------------------
 
-:日時: 2022-09-02
+古いお知らせ
+------------------
 
-Sora Labo のバックエンドをマルチクラウド化しました。
-
-
-チャネル ID の方式変更
-------------------------------------------------------
-
-:日時: 2022-08-26
-
-チャネル ID の方式を変更しました。
-
-いままでは <github-username>@<好きな文字列> でしたが、これを <好きな文字列>@<github-username>#<github-id> に変更します。
-
-- GitHub ID とは GitHub アカウントに紐付けられている変更できないユニークな数値です
-- GitHub Username とは GitHub アカウント名で、自由に変更が可能です
-
-例えばチャネル名が sora 、 GitHub ID が 0 、 GitHubUsername が shiguredo の場合は ``sora@shiguredo#0`` となります。
-
-シグナリングキーの廃止とアクセストークンの開始
-------------------------------------------------------
-
-:日時: 2022-08-25
-
-シグナリングキーを廃止しました。今後はアクセストークンまたはシークレットキーを利用してください。
-
-- アクセストークンは JWT HS256 でシークレットキーを利用して生成してください
-- シークレットキーをアクセストークンとして利用可能です
-
-今までは ``metadata`` の ``signaling_key`` にシグナリングキーを指定する必要がありましたが、
-今後は ``metadata`` の ``access_token`` にアクセストークン、またはシークレットキーを指定する必要があります。
-
-canary 版のクラスターのノード追加
-------------------------------------------------------
-
-:日時: 2022-08-22
-
-5 ノードから 10 ノードへ変更しました。
-
-stable 版の単独ノードでの提供
-------------------------------------------------------
-
-:日時: 2022-07-01
-
-非クラスターを検証できるようにするため、
-stable 版でのクラスター提供を廃止ししました。
-
-stable 版 devtools へのリンクを追加
-------------------------------------------------------
-
-:日時: 2022-04-08
-
-canary 版 sora-devtools へのリンク以外に、stable 版 sora-devtools へのリンクを追加しました。
-
-multistream: false 無効化
-------------------------------------------------------
-
-:日時: 2022-04-08
-
-canary / stable で ``multistream: false`` を無効化しました。
-
-マルチストリームへの一本化を検討するためのとなります。
-
-multistream_auto_sharing_video_bit_rate = false に変更
-------------------------------------------------------------------------------------
-
-:日時: 2022-03-22
-
-canary / stable 両方の Sora ノードの multistream_auto_sharing_video_bit_rate を false に変更しました。
-そのため、マルチストリームを利用した場合、人数に応じて自動で配信ビットレートが制限されなくなります。利用の際は注意をお願いします。
-
-`マルチストリームにおける映像ビットレート自動シェアリング機能 <https://sora-doc.shiguredo.jp/MULTISTREAM#4fa79a>`_
-
-利用時間拡大のお知らせ
-------------------------------------------------------------------------------------
-
-:日時: 2022-02-28
-
-利用時間を直近 30 日 1000 分から直近 30 日 2000 分に拡大いたしました。
-
-アカデミック向けのご提供終了のお知らせ
-------------------------------------------------------------------------------------
-
-:日時: 2022-02-24
-
-2022 年 2 月 28 日をもってアカデミックむけの提供を終了とさせていただきます。
-アカデミックでのご利用をご検討されている方はライセンスの購入をご検討ください。
-
-制限解除終了のお知らせ
-------------------------------------------------------------------------------------
-
-:日時: 2022-02-22
-
-利用時間を直近 7 日 100 分から直近 30 日 1000 分に緩和したこともあり、制限解除申請を終了させていただきました。
-
-現在ご利用いただいているお客様は制限期間までご利用可能です。
-
-Sora Labo ドメインの変更およびサービス全体での最大同時接続数の変更
-------------------------------------------------------------------------------------
-
-:日時: 2022-02-01
-
-- Sora Labo のドメイン変更を行いました
-
-  - Sora Labo に関するすべてのドメインが ``sora-labo.shiguredo.jp`` から ``sora-labo.shiguredo.app`` へ変更されました
-  - シグナリング URL も変更となります。Sora Labo サイトをご確認のうえ変更をお願いします
-
-- Canary 版 Sora クラスターの提供を開始しました
-
-  - 開発中のスナップショット版の Sora です
-  - 3 台でクラスターを構成しているため、クラスターの最大同時接続数は 300 となります
-- Stable 版 Sora クラスターの提供を開始しました
-
-  - 正式リリース版の Sora です
-  - 2 台でクラスターを構成しているため、クラスターの最大同時接続数は 200 となります
-- 利用可能時間を直近 7 日間 100 分から直近 30 日間 1000 分に変更しました
-- 制限時の最大接続時間を 10 分から 60 分へ変更しました
-- 制限解除時の最大接続時間を無制限へ変更しました
+https://github.com/shiguredo/sora-labo-doc/blob/master/OLD_NEWS.rst
 
 FAQ
 ===
@@ -319,6 +233,8 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
 - `WebRTC SUF Sora C++ SDK <https://github.com/shiguredo/sora-cpp-sdk>`_
 
   - `WebRTC SFU Sora C++ SDK サンプル集 <https://github.com/shiguredo/sora-cpp-sdk-samples>`_
+- `WebRTC SUF Sora Flutter SDK <https://github.com/shiguredo/sora-flutter-sdk>`_
+- `WebRTC SUF Sora Python SDK <https://github.com/shiguredo/sora-python-sdk>`_
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
 
 
@@ -416,16 +332,18 @@ Sora DevTools を利用する
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
 チャネル ID とアクセストークンとシグナリング URL 埋め込んである URL を用意してあります。
 
-.. image:: https://i.gyazo.com/e538e1e4841a0465d01b1131cbf58952.png
+.. image:: https://i.gyazo.com/a6ed59073da7d7773303ab17ecc68250.png
 
 Sora JS SDK を利用する
 ------------------------
 
 `shiguredo/sora-js-sdk: WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
 
-- チャネル ID を ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` のように指定してください
+- チャネル ID を ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` のように指定してください
+
+  - ここでは GitHub Username を ``shiguredo`` としています
+  - ここでは GitHub ID を ``0`` としています
 - 自分のアクセストークンを metadata で指定してください
-- Sora Labo は Sora クラスターを採用しているため提供されているシグナリング URL をすべて指定してください
 
 https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
@@ -433,7 +351,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
 
 .. code-block:: javascript
 
-    const channelId = "sora@shiguredo#0";
+    const channelId = "shiguredo_0_sora";
     const debug = false;
     const sora = connection("wss://canary.sora-labo.shiguredo.app/signaling", debug);
     const metadata = {
@@ -469,7 +387,7 @@ gradle.properties の作成::
 ``gradle.properties`` に Sora Labo への接続情報を設定します。
 
 - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を設定してください。カンマ区切りですべてのシグナリング URL を指定をしてください。
-- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` を指定してください
+- ``channel_id`` に ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
   - ここでは GitHub ID を ``0`` としています
@@ -481,7 +399,7 @@ gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
     signaling_endpoint = wss://canary.sora-labo.shiguredo.app/signaling
-    channel_id         = sora@shiguredo#0
+    channel_id         = shiguredo_0_sora
 
     # Setting Signaling Metadata.
     # Quotes must be double escaped.
@@ -514,7 +432,7 @@ Environment.swift の作成::
 ``Environment.swift`` に Sora Labo への接続情報を設定します。
 
 - ``signaling_endpoint`` に Sora Labo の Sora シグナリング URLs を全て指定してください
-- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` を指定してください
+- ``channel_id`` に ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
   - ここでは GitHub ID を ``0`` としています
@@ -528,7 +446,7 @@ Environment.swift への設定例::
     static let urls = [URL(string: "wss://canary.sora-labo.shiguredo.app/signaling")!]
 
     // チャネル ID
-    static let channelId = "sora@shiguredo#0"
+    static let channelId = "shiguredo_0_sora"
 
     // metadata
     static let signalingConnectMetadata = ["access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"]
@@ -540,7 +458,7 @@ WebRTC Native Client Momo で Sora を利用する
 
 Momo で Sora が利用できます。
 
-- ``channel_id`` に ``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` を指定してください
+- ``channel_id`` に ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` を指定してください
 
   - ここでは GitHub Username を ``shiguredo`` としています
   - ここでは GitHub ID を ``0`` としています
@@ -554,7 +472,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
     ./momo --resolution VGA --no-audio-device sora --auto \
         --signaling-url \
             wss://canary.sora-labo.shiguredo.app/signaling \
-        --channel-id sora@shiguredo#0 \
+        --channel-id shiguredo_0_sora \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"}'
 
@@ -576,6 +494,58 @@ Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効
 
 `Sora で WebRTC の H.265 を試す <https://gist.github.com/voluntas/c271462d273285377593521dcb6dd6a5>`_
 
+OBS (WebRTC) で配信する
+=======================================
+
+手順
+-------------------
+
+#. OBS をダウンロードする
+#. OBS に WHIP エンドポイント URL を指定する
+#. OBS の ``Bearer Token`` にアクセストークンを指定する
+
+OBS のダウンロード
+----------------------------------------
+
+OBS (WebRTC) はまだ正式にリリースされていません。
+そのため、以下の URL からダウンロードしてください。
+
+`Add WebRTC (WHIP) output support · obsproject/obs-studio@012f5ab <https://github.com/obsproject/obs-studio/actions/runs/4711358202>`_
+
+スクロールして下の方に行くと Artifacts があります。
+
+- obs-studio-flatpak-ab0bbce72-x86_64
+- obs-studio-macos-arm64-ab0bbce72
+- obs-studio-macos-x86_64-ab0bbce72
+- obs-studio-ubuntu-20.04-ab0bbce72
+- obs-studio-ubuntu-22.04-ab0bbce72
+- obs-studio-windows-x64-ab0bbce72
+- obs-studio-windows-x86-ab0bbce72
+
+注意点として macOS の場合はセキュリティで色々頑張る必要があります。
+
+OBS (WebRTC) の設定
+-------------------------
+
+#. サービスで WHIP を選ぶ
+#. サーバーに WHIP エンドポイントを指定する
+
+   - ``https://canary.sora-labo.shiguredo.app/whip/{channel_id}``
+   - ``channel_id`` は ``{github-username}_{github-id}_{channel_name}`` です
+#. ``Bearer Token`` を指定する
+
+.. image:: https://i.gyazo.com/40b0143574fcdc8f27e28102d3040608.png
+
+OBS の設定例
+---------------------------
+
+以下は H.264 の 1080p 60fps で配信する際の設定例です。
+
+.. image:: https://i.gyazo.com/2343be3113f6ee62bbd5854832095d7b.png
+
+.. image:: https://i.gyazo.com/bde10b937928dd43b588c205ee8e0435.png
+
+
 認証方法
 ========
 
@@ -586,15 +556,14 @@ Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効
 
 チャネル ID は GitHub アカウントのユーザ名を先頭に指定する必要があります。
 
-``<好きなチャネル名>@<自分の GitHub Username>#<自分の GitHub ID>`` と指定する必要があります。
+``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` と指定する必要があります。
 
 以下はチャネル名 sora-devtools 、Github ユーザ名 shiguredo 、GitHub ID 0 を指定した例です。
 
 チャネル ID 例::
 
-    sora@shiguredo#0
+    shiguredo_0_sora-devtools
 
-@ 以降に指定する値はホーム画面にて確認可能です。
 
 metadata に access_token を指定する
 ------------------------------------
@@ -633,21 +602,3 @@ Sora Labo のアカウントを削除する
 もし今後、 Sora Labo を利用しないのであればアカウントを削除できます。
 
 ダッシュボードの一番下にアカウントの削除があります。
-
-今後
-====
-
-対応済み
-----------
-
-- channel_id 指定方法変更
-
-  - <好きな文字列>@<github-username>#<github-id>
-- access_token 認証
-
-  - シークレットキーを利用して署名したトークを利用
-- 利用枠直近 30 日間 2000 分 へ拡大
-- 利用枠直近 7 日間 100 分から直近 30 日間 1000 分 へ拡大
-- アカデミックでの利用禁止
-
-
