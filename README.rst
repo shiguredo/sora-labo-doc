@@ -233,6 +233,8 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
 - `WebRTC SUF Sora C++ SDK <https://github.com/shiguredo/sora-cpp-sdk>`_
 
   - `WebRTC SFU Sora C++ SDK サンプル集 <https://github.com/shiguredo/sora-cpp-sdk-samples>`_
+- `WebRTC SUF Sora Flutter SDK <https://github.com/shiguredo/sora-flutter-sdk>`_
+- `WebRTC SUF Sora Python SDK <https://github.com/shiguredo/sora-python-sdk>`_
 - `WebRTC Native Client Momo <https://github.com/shiguredo/momo>`_
 
 
@@ -491,6 +493,58 @@ H.265 を利用する
 Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効にすることで H.265 を試すことが可能です。
 
 `Sora で WebRTC の H.265 を試す <https://gist.github.com/voluntas/c271462d273285377593521dcb6dd6a5>`_
+
+OBS (WebRTC) で配信する
+=======================================
+
+手順
+-------------------
+
+#. OBS をダウンロードする
+#. OBS に WHIP エンドポイント URL を指定する
+#. OBS の ``Bearer Token`` にアクセストークンを指定する
+
+OBS のダウンロード
+----------------------------------------
+
+OBS (WebRTC) はまだ正式にリリースされていません。
+そのため、以下の URL からダウンロードしてください。
+
+`Add WebRTC (WHIP) output support · obsproject/obs-studio@012f5ab <https://github.com/obsproject/obs-studio/actions/runs/4711358202>`_
+
+スクロールして下の方に行くと Artifacts があります。
+
+- obs-studio-flatpak-ab0bbce72-x86_64
+- obs-studio-macos-arm64-ab0bbce72
+- obs-studio-macos-x86_64-ab0bbce72
+- obs-studio-ubuntu-20.04-ab0bbce72
+- obs-studio-ubuntu-22.04-ab0bbce72
+- obs-studio-windows-x64-ab0bbce72
+- obs-studio-windows-x86-ab0bbce72
+
+注意点として macOS の場合はセキュリティで色々頑張る必要があります。
+
+OBS (WebRTC) の設定
+-------------------------
+
+#. サービスで WHIP を選ぶ
+#. サーバーに WHIP エンドポイントを指定する
+
+   - ``https://canary.sora-labo.shiguredo.app/whip/{channel_id}``
+   - ``channel_id`` は ``{github-username}_{github-id}_{channel_name}`` です
+#. ``Bearer Token`` を指定する
+
+.. image:: https://i.gyazo.com/40b0143574fcdc8f27e28102d3040608.png
+
+OBS の設定例
+---------------------------
+
+以下は H.264 の 1080p 60fps で配信する際の設定例です。
+
+.. image:: https://i.gyazo.com/2343be3113f6ee62bbd5854832095d7b.png
+
+.. image:: https://i.gyazo.com/bde10b937928dd43b588c205ee8e0435.png
+
 
 認証方法
 ========
