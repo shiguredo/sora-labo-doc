@@ -316,11 +316,9 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 
   - channel_id クレームを指定するとチャネル ID が一致していないと認証に失敗します
 
-アクセストークンは `jwt.io <https://jwt.io/>`_ などを利用して生成可能です。
+アクセストークンは Sora Labo のダッシュボードで作成可能です。
 
-以下は例です。
-
-https://jwt.io/#debugger-io?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is
+.. image:: https://i.gyazo.com/2da238f201c08ffef50d01c791d80e34.png
 
 シークレットキーをアクセストークンとして利用する
 ------------------------------------------------
@@ -363,7 +361,7 @@ https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
     const options = {
       multistream: true
     };
-    const sendrecv1 = sora.sendrecv(channelId, metadata, options);
+    const sendrecv = sora.sendrecv(channelId, metadata, options);
 
 Sora Android SDK を利用する
 -------------------------------
@@ -605,4 +603,5 @@ Sora Labo のアカウントを削除する
 もし今後、 Sora Labo を利用しないのであればアカウントを削除できます。
 
 ダッシュボードの一番下にアカウントの削除があります。
+
 
