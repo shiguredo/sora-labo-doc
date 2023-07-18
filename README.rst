@@ -335,23 +335,15 @@ Sora DevTools を利用する
 
 .. image:: https://i.gyazo.com/a6ed59073da7d7773303ab17ecc68250.png
 
-Sora JS SDK を利用する
-------------------------
+Sora JavaScript SDK を利用する
+--------------------------------------------
 
-`shiguredo/sora-js-sdk: WebRTC SFU Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
+Sora JavaScript SDK のサンプル集を利用して Sora Labo に接続できます。
 
-- チャネル ID を ``<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>`` のように指定してください
-
-  - ここでは GitHub Username を ``shiguredo`` としています
-  - ここでは GitHub ID を ``0`` としています
-- 自分のアクセストークンを metadata で指定してください
-
-Sora Android SDK のサンプル集を利用して Sora Labo に接続できます。
-
-`WebRTC SFU Sora JS SDK サンプル集 <https://github.com/shiguredo/sora-js-sdk-samples>`_
+`WebRTC SFU Sora JavaScript SDK サンプル集 <https://github.com/shiguredo/sora-js-sdk-samples>`_
 
 ``git clone`` 後 ``pnpm install`` した後、
-``sendrecv`` ディレクトリの ``env.local.sample`` を ``env.local`` に変更して以下の値を設定してください。
+``sendrecv`` ディレクトリの ``.env.local.sample`` を ``.env.local`` に変更して以下の値を設定してください。
 
 .. code-block::
 
