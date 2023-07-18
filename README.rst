@@ -346,22 +346,20 @@ Sora JS SDK を利用する
   - ここでは GitHub ID を ``0`` としています
 - 自分のアクセストークンを metadata で指定してください
 
-https://github.com/shiguredo/sora-js-sdk/blob/develop/example/sendrecv.html
+Sora Android SDK のサンプル集を利用して Sora Labo に接続できます。
 
-双方向のサンプルの一部です。
+`WebRTC SFU Sora JS SDK サンプル集 <https://github.com/shiguredo/sora-js-sdk-samples>`_
 
-.. code-block:: javascript
+``git clone`` 後 ``pnpm install`` した後、
+``sendrecv`` ディレクトリの ``env.local.sample`` を ``env.local`` に変更して以下の値を設定してください。
 
-    const channelId = "shiguredo_0_sora";
-    const debug = false;
-    const sora = connection("wss://canary.sora-labo.shiguredo.app/signaling", debug);
-    const metadata = {
-      access_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"
-    };
-    const options = {
-      multistream: true
-    };
-    const sendrecv = sora.sendrecv(channelId, metadata, options);
+.. code-block::
+
+  VITE_DEFAULT_SIGNALING_URL=wss://canary.sora-labo.shiguredo.app/signaling
+  VITE_DEFAULT_CHANNEL_ID=<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>
+  VITE_DEFAULT_ACCESS_TOKEN=<アクセストークン>
+
+その後は ``pnpm run sendrecv`` で実行可能です。
 
 Sora Android SDK を利用する
 -------------------------------
