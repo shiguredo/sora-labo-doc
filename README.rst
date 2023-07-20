@@ -364,7 +364,7 @@ Sora JavaScript SDK のサンプル集を利用して Sora Labo に接続でき�
 
 .. code-block::
 
-  VITE_DEFAULT_SIGNALING_URL=wss://canary.sora-labo.shiguredo.app/signaling
+  VITE_DEFAULT_SIGNALING_URL=wss://0001.canary.sora-labo.shiguredo.app/signaling
   VITE_DEFAULT_CHANNEL_ID=<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>
   VITE_DEFAULT_ACCESS_TOKEN=<アクセストークン>
 
@@ -406,7 +406,7 @@ gradle.properties の作成::
 gradle.properties への設定例::
 
     # Setting Sora's signaling endpoint and channel_id
-    signaling_endpoint = wss://canary.sora-labo.shiguredo.app/signaling
+    signaling_endpoint = wss://0001.canary.sora-labo.shiguredo.app/signaling, wss://0002.canary.sora-labo.shiguredo.app/signaling, wss://0003.canary.sora-labo.shiguredo.app/signaling
     channel_id         = shiguredo_0_sora
 
     # Setting Signaling Metadata.
@@ -451,7 +451,9 @@ Environment.swift の作成::
 Environment.swift への設定例::
 
     // 接続するサーバーのシグナリング URL
-    static let urls = [URL(string: "wss://canary.sora-labo.shiguredo.app/signaling")!]
+    static let urls = [URL(string: "wss://0001.canary.sora-labo.shiguredo.app/signaling")!,
+                       URL(string: "wss://0002.canary.sora-labo.shiguredo.app/signaling")!,
+                       URL(string: "wss://0003.canary.sora-labo.shiguredo.app/signaling")!]
 
     // チャネル ID
     static let channelId = "shiguredo_0_sora"
@@ -479,7 +481,9 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
 
     ./momo --resolution VGA --no-audio-device sora --auto \
         --signaling-url \
-            wss://canary.sora-labo.shiguredo.app/signaling \
+            wss://0001.canary.sora-labo.shiguredo.app/signaling \
+            wss://0002.canary.sora-labo.shiguredo.app/signaling \
+            wss://0003.canary.sora-labo.shiguredo.app/signaling \
         --channel-id shiguredo_0_sora \
         --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
         --metadata '{"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"}'
