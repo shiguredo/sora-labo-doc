@@ -25,7 +25,7 @@ https://shiguredo.onlineornot.com
 
   (変更前) wss://canary.sora-labo.shiguredo.app/signaling
     ↓
-  (変更後) wss://0001.canary.sora-labo.shiguredo.app/signaling ("0001" の箇所は "0001" から "0012" まで)
+  (変更後) wss://0001.canary.sora-labo.shiguredo.app/signaling
 
 OBS (WebRTC) は WebSocket を利用しないため、以前通り LB を指定する方式にしています。
 
