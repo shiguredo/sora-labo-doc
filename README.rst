@@ -13,19 +13,20 @@ https://shiguredo.onlineornot.com
 お知らせ
 ========
 
-ロードバランサーで WebSocket が切断される問題への対応
+ロードバランサーで WebSocket が突然切断される問題への対応
 ------------------------------------------------------------------
 
 :日時: 2023-07-20
 
-ロードバランサー (以下 LB) を経由した場合に WebSocket が突然切断される問題があることがわかりました。
-これを回避するため、Sora Labo の Canary 版 Sora のシグナリング URL は LB を使わず、直接 Canary 版 Sora の URL を指定するように修正をしました。
+シグナリング URL の一本化に利用しているロードバランサー (以下 LB) を経由した場合、 WebSocket が突然切断される問題があることがわかりました。
+この問題をすぐに解決することは難しいため、 Sora Labo の Canary 版 Sora のシグナリング URL は LB を利用することを停止しました。そのため Canary 版 Sora のシグナリング URL が変更になります。
 
 ::
 
   (変更前) wss://canary.sora-labo.shiguredo.app/signaling
     ↓
-  (変更後) wss://0001.canary.sora-labo.shiguredo.app/signaling
+  (変更後) wss://<node-id>.canary.sora-labo.shiguredo.app/signaling
+  * <node-id> の箇所は "0001" などの文字列になります
 
 OBS (WebRTC) は WebSocket を利用しないため、以前通り LB を指定する方式にしています。
 
