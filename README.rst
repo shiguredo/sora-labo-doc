@@ -13,6 +13,23 @@ https://shiguredo.onlineornot.com
 お知らせ
 ========
 
+Cloudflare Load Balancing で WebSocket が切断される問題への対応
+------------------------------------------------------------------
+
+:日時: 2023-07-20
+
+Cloudflare Load Balancing (以下 LB) を経由した場合に WebSocket が切断される問題があることがわかりました。
+これを回避するため、Sora Labo の Canary 版 Sora のシグナリング URL は LB を使わず、直接 Canary 版 Sora の URL を指定するように修正をしました。
+
+::
+
+  (変更前) wss://canary.sora-labo.shiguredo.app/signaling
+    ↓
+  (変更後) wss://0001.canary.sora-labo.shiguredo.app/signaling ("0001" の箇所は "0001" から "0012" まで)
+
+OBS (WebRTC) は WebSocket を利用しないため、以前通り LB を指定する方式にしています。
+
+
 OBS (WebRTC) 対応
 ------------------------------------------------------
 
