@@ -521,17 +521,16 @@ OBS のダウンロード
 OBS (WebRTC) はまだ正式にリリースされていません。
 そのため、以下の URL からダウンロードしてください。
 
-`Add WebRTC (WHIP) output support · obsproject/obs-studio@012f5ab <https://github.com/obsproject/obs-studio/actions/runs/4711358202>`_
+`OBS Studio 30.0 Beta 2 <https://github.com/obsproject/obs-studio/releases/tag/30.0.0-beta2>`_
 
 スクロールして下の方に行くと Artifacts があります。
 
-- obs-studio-flatpak-ab0bbce72-x86_64
-- obs-studio-macos-arm64-ab0bbce72
-- obs-studio-macos-x86_64-ab0bbce72
-- obs-studio-ubuntu-20.04-ab0bbce72
-- obs-studio-ubuntu-22.04-ab0bbce72
-- obs-studio-windows-x64-ab0bbce72
-- obs-studio-windows-x86-ab0bbce72
+- OBS-Studio-30.0-beta2-Full-Installer-x64.exe
+- OBS-Studio-30.0.0-beta2-macOS-Apple.dmg
+- OBS-Studio-30.0.0-beta2-macOS-Intel.dmg
+- OBS-Studio-30.0.0-beta2-Ubuntu-x86_64.deb
+- obs-studio_30.0.0.beta2-0obsproject1.jammy_amd64.deb
+- obs-studio_30.0.0.beta2-0obsproject1.lunar_amd64.deb
 
 注意点として macOS の場合はセキュリティで色々頑張る必要があります。
 
