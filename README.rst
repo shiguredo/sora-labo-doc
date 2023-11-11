@@ -518,21 +518,10 @@ OBS (WebRTC) で配信する
 OBS のダウンロード
 ----------------------------------------
 
-OBS (WebRTC) はまだ正式にリリースされていません。
-そのため、以下の URL からダウンロードしてください。
+OBS の WebRTC/WHIP は 30.0.0 から対応しています。
 
-`OBS Studio 30.0 Beta 2 <https://github.com/obsproject/obs-studio/releases/tag/30.0.0-beta2>`_
-
-スクロールして下の方に行くと Artifacts があります。
-
-- OBS-Studio-30.0-beta2-Full-Installer-x64.exe
-- OBS-Studio-30.0.0-beta2-macOS-Apple.dmg
-- OBS-Studio-30.0.0-beta2-macOS-Intel.dmg
-- OBS-Studio-30.0.0-beta2-Ubuntu-x86_64.deb
-- obs-studio_30.0.0.beta2-0obsproject1.jammy_amd64.deb
-- obs-studio_30.0.0.beta2-0obsproject1.lunar_amd64.deb
-
-注意点として macOS の場合はセキュリティで色々頑張る必要があります。
+30.0.0 は以下からダウンロード可能です。
+https://github.com/obsproject/obs-studio/releases/tag/30.0.0
 
 OBS (WebRTC) の設定
 -------------------------
@@ -549,7 +538,7 @@ OBS (WebRTC) の設定
 OBS の設定例
 ---------------------------
 
-以下は H.264 の 1080p 60fps で配信する際の設定例です。
+以下は macOS の H.264 HWA を利用して 1080p 60fps で配信する際の設定例です。
 
 .. image:: https://i.gyazo.com/2343be3113f6ee62bbd5854832095d7b.png
 
@@ -612,5 +601,6 @@ Sora Labo のアカウントを削除する
 もし今後、 Sora Labo を利用しないのであればアカウントを削除できます。
 
 ダッシュボードの一番下にアカウントの削除があります。
+
 
 
