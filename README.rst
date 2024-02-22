@@ -356,20 +356,37 @@ Sora DevTools を利用する
 Sora JavaScript SDK を利用する
 --------------------------------------------
 
-Sora JavaScript SDK のサンプル集を利用して Sora Labo に接続できます。
+Sora JavaScript SDK サンプルを利用して Sora Labo に接続できます。
 
-`WebRTC SFU Sora JavaScript SDK サンプル集 <https://github.com/shiguredo/sora-js-sdk-samples>`_
+`Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
 
-``git clone`` 後 ``pnpm install`` した後、
-``sendrecv`` ディレクトリの ``.env.local.sample`` を ``.env.local`` に変更して以下の値を設定してください。
+``git clone`` 後 ``.env.template`` を ``.env.local`` に変更します。
 
 .. code-block::
 
-  VITE_DEFAULT_SIGNALING_URL=wss://0001.canary.sora-labo.shiguredo.app/signaling
-  VITE_DEFAULT_CHANNEL_ID=<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>
-  VITE_DEFAULT_ACCESS_TOKEN=<アクセストークン>
+  $ git clone git@github.com:shiguredo/sora-js-sdk.git
+  $ cd sora-js-sdk
+  $ cp .env.template .env.local
 
-その後は ``pnpm run sendrecv`` で実行可能です。
+``.env.local`` の値を以下の通り変更してください。VITE_SORA_CHANNEL_ID_PREFIX の最後にアンダーバーが必要であることに注意してください。
+
+.. code-block::
+
+  VITE_SORA_SIGNALING_URL=wss://0001.canary.sora-labo.shiguredo.app/signaling
+  VITE_SORA_CHANNEL_ID_PREFIX=<自分の GitHub Username>_<自分の GitHub ID>_
+  VITE_ACCESS_TOKEN=<アクセストークン>
+
+その後、以下のコマンドでビルドとサンプルの実行を行います。
+
+.. code-block::
+
+  $ pnpm install
+  $ pnpm run build
+  $ pnpm run dev
+
+その後は ``http://localhost:5173/sendrecv/`` で Sora Labo を利用した動作確認が可能です。
+
+ぜひ他のサンプルも確認してみてください。
 
 Sora Android SDK を利用する
 -------------------------------
