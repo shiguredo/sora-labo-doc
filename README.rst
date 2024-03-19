@@ -13,6 +13,14 @@ https://shiguredo.onlineornot.com
 お知らせ
 ========
 
+クラスターリレー機能
+------------------------------------------------------------------
+
+:日時: 2024-03-19
+
+Sora Canary 版にてクラスターリレー機能を有効にしました。
+どの Sora ノードに繫いでも同一チャネルに接続することができます。
+
 ロードバランサーで WebSocket が突然切断される問題への対応
 ------------------------------------------------------------------
 
@@ -29,7 +37,6 @@ https://shiguredo.onlineornot.com
   * <node-id> の箇所は "0001" などの文字列になります
 
 OBS (WebRTC) は WebSocket を利用しないため、以前通り LB を指定する方式にしています。
-
 
 OBS (WebRTC) 対応
 ------------------------------------------------------
@@ -178,7 +185,7 @@ FAQ
   - いずれかの制限または禁止項目に当てはまっている可能性があります。Discord にてご連絡ください
 - 認証エラー理由に ``CONNECTION-LIMIT`` が出ました
 
-  - 直近 30 日間の利用が 2000 分を超えると利用できなくなります
+  - 直近 30 日間の利用が 2000 分を超えると利用できなくなるので、少し時間をおいてから再度試してみてください
 
 Discord
 =======
@@ -356,37 +363,20 @@ Sora DevTools を利用する
 Sora JavaScript SDK を利用する
 --------------------------------------------
 
-Sora JavaScript SDK サンプルを利用して Sora Labo に接続できます。
+Sora JavaScript SDK のサンプル集を利用して Sora Labo に接続できます。
 
-`Sora JavaScript SDK <https://github.com/shiguredo/sora-js-sdk>`_
+`WebRTC SFU Sora JavaScript SDK サンプル集 <https://github.com/shiguredo/sora-js-sdk-samples>`_
 
-``git clone`` 後 ``.env.template`` を ``.env.local`` に変更します。
-
-.. code-block::
-
-  $ git clone git@github.com:shiguredo/sora-js-sdk.git
-  $ cd sora-js-sdk
-  $ cp .env.template .env.local
-
-``.env.local`` の値を以下の通り変更してください。VITE_SORA_CHANNEL_ID_PREFIX の最後にアンダーバーが必要であることに注意してください。
+``git clone`` 後 ``pnpm install`` した後、
+``sendrecv`` ディレクトリの ``.env.local.sample`` を ``.env.local`` に変更して以下の値を設定してください。
 
 .. code-block::
 
-  VITE_SORA_SIGNALING_URL=wss://0001.canary.sora-labo.shiguredo.app/signaling
-  VITE_SORA_CHANNEL_ID_PREFIX=<自分の GitHub Username>_<自分の GitHub ID>_
-  VITE_ACCESS_TOKEN=<アクセストークン>
+  VITE_DEFAULT_SIGNALING_URL=wss://0001.canary.sora-labo.shiguredo.app/signaling
+  VITE_DEFAULT_CHANNEL_ID=<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>
+  VITE_DEFAULT_ACCESS_TOKEN=<アクセストークン>
 
-その後、以下のコマンドでビルドとサンプルの実行を行います。
-
-.. code-block::
-
-  $ pnpm install
-  $ pnpm run build
-  $ pnpm run dev
-
-その後は ``http://localhost:5173/sendrecv/`` で Sora Labo を利用した動作確認が可能です。
-
-ぜひ他のサンプルも確認してみてください。
+その後は ``pnpm run sendrecv`` で実行可能です。
 
 Sora Android SDK を利用する
 -------------------------------
