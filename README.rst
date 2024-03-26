@@ -13,6 +13,18 @@ https://shiguredo.onlineornot.com
 お知らせ
 ========
 
+OBS (WebRTC/WHEP) 対応
+------------------------------------------------------------------
+
+:日時: 2023-03-26
+
+OBS (WebRTC/WHEP) のソースに対応しました。以下の URL で利用できます。
+OBS の ``Bearer Token`` にはアクセストークンを指定してください。
+
+::
+
+    https://canary.sora-labo.shiguredo.app/whep/{channel-id}
+
 クラスターリレー機能
 ------------------------------------------------------------------
 
@@ -38,12 +50,12 @@ Sora Canary 版にてクラスターリレー機能を有効にしました。
 
 OBS (WebRTC) は WebSocket を利用しないため、以前通り LB を指定する方式にしています。
 
-OBS (WebRTC) 対応
+OBS (WebRTC/WHIP) 対応
 ------------------------------------------------------
 
 :日時: 2023-04-17
 
-OBS (WebRTC) での配信に対応しました。以下の URL で利用できます。
+OBS (WebRTC/WHIP) での配信に対応しました。以下の URL で利用できます。
 OBS の ``Bearer Token`` にはアクセストークンを指定してください。
 
 ::
@@ -60,7 +72,7 @@ OBS の ``Bearer Token`` にはアクセストークンを指定してくださ�
 
 いままでは ``<好きな文字列>@<github-username>#<github-id>`` でしたが、これを ``<github-username>_<github-id>_<好きな文字列>`` に変更します。
 
-- OBS (WHIP) 機能に伴い URL にチャネル ID を指定する必要が出てきたため ``#`` と ``@`` を ``_`` に変更します
+- OBS (WebRTC/WHIP) 機能に伴い URL にチャネル ID を指定する必要が出てきたため ``#`` と ``@`` を ``_`` に変更します
 - 固有値を先頭に持ってくるため GitHub ユーザ名と ID を先頭に持ってきます
 - _ は GitHub ユーザ名には利用できないため、採用しました
 - GitHub ID とは GitHub アカウントに紐付けられている変更できないユニークな数値です
@@ -512,7 +524,7 @@ Safari Technology Preview 105 以降で設定で ``WebRTC H265 codec`` を有効
 
 `Sora で WebRTC の H.265 を試す <https://gist.github.com/voluntas/c271462d273285377593521dcb6dd6a5>`_
 
-OBS (WebRTC) で配信する
+OBS (WebRTC/WHIP) で配信する
 =======================================
 
 手順
@@ -530,7 +542,7 @@ OBS の WebRTC/WHIP は 30.0.0 から対応しています。
 30.0.0 は以下からダウンロード可能です。
 https://github.com/obsproject/obs-studio/releases/tag/30.0.0
 
-OBS (WebRTC) の設定
+OBS (WebRTC/WHIP) の設定
 -------------------------
 
 #. サービスで WHIP を選ぶ
@@ -542,7 +554,7 @@ OBS (WebRTC) の設定
 
 .. image:: https://i.gyazo.com/40b0143574fcdc8f27e28102d3040608.png
 
-OBS の設定例
+OBS (WebRTC/WHIP) の設定例
 ---------------------------
 
 以下は macOS の H.264 HWA を利用して 1080p 60fps で配信する際の設定例です。
