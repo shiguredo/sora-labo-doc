@@ -1,0 +1,6 @@
+[book]
+authors = ["Shiguredo Inc."]
+language = "ja"
+multilingual = false
+src = "src"
+title = "Sora Labo ドキュメント"
