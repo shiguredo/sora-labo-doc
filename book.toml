@@ -4,3 +4,6 @@ language = "ja"
 multilingual = false
 src = "src"
 title = "Sora Labo ドキュメント"
+
+[output.html.search]
+enable = false
