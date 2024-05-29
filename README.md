@@ -227,7 +227,7 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
 チャネル ID とアクセストークンとシグナリング URL 埋め込んである URL を用意してあります。
 
-![Image](https://i.gyazo.com/a6ed59073da7d7773303ab17ecc68250.png)
+![Image](https://i.gyazo.com/8c7863443bd8c86130f428f13470191e.png)
 
 ## Sora JavaScript SDK を利用する
 
@@ -357,7 +357,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
 
 Sora DevTools のマルチストリーム受信を開いて接続してみてください。
 
-![Image](https://i.gyazo.com/ade1532c1536d36cf890e533b9185289.png)
+![Image](https://i.gyazo.com/05f695c875b5d95c6a74c5150e7bd11a.png)
 
 ### AV1 を利用する
 
