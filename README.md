@@ -264,7 +264,7 @@ gradle.properties の作成:
 cp gradle.properties.example gradle.properties
 ```
 
-### 続情報の設定
+### 接続情報の設定
 
 `gradle.properties` に Sora Labo への接続情報を設定します。
 
