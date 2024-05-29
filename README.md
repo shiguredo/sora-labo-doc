@@ -379,8 +379,6 @@ Safari Technology Preview 最新版で H.265 を試すことが可能です。
 1. OBS に WHIP エンドポイント URL を指定する
 1. OBS の `Bearer Token` にアクセストークンを指定する
 
-![Image](https://i.gyazo.com/988535745d0b273d9615d562dcf7330d.png)
-
 ### OBS のダウンロード
 
 OBS の WebRTC/WHIP は 30.0.0 から対応しています。
@@ -395,7 +393,7 @@ OBS の WebRTC/WHIP は 30.0.0 から対応しています。
 1. サーバーに WHIP エンドポイントを指定する
     - `https://sora.sora-labo.shiguredo.app/whip/{channel_id}`
     - `channel_id` は `{github-username}_{github-id}_{channel_name}` です
-1. `Bearer Token` を指定する
+1. `Bearer Token` にアクセストークンを指定する
 
 ### OBS (WebRTC/WHIP) の設定例
 
@@ -404,6 +402,8 @@ OBS の WebRTC/WHIP は 30.0.0 から対応しています。
 ![Image](https://i.gyazo.com/2343be3113f6ee62bbd5854832095d7b.png)
 
 ![Image](https://i.gyazo.com/bde10b937928dd43b588c205ee8e0435.png)
+
+![Image](https://i.gyazo.com/988535745d0b273d9615d562dcf7330d.png)
 
 ## 認証方法
 
