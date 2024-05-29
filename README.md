@@ -227,7 +227,7 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 ダッシュボードページに Sora DevTools をSora Labo 経由で利用できるように、
 チャネル ID とアクセストークンとシグナリング URL 埋め込んである URL を用意してあります。
 
-![Image](https://i.gyazo.com/a6ed59073da7d7773303ab17ecc68250.png)
+![Image](https://i.gyazo.com/8c7863443bd8c86130f428f13470191e.png)
 
 ## Sora JavaScript SDK を利用する
 
@@ -357,7 +357,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
 
 Sora DevTools のマルチストリーム受信を開いて接続してみてください。
 
-![Image](https://i.gyazo.com/ade1532c1536d36cf890e533b9185289.png)
+![Image](https://i.gyazo.com/05f695c875b5d95c6a74c5150e7bd11a.png)
 
 ### AV1 を利用する
 
@@ -393,7 +393,7 @@ OBS の WebRTC/WHIP は 30.0.0 から対応しています。
 1. サーバーに WHIP エンドポイントを指定する
     - `https://sora.sora-labo.shiguredo.app/whip/{channel_id}`
     - `channel_id` は `{github-username}_{github-id}_{channel_name}` です
-1. `Bearer Token` を指定する
+1. `Bearer Token` にアクセストークンを指定する
 
 ### OBS (WebRTC/WHIP) の設定例
 
@@ -402,6 +402,8 @@ OBS の WebRTC/WHIP は 30.0.0 から対応しています。
 ![Image](https://i.gyazo.com/2343be3113f6ee62bbd5854832095d7b.png)
 
 ![Image](https://i.gyazo.com/bde10b937928dd43b588c205ee8e0435.png)
+
+![Image](https://i.gyazo.com/988535745d0b273d9615d562dcf7330d.png)
 
 ## 認証方法
 
@@ -443,6 +445,12 @@ metadata 指定時に `{"turn_tcp_only": true}` を指定して下さい。
 指定した接続が TURN-TLS を利用するように強制可能にする機能です。
 
 metadata 指定時に `{"turn_tls_only": true}` を指定して下さい。
+
+### クラスターアフィニティ有効化機能
+
+同一セッションの接続を同一ノードに集約する機能です。
+
+metadata 指定時に `{"cluster_affinity": true}` を指定して下さい。
 
 ## Sora Labo のアカウントを削除する
 
