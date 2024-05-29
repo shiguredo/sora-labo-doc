@@ -1,6 +1,8 @@
-# 古いおしらせ
+## お知らせ
 
-## OBS (WebRTC/WHEP) 対応
+以下は Sora 構成一新前のお知らせです。
+
+### OBS (WebRTC/WHEP) 対応
 
 **日時**: 2023-03-26
 
@@ -9,14 +11,14 @@ OBS の ``Bearer Token`` にはアクセストークンを指定してくださ�
 
 `https://canary.sora-labo.shiguredo.app/whep/{channel-id}`
 
-## クラスターリレー機能
+### クラスターリレー機能
 
 **日時**: 2024-03-19
 
 Sora Canary 版にてクラスターリレー機能を有効にしました。
 どの Sora ノードに繫いでも同一チャネルに接続することができます。
 
-## ロードバランサーで WebSocket が突然切断される問題への対応
+### ロードバランサーで WebSocket が突然切断される問題への対応
 
 **日時**: 2023-07-20
 
@@ -33,7 +35,7 @@ Sora Canary 版にてクラスターリレー機能を有効にしました。
 
 OBS (WebRTC) は WebSocket を利用しないため、以前通り LB を指定する方式にしています。
 
-## OBS (WebRTC/WHIP) 対応
+### OBS (WebRTC/WHIP) 対応
 
 **日時**: 2023-04-17
 
@@ -42,7 +44,7 @@ OBS の ``Bearer Token`` にはアクセストークンを指定してくださ�
 
 `https://canary.sora-labo.shiguredo.app/whip/{channel-id}`
 
-## チャネル ID の方式変更 (2023)
+### チャネル ID の方式変更 (2023)
 
 **日時**: 2023-04-17
 
@@ -58,7 +60,7 @@ OBS の ``Bearer Token`` にはアクセストークンを指定してくださ�
 
 例えば GitHub ユーザ名が shiguredo で GitHub ID が 0 でチャネル名が sora の場合は `shiguredo_0_sora` となります。
 
-## シグナリング URL 一本化
+### シグナリング URL 一本化
 
 **日時**: 2023-04-10
 
@@ -66,13 +68,13 @@ Sora Labo の Canary 版 Sora のシグナリング URL を一本化しました
 
 `wss://canary.sora-labo.shiguredo.app/signaling`
 
-## マルチクラウド化
+### マルチクラウド化
 
 **日時**: 2022-09-02
 
 Sora Labo のバックエンドをマルチクラウド化しました。
 
-## チャネル ID の方式変更 (2022)
+### チャネル ID の方式変更 (2022)
 
 **日時**: 2022-08-26
 
@@ -85,7 +87,7 @@ Sora Labo のバックエンドをマルチクラウド化しました。
 
 例えばチャネル名が sora 、 GitHub ID が 0 、 GitHub Username が shiguredo の場合は `sora@shiguredo#0` となります。
 
-## シグナリングキーの廃止とアクセストークンの開始
+### シグナリングキーの廃止とアクセストークンの開始
 
 **日時**: 2022-08-25
 
@@ -97,26 +99,26 @@ Sora Labo のバックエンドをマルチクラウド化しました。
 今までは `metadata` の `signaling_key` にシグナリングキーを指定する必要がありましたが、
 今後は `metadata` の `access_token` にアクセストークン、またはシークレットキーを指定する必要があります。
 
-## canary 版のクラスターのノード追加
+### canary 版のクラスターのノード追加
 
 **日時**: 2022-08-22
 
 5 ノードから 10 ノードへ変更しました。
 
-## stable 版の単独ノードでの提供
+### stable 版の単独ノードでの提供
 
 **日時**: 2022-07-01
 
 非クラスターを検証できるようにするため、
 stable 版でのクラスター提供を廃止しました。
 
-## stable 版 devtools へのリンクを追加
+### stable 版 devtools へのリンクを追加
 
 **日時**: 2022-04-08
 
 canary 版 sora-devtools へのリンク以外に、stable 版 sora-devtools へのリンクを追加しました。
 
-## multistream: false 無効化
+### multistream: false 無効化
 
 **日時**: 2022-04-08
 
@@ -124,7 +126,7 @@ canary / stable で `multistream: false` を無効化しました。
 
 マルチストリームへの一本化を検討するためのものとなります。
 
-## multistream_auto_sharing_video_bit_rate = false に変更
+### multistream_auto_sharing_video_bit_rate = false に変更
 
 **日時**: 2022-03-22
 
@@ -133,20 +135,20 @@ canary / stable 両方の Sora ノードの multistream_auto_sharing_video_bit_r
 
 [マルチストリームにおける映像ビットレート自動シェアリング機能](https://sora-doc.shiguredo.jp/MULTISTREAM#4fa79a)
 
-## 利用時間拡大のお知らせ
+### 利用時間拡大のお知らせ
 
 **日時**: 2022-02-28
 
 利用時間を直近 30 日 1000 分から直近 30 日 2000 分に拡大いたしました。
 
-## アカデミック向けのご提供終了のお知らせ
+### アカデミック向けのご提供終了のお知らせ
 
 **日時**: 2022-02-24
 
 2022 年 2 月 28 日をもってアカデミック向けの提供を終了とさせていただきます。
 アカデミックでのご利用をご検討されている方はライセンスの購入をご検討ください。
 
-## 制限解除終了のお知らせ
+### 制限解除終了のお知らせ
 
 **日時**: 2022-02-22
 
@@ -154,7 +156,7 @@ canary / stable 両方の Sora ノードの multistream_auto_sharing_video_bit_r
 
 現在ご利用いただいているお客様は制限期間までご利用可能です。
 
-## Sora Labo ドメインの変更およびサービス全体での最大同時接続数の変更
+### Sora Labo ドメインの変更およびサービス全体での最大同時接続数の変更
 
 **日時**: 2022-02-01
 

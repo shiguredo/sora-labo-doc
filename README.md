@@ -9,11 +9,40 @@
 
 ## お知らせ
 
-[NEWS.md](NEWS.md) をご覧ください。
+### Sora の構成を一新しました
 
-### 古いお知らせ
+**日時**: 2024-05-29
 
-<https://github.com/shiguredo/sora-labo-doc/blob/master/OLD_NEWS.rst>
+Sora Labo で提供する Sora の構成を一新しました。
+
+#### Sora クラスター
+
+- Akamai Connected Cloud に変更しました
+- リージョンは大阪です
+- シグナリング URL を一本化しました
+  - `wss://sora.sora-labo.shiguredo.app/signaling`
+- レギュラーノード: 5 / テンポラリーノード: 2 の 7 台構成に変更しました
+- リレーあり / アフィニティなし
+- ノード間通信は VPC です
+
+#### Sora マルチリージョンクラスター
+
+- 大阪 / チェンナイ / ストックホルム / マイアミ / シアトルの 5 リージョンでクラスターを組んでいます
+- レギュラーノード: 5 の 5 台構成です
+- リレーあり / アフィニティなし
+- ノード間通信はパブリックかつ [Tailscale](https://tailscale.com/) です
+
+#### Sora IPv6 オンリー
+
+- Akamai Connected Cloud に変更しました
+- リージョンは大阪です
+- シグナリング URL を変更しました
+  - `wss://sora-ipv6.sora-labo.shiguredo.app/signaling`
+- シングルノードです
+
+## 古いお知らせ
+
+[OLD_NEWS.md](OLD_NEWS.md) をご覧ください。
 
 ## FAQ
 
@@ -39,73 +68,53 @@
   - **利用できません**
   - Sora または Sora Cloud の利用を検討してください
 - Sora Labo は日本以外からも利用できますか？
-
   - 利用できません
-  - 頻繁に日本国外からのアクセスがある場合は BAN 対象とします
   - 何か問題が起きたときに海外の場合は対応ができないため、日本のみの利用に限定しています
 - Sora Labo サービス全体での転送量制限がありますか？
-
-  - あります。 Canary は 10 TB 程度、 Stable も同様です
+  - ありません
   - 極端に転送量の多い配信をされると他の利用者に影響しますので、ご配慮をお願いします
 - Sora Labo サービス全体での帯域制限はありますか？
-
-  - 制限はありません
+  - サービス全体ではなく Sora ごとに帯域制限があります
+  - In 40 Gbps / Out 1 Gbps です
 - Sora Labo は同時接続数の制限がありますか？
-
   - 1 チャネルあたりの最大同時接続数は 10 です
 - Sora Labo は映像ビットレートの制限はありますか？
-
   - 最大 15 Mbps です
 - Sora Labo の合計接続時間制限はありますか？
-
   - あります月 2000 分までです
   - 30 日経過すると復活します
   - 1/1 に 300 分利用すると、 1/31 に 300 分追加されます
 - Sora Labo の連続接続時間制限はありますか？
-
   - 60 分です。60 分経過すると接続は切断されます
 - Sora Labo の DataChannel メッセージング機能に制限はありますか？
-
   - 制限はありません
   - 極端に転送量の多い配信をされると他の利用者に影響しますので、ご配慮をお願いします
 - Sora Labo は TURN-TCP や TURN-TLS を提供していますか？
-
   - 提供しています
   - TURN-TCP は 443 ポートです
   - TURN-TLS は 443 ポートです
 - Sora Labo は IPv6 に対応していますか？
-
   - 対応しています
 - Sora Labo の SLA はいくつですか？
-
   - SLA はありません
 - Sora Labo はウェブフック機能を提供しますか？
-
   - 提供はしていません。Sora の評価版または Sora Cloud をご検討ください
 - Sora Labo は Sora の HTTP API を提供しますか？
-
   - 提供はしていません。Sora の評価版または Sora Cloud をご検討ください
 - Sora Labo はサポートを提供していますか？
-
   - 提供していません
 - Sora SDK のサポートは提供していますか？
-
   - 提供していません
-- 変更などの告知は行いますか？
-
+- 変更などの通知は行いますか？
   - すべて時雨堂 Discord の #sora-labo にて通知します
 - メンテナンス告知は行いますか？
-
-  - 時雨堂の営業時間である平日の 10:00-17:00 の間にメンテナンスを行う場合のみ Discord にて通知します
-  - それ以外は事前の告知なく行います
+  - 行いません
+  - 長時間にわたるメンテナンスの場合のみ `#sora-labo` にて通知します
 - Sora Labo の Sora のバージョンはいくつですか？
-
   - Canary は今後リリースを予定している最新の Sora の開発版で、製品版とは異なります
-  - Stable は現在リリースしている最新の Sora の正式版で、製品版と同じものです
-- 認証エラー理由に ``PLEASE-CONTACT-US`` が出ました
-
+- 認証エラー理由に `PLEASE-CONTACT-US` が出ました
   - いずれかの制限または禁止項目に当てはまっている可能性があります。Discord にてご連絡ください
-- 認証エラー理由に ``CONNECTION-LIMIT`` が出ました
+- 認証エラー理由に `CONNECTION-LIMIT` が出ました
   - 直近 30 日間の利用が 2000 分を超えると利用できなくなるので、少し時間をおいてから再度試してみてください
 
 ## Discord
@@ -149,9 +158,9 @@
 
 Sora Labo は商用利用は許可しておりませんので、以下をご検討ください。
 
-- 時雨堂と `Sora Cloud <https://sora-cloud.shiguredo.jp/>`_ を契約をする
+- 時雨堂と [Sora Cloud](https://sora-cloud.shiguredo.jp/) を契約をする
   - 運用全部任せたい
-- 時雨堂と `WebRTC SFU Sora <https://sora.shiguredo.jp/>`_ を契約をする
+- 時雨堂と [WebRTC SFU Sora](https://sora.shiguredo.jp/) を契約をする
   - 自前で頑張りたい
 
 ## 利用可能な SDK やクライアント、ライブラリ
@@ -176,7 +185,7 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
 
 ## 比較表
 
-Sora Labo は検証目的以外での利用はできません。それ以外は `Sora Cloud <https://sora-cloud.shiguredo.jp>`_または `Sora <https://sora.shiguredo.jp>`_ をご検討ください。
+Sora Labo は検証目的以外での利用はできません。それ以外は [Sora Cloud](https://sora-cloud.shiguredo.jp)_または [Sora](https://sora.shiguredo.jp) をご検討ください。
 
 | 機能       | Sora Labo          | Sora Cloud         | Sora           |
 |:------------:| :------------------: | :-------------------:|:----------------:|
@@ -229,7 +238,7 @@ Sora JavaScript SDK のサンプル集を利用して Sora Labo に接続でき�
 `git clone` 後 `pnpm install` した後、`sendrecv` ディレクトリの `.env.local.sample` を `.env.local` に変更して以下の値を設定してください。
 
 ```bash
-VITE_DEFAULT_SIGNALING_URL=wss://0001.canary.sora-labo.shiguredo.app/signaling
+VITE_DEFAULT_SIGNALING_URL=wss://sora.sora-labo.shiguredo.app/signaling
 VITE_DEFAULT_CHANNEL_ID=<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>
 VITE_DEFAULT_ACCESS_TOKEN=<アクセストークン>
 ```
@@ -270,7 +279,7 @@ gradle.properties への設定例:
 
 ```properties
 # Setting Sora's signaling endpoint and channel_id
-signaling_endpoint = wss://0001.canary.sora-labo.shiguredo.app/signaling, wss://0002.canary.sora-labo.shiguredo.app/signaling, wss://0003.canary.sora-labo.shiguredo.app/signaling
+signaling_endpoint = wss://sora.sora-labo.shiguredo.app/signaling
 channel_id         = shiguredo_0_sora
 
 # Setting Signaling Metadata.
@@ -314,9 +323,7 @@ Environment.swift への設定例:
 
 ```swift
 // 接続するサーバーのシグナリング URL
-static let urls = [URL(string: "wss://0001.canary.sora-labo.shiguredo.app/signaling")!,
-                   URL(string: "wss://0002.canary.sora-labo.shiguredo.app/signaling")!,
-                   URL(string: "wss://0003.canary.sora-labo.shiguredo.app/signaling")!]
+static let urls = [URL(string: "wss://sora.sora-labo.shiguredo.app/signaling")!]
 
 // チャネル ID
 static let channelId = "shiguredo_0_sora"
@@ -342,10 +349,7 @@ GitHub Username が shiguredo で、 チャネル ID が sora-devtools の場合
 
 ```bash
 ./momo --resolution VGA --no-audio-device sora --auto \
-    --signaling-url \
-        wss://0001.canary.sora-labo.shiguredo.app/signaling \
-        wss://0002.canary.sora-labo.shiguredo.app/signaling \
-        wss://0003.canary.sora-labo.shiguredo.app/signaling \
+    --signaling-url wss://sora.sora-labo.shiguredo.app/signaling \
     --channel-id shiguredo_0_sora \
     --role sendonly --multistream true --video-codec-type VP8 --video-bit-rate 2500 \
     --metadata '{"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsX2lkIjoic29yYUBzaGlndXJlZG8jMCJ9.TYP-iQaMNcGF7xSxoa8QyqBveUyUQ6EobBc1djg1_is"}'
@@ -387,11 +391,9 @@ OBS の WebRTC/WHIP は 30.0.0 から対応しています。
 
 1. サービスで WHIP を選ぶ
 1. サーバーに WHIP エンドポイントを指定する
-    - `https://canary.sora-labo.shiguredo.app/whip/{channel_id}`
+    - `https://sora.sora-labo.shiguredo.app/whip/{channel_id}`
     - `channel_id` は `{github-username}_{github-id}_{channel_name}` です
 1. `Bearer Token` を指定する
-
-![Image](https://i.gyazo.com/40b0143574fcdc8f27e28102d3040608.png)
 
 ### OBS (WebRTC/WHIP) の設定例
 
