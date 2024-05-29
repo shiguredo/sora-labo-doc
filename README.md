@@ -379,6 +379,8 @@ Safari Technology Preview 最新版で H.265 を試すことが可能です。
 1. OBS に WHIP エンドポイント URL を指定する
 1. OBS の `Bearer Token` にアクセストークンを指定する
 
+![Image](https://i.gyazo.com/988535745d0b273d9615d562dcf7330d.png)
+
 ### OBS のダウンロード
 
 OBS の WebRTC/WHIP は 30.0.0 から対応しています。
