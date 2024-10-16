@@ -187,8 +187,8 @@ Sora Labo は商用利用は許可しておりませんので、以下をご検�
 - [WebRTC SFU Sora Unity SDK](https://github.com/shiguredo/sora-unity-sdk)
   - [WebRTC SFU Sora Unity SDK サンプル集](https://github.com/shiguredo/sora-unity-sdk-samples)
 - [WebRTC SFU Sora C++ SDK](https://github.com/shiguredo/sora-cpp-sdk)
-  - [WebRTC SFU Sora C++ SDK サンプル集](https://github.com/shiguredo/sora-cpp-sdk-samples)
 - [WebRTC SFU Sora Python SDK](https://github.com/shiguredo/sora-python-sdk)
+  - [WebRTC SFU Sora Python SDK サンプル集](https://github.com/shiguredo/sora-python-sdk-examples)
 - [WebRTC SFU Sora C SDK](https://github.com/shiguredo/sora-c-sdk)
 - [WebRTC Native Client Momo](https://github.com/shiguredo/momo)
 
