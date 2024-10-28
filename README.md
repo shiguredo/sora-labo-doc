@@ -9,9 +9,24 @@
 
 ## お知らせ
 
-**日時**: 2024-08-30
+### JWT プライベートクレームを追加し、検証用の metadata 項目を廃止しました
+
+**日時**: 2024-10-28
+
+- JWT のプライベートクレームを追加しました
+  - `turn_tcp_only` を追加しました
+  - `turn_tls_only` を追加しました
+  - `cluster_affinity` を追加しました
+- 検証用の metadata 項目を廃止しました
+  - `turn_tcp_only` を廃止しました
+  - `turn_tls_only` を廃止しました
+  - `cluster_affinity` を廃止しました
+
+今後は `metadata` に指定するのではなく、JWT のプライベートクレームに指定して利用してください。
 
 ### Sora クラスターの構成を変更しました
+
+**日時**: 2024-08-30
 
 - シグナリング URL を一本化しました
   - `wss://sora.sora-labo.shiguredo.app/signaling`
@@ -220,6 +235,9 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 - nbf はオプションです
 - channel_id はオプションです
   - channel_id クレームを指定するとチャネル ID が一致していないと認証に失敗します
+- turn_tcp_only はオプションです
+- turn_tls_only はオプションです
+- cluster_affinity はオプションです
 
 アクセストークンは Sora Labo のダッシュボードで作成可能です。
 
@@ -443,23 +461,25 @@ Sora の SDK は metadata をシグナリング時に指定できます。metada
 
 ## 検証向け機能
 
+`metadata` の `access_token` に JWT を指定する際、JWT のプライベートクレームに検証用のクレームを指定できます。
+
 ### TURN-TCP 利用強制機能
 
 指定した接続が TURN-TCP を利用するように強制可能にする機能です。
 
-metadata 指定時に `{"turn_tcp_only": true}` を指定して下さい。
+JWT のプライベートクレームに `turn_tcp_only` を boolean 型で指定してください。
 
 ### TURN-TLS 利用強制機能
 
 指定した接続が TURN-TLS を利用するように強制可能にする機能です。
 
-metadata 指定時に `{"turn_tls_only": true}` を指定して下さい。
+JWT のプライベートクレームに `turn_tls_only` を boolean 型で指定してください。
 
 ### クラスターアフィニティ有効化機能
 
 同一セッションの接続を同一ノードに集約する機能です。
 
-metadata 指定時に `{"cluster_affinity": true}` を指定して下さい。
+JWT のプライベートクレームに `cluster_affinity` を boolean 型で指定してください。
 
 ## Sora Labo のアカウントを削除する
 
