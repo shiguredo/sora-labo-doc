@@ -415,11 +415,10 @@ Safari Technology Preview 最新版で H.265 を試すことが可能です。
 
 ### OBS のダウンロード
 
-OBS の WebRTC/WHIP は 30.0.0 から対応しています。
+OBS の WebRTC/WHIP は 30.0.0 から対応していますが、Sora Labo は WebRTC/WHIP の TURN 利用を必須とする設定を行なっています。
+TURN の利用に対応した OBS 30.2.0 以降をご利用ください。
 
-30.0.0 は以下からダウンロード可能です。
-
-<https://github.com/obsproject/obs-studio/releases/tag/30.0.0>
+https://obsproject.com/ja/download
 
 ### OBS (WebRTC/WHIP) の設定
 
