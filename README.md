@@ -279,19 +279,10 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 
 ## Sora JavaScript SDK を利用する
 
-Sora JavaScript SDK のサンプル集を利用して Sora Labo に接続できます。
+以下をご確認ください。
 
-[WebRTC SFU Sora JavaScript SDK サンプル集](https://github.com/shiguredo/sora-js-sdk-samples)
+[Sora Labo](https://sora-js-sdk.shiguredo.jp/sora_labo)
 
-`git clone` 後 `pnpm install` した後、`sendrecv` ディレクトリの `.env.local.sample` を `.env.local` に変更して以下の値を設定してください。
-
-```bash
-VITE_DEFAULT_SIGNALING_URL=wss://sora.sora-labo.shiguredo.app/signaling
-VITE_DEFAULT_CHANNEL_ID=<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>
-VITE_DEFAULT_ACCESS_TOKEN=<アクセストークン>
-```
-
-その後は `pnpm run sendrecv` で実行可能です。
 
 ## Sora Android SDK を利用する
 
