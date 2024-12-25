@@ -9,6 +9,20 @@
 
 ## お知らせ
 
+### WHIP/WHEP の CORS Origin を払い出すようにしました
+
+**日時**: 2024-12-25
+
+- WHIP/WHEP の CORS Origin に `http://localhost:5173"` を追加しました
+
+これは Sora JavaScript SDK の WHIP/WHEP のサンプル集をローカルで起動したときのOrigin になります。 これ以外からはブラウザからの WHIP/WHEP は利用できません。
+
+### WHIP/WHEP の TURN 利用を必須としました
+
+**日時**: 2024-12-20
+
+- OBS を利用する場合は OBS 30.2 以降を利用してください
+
 ### Sora クラスターのノード数を 20 に増やしました
 
 **日時**: 2024-11-21
@@ -418,7 +432,7 @@ Safari Technology Preview 最新版で H.265 を試すことが可能です。
 OBS の WebRTC/WHIP は 30.0.0 から対応していますが、Sora Labo は WebRTC/WHIP の TURN 利用を必須とする設定を行なっています。
 TURN の利用に対応した OBS 30.2.0 以降をご利用ください。
 
-https://obsproject.com/ja/download
+<https://obsproject.com/ja/download>
 
 ### OBS (WebRTC/WHIP) の設定
 
