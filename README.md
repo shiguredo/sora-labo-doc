@@ -17,13 +17,13 @@
 - 個人事業主の利用を **不可** としました
 - その他、ご利用時の制限事項や禁止事項などを変更しました
 
- [新しい利用規約](https://github.com/shiguredo/sora-labo-doc/blob/master/TERMS.md) についてはこちらからご確認いただけます
+ [新しい利用規約](https://github.com/shiguredo/sora-labo-doc/blob/master/TERMS.md) についてはこちらからご確認ください
 
 ### WHIP/WHEP の CORS Origin を払い出すようにしました
 
 **日時**: 2024-12-25
 
-- WHIP/WHEP の CORS Origin に `http://localhost:5173"` を追加しました
+- WHIP/WHEP の CORS Origin に `http://localhost:5173` を追加しました
 
 これは Sora JavaScript SDK の WHIP/WHEP のサンプル集をローカルで起動したときのOrigin になります。 これ以外からはブラウザからの WHIP/WHEP は利用できません。
 
@@ -101,7 +101,7 @@ Sora Labo で提供する Sora の構成を一新しました。
 
 ## FAQ
 
-**Sora Labo は Sora または Sora Cloud の導入を前提とした検証、および WebRTC の技術そのものに関心のある個人の方の技術的な理解を目的として無償で提供しています。それ以外の目的で本サービスを利用することはできません**
+**Sora Labo は WebRTC SFU Sora または Sora Cloud の導入を前提とした検証、および WebRTC の技術そのものに関心のある個人の方の技術的な理解を目的として無償で提供しています。それ以外の目的で本サービスを利用することはできません**
 
 - Sora Labo は無料で利用できますか？
   - 無料で利用できます
@@ -142,9 +142,10 @@ Sora Labo で提供する Sora の構成を一新しました。
   - 30 日経過すると復活します
   - 1 月 1 日 に 300 分利用すると、 1 月 31 日に 300 分追加されます
 - Sora Labo の連続接続時間制限はありますか？
+  - あります
   - 60 分です。60 分経過すると接続は切断されます
 - Sora Labo の DataChannel メッセージング機能に制限はありますか？
-  - 制限はありません
+  - ありません
   - 極端に転送量の多い配信をされると他の利用者に影響しますので、ご配慮をお願いします
 - Sora Labo は TURN-TCP や TURN-TLS を提供していますか？
   - 提供しています
