@@ -112,7 +112,7 @@ Sora Labo で提供する Sora の構成を一新しました。
   - 商用サービスや商用製品の開発のためには利用できません
   - 商用サービスや商用製品の開発のために利用する場合は Sora の開発環境用ライセンス、または Sora Cloud を契約してください
 - Sora Labo は不特定多数の人が利用する無料のサービスや製品、展示会などで利用できますか？
-  - 無料・有料を問わず、不特定多数の人が利用するサービスや製品、展示会では利用できません
+  - 無料・有料を問わず、不特定多数の人が利用するサービスや製品、展示会などでは利用できません
   - 不特定多数の人が利用するサービスや製品、展示会で利用する場合は Sora の本番環境用ライセンス、または Sora Cloud を契約してください
 - Sora Labo は法人や団体で利用できますか？
   - 法人や団体でも利用できますが、Sora および Sora Cloud の導入を前提とした検証目的でのみご利用いただけます
@@ -226,7 +226,7 @@ Sora Labo は商用利用は許可していませんので、以下のいずれ�
 ## 利用可能な SDK やクライアント、ライブラリ
 
 - [WebRTC SFU Sora JavaScript SDK](https://github.com/shiguredo/sora-js-sdk)
-  - [Sora JavaScript SDK ドキュメント](https://sora-js-sdk.shiguredo.jp//)
+  - [Sora JavaScript SDK ドキュメント](https://sora-js-sdk.shiguredo.jp/)
 - [WebRTC SFU Sora iOS SDK](https://github.com/shiguredo/sora-ios-sdk)
   - [Sora iOS SDK ドキュメント](https://sora-ios-sdk.shiguredo.jp/)
   - [WebRTC SFU Sora iOS SDK クイックスタート](https://github.com/shiguredo/sora-ios-sdk-quickstart)
@@ -321,7 +321,7 @@ cp gradle.properties.example gradle.properties
 
 `gradle.properties` に Sora Labo への接続情報を設定します。
 
-- `signaling_endpoint` に Sora Labo の Sora シグナリング URLs を設定してください。カンマ区切りですべてのシグナリング URL を指定をしてください。
+- `signaling_endpoint` に Sora Labo の Sora シグナリング URLs を設定してください。カンマ区切りですべてのシグナリング URL を指定してください。
 - `channel_id` に `<自分の GitHub Username>_<自分の GitHub ID>_<好きなチャネル名>` を指定してください
   - ここでは GitHub Username を `shiguredo` としています
   - ここでは GitHub ID を `0` としています
