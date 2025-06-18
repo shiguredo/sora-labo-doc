@@ -19,14 +19,6 @@
 
  [新しい利用規約](https://github.com/shiguredo/sora-labo-doc/blob/master/TERMS.md) についてはこちらからご確認ください
 
-### WHIP/WHEP の CORS Origin を払い出すようにしました
-
-**日時**: 2024-12-25
-
-- WHIP/WHEP の CORS Origin に `http://localhost:5173` を追加しました
-
-これは Sora JavaScript SDK の WHIP/WHEP のサンプル集をローカルで起動したときのOrigin になります。 これ以外からはブラウザからの WHIP/WHEP は利用できません。
-
 ### WHIP/WHEP の TURN 利用を必須としました
 
 **日時**: 2024-12-20
