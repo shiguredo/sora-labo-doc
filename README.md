@@ -9,6 +9,14 @@
 
 ## おしらせ
 
+### Sora MoQ の提供を開始しました
+
+**日時**: 2026-10-01
+
+- Sora MoQ の提供を開始しました
+
+詳細は [Sora MoQ について](https://github.com/shiguredo/sora-labo-doc/blob/master/SORA_MOQ.md) をご確認ください。
+
 ### Sora マルチリージョンクラスターは廃止しました
 
 **日時**: 2025-07-30
@@ -295,7 +303,6 @@ Sora Labo は検証目的以外での利用はできません。それ以外は 
 以下をご確認ください。
 
 [Sora Labo](https://sora-js-sdk.shiguredo.jp/sora_labo)
-
 
 ## Sora Android SDK を利用する
 
