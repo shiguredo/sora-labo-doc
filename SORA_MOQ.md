@@ -8,9 +8,9 @@ Sora Labo では Sora の Media over QUIC 機能である Sora MoQ を検証す�
 
 ## 注意
 
-Media over QUIC は主な仕様は全て RFC ドラフトです。 Sora MoQ では最新版の RFC ドラフトへの追従を積極的に行います。そのため破壊的変更が前提となります。
+Media over QUIC は主な仕様は全て RFC ドラフトのため、仕様が固まっていません。Sora MoQ では最新版の RFC ドラフトへの追従を積極的に行うため、破壊的変更が前提となりますのでご注意ください。
 
-またブラウザ毎に WebTransport や WebCodecs 対応状況も異なります。Sora MoQ では Chrome と Safari の二つのブラウザをメインターゲットとしています。 Edge と Firefox やそれ以外のブラウザに対しては優先度を一つ落としています。
+また、ブラウザ毎に WebTransport や WebCodecs 対応状況も異なります。 Sora MoQ では Chrome と Safari の二つのブラウザをメインターゲットとしています。 Edge と Firefox やそれ以外のブラウザに対しては優先度を一つ落としています。
 
 ## 対応 RFC ドラフト
 
