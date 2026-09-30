@@ -29,7 +29,7 @@ Media over QUIC は主な仕様は全て RFC ドラフトのため、仕様が�
 
 ## Namespace
 
-MoQ では Sora の ChannelId のような仕組みを Namepsace という仕組みを利用します。 Namespace はバイナリの配列です。 Sora Labo の Sora MoQ ではユニークな ID である GitHub-ID を採用しています。
+MoQ では Sora のチャネル ID のような仕組みを `Namepsace` と呼びます。 Namespace はバイナリの配列です。 Sora Labo の Sora MoQ ではユニークな ID である GitHub-ID を prefix として採用しています。
 
 `["<GitHub-ID>", <好きな文字列(128 文字)>]`
 
@@ -40,12 +40,18 @@ Sora Labo の Sora MoQ では認証方式に C4M (CAT 4 MOQT) を採用してい
 利用できるクレーム内容は 2026 年 10 月現時点では時点では固定しています。
 
 - SETUP
-- PUBLISH/SUBSCRIBE: catalog
-- PUBLISH/SUBSCRIBE: audio
-- PUBLISH/SUBSCRIBE/FETCH/REQUEST_UPDATE: video
-- PUBLISH/SUBSCRIBE: events
+- PUBLISH / SUBSCRIBE: catalog
+- PUBLISH / SUBSCRIBE: audio
+- PUBLISH / SUBSCRIBE / FETCH / REQUEST_UPDATE: video
+- PUBLISH / SUBSCRIBE: events
 
-trackname も固定しています。
+trackname も音声は audio で映像は video と固定しています。 events は MOQT-DevTools に合わせています。
+
+C4M を利用する場合 MSF の URI フラグメントを利用します。
+
+`moqt://sora-moq.sora-labo.shgiuredo.app/#msf:<namespace>--catalog&c4m=<token>`
+
+これを MOQT-DevTools であれば MOQT URI に指定してください。
 
 ## 時雨堂の MOQT ライブラリ
 
