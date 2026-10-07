@@ -2,7 +2,7 @@
 
 Sora Labo では Sora の Media over QUIC 機能である Sora MoQ を検証することができます。
 
-2026 年 10 月現時点では Sora MoQ は以下のライブラリとの接続検証を行っています
+2026 年 10 月現時点では Sora MoQ は以下のライブラリとの接続検証を行っています。
 
 まずは [MOQT DevTools](https://moqt-devtools.shiguredo.app/) でお試しください。
 
@@ -16,7 +16,7 @@ Media over QUIC は主な仕様は全て RFC ドラフトのため、仕様が�
 
 ### Media over QUIC
 
-- [draft\-ietf\-moq\-transport\-21](https://datatracker.ietf.org/doc/html/draft-ietf-moq-transport-21)
+- [draft\-ietf\-moq\-transport\-21](https://datatracker.ietf.org/doc/html/draft-ietf-moq-transport-22)
 - [draft\-ietf\-moq\-loc\-04](https://datatracker.ietf.org/doc/html/draft-ietf-moq-loc-04)
 - [draft\-ietf\-moq\-msf\-01](https://datatracker.ietf.org/doc/html/draft-ietf-moq-msf-01)
 - [draft\-ietf\-moq\-c4m\-01](https://datatracker.ietf.org/doc/html/draft-ietf-moq-c4m-01)
@@ -31,13 +31,13 @@ Media over QUIC は主な仕様は全て RFC ドラフトのため、仕様が�
 
 MoQ では Sora のチャネル ID のような仕組みを `Namepsace` と呼びます。 Namespace はバイナリの配列です。 Sora Labo の Sora MoQ ではユニークな ID である GitHub-ID を prefix として採用しています。
 
-`["<GitHub-ID>", <好きな文字列(128 文字)>]`
+`["<GitHub-ID>", <チャネル名(128 文字)>]`
 
 ## 認証方式
 
 Sora Labo の Sora MoQ では認証方式に C4M (CAT 4 MOQT) を採用しています。
 
-利用できるクレーム内容は 2026 年 10 月現時点では時点では固定しています。
+利用できるクレーム内容は 2026 年 10 月現時点では固定しています。
 
 - SETUP
 - PUBLISH / SUBSCRIBE: catalog
@@ -52,6 +52,41 @@ C4M を利用する場合 MSF の URI フラグメントを利用します。
 `moqt://sora-moq.sora-labo.shgiuredo.app/#msf:<namespace>--catalog&c4m=<token>`
 
 これを MOQT-DevTools であれば MOQT URI に指定してください。
+
+## Sora Labo で Sora MoQ (sora-moq) に接続する
+
+### sora-moq のトークン署名鍵を生成する
+
+sora-moq へ接続するためのトークン署名用の秘密鍵を生成します。
+
+Sora Labo はこの秘密鍵に対応する公開鍵でトークン署名の検証を行います。
+
+「sora-moq のトークン署名鍵」で「生成」ボタンをクリックすると、秘密鍵の生成とダウンロードが行えます。
+
+ダウンロードした秘密鍵は自分でトークンを発行する場合に使用します。この手順では Sora Labo で発行したトークンを利用するため使用しません。
+
+[![Image from Gyazo](https://i.gyazo.com/f96f0e433f2c5a9d1ebb0fe9d3e075dd.png)](https://gyazo.com/f96f0e433f2c5a9d1ebb0fe9d3e075dd)
+
+### トークンと MOQT URI を発行する
+
+任意のチャネル名を入力して、sora-moq に接続するためのトークンと MOQT URI を発行します。
+
+[![Image from Gyazo](https://i.gyazo.com/028f42bd433f1f772887d37ca9b3d62f.png)](https://gyazo.com/028f42bd433f1f772887d37ca9b3d62f)
+
+MOQT-DevTools の URL をコピーしてブラウザで開きます。MOQT URI を設定済みの MOQT-DevTools が表示されます。
+
+[![Image from Gyazo](https://i.gyazo.com/028f42bd433f1f772887d37ca9b3d62f.png)](https://gyazo.com/028f42bd433f1f772887d37ca9b3d62f)
+
+### MOQT-DevTools から sora-moq に接続する
+
+MOQT Devtools では設定された MOQT URI やトークンの内容が確認できます。
+
+[![Image from Gyazo](https://i.gyazo.com/01404fb31ccfb1dd3ffe8e82547eadc2.png)](https://gyazo.com/01404fb31ccfb1dd3ffe8e82547eadc2)
+
+sora-moq に接続して映像の配信と試聴が行えます。
+
+[![Image from Gyazo](https://i.gyazo.com/be355d58e03f7ae7aed7e010e0554e6e.png)](https://gyazo.com/be355d58e03f7ae7aed7e010e0554e6e)
+
 
 ## 時雨堂の MOQT ライブラリ
 

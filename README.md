@@ -15,7 +15,7 @@
 
 - Sora MoQ の提供を開始しました
 
-詳細は [Sora MoQ について](https://github.com/shiguredo/sora-labo-doc/blob/master/SORA_MOQ.md) をご確認ください。
+詳細および利用方法は [Sora MoQ について](https://github.com/shiguredo/sora-labo-doc/blob/master/SORA_MOQ.md) をご確認ください。
 
 ### Sora マルチリージョンクラスターは廃止しました
 
