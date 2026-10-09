@@ -54,15 +54,12 @@ MOQT DevTools を利用する場合は、これを MOQT URI に指定してく�
 
 ## Sora Labo で Sora MoQ に接続する
 
-### MOQT DevTools を利用してブラウザから接続する
+Sora Labo では [MOQT DevTools](https://moqt-devtools.shiguredo.app/) を利用して簡単に Sora MoQ に接続する仕組みを用意しています。
 
-[MOQT DevTools](https://moqt-devtools.shiguredo.app/) という moqt-js の開発者ツールを公開しています。
+Sora Labo のホーム画面から接続に必要な署名鍵の生成やトークン、MOQT URI の発行を行えます。
+これらをもとに、ブラウザ (moqt-js) および CLI (moqt-rs) で Sora Moq に接続する方法を説明します。
 
-Sora Labo では [MOQT DevTools](https://moqt-devtools.shiguredo.app/) で簡単に Sora MoQ に接続する仕組みを用意しています。
-
-#### 対応ブラウザについて
-
-WebTransport や WebCodecs の対応状況はブラウザによって異なります。Sora MoQ と moqt-js は Chrome と Safari の二つのブラウザをメインターゲットとしています。Edge、Firefox などその他のブラウザは優先度を下げています。
+### Sora MoQ に接続するための情報を生成する
 
 #### Sora MoQ のトークン署名鍵を生成する
 
@@ -81,11 +78,25 @@ Sora MoQ へ接続するためのトークン署名用の秘密鍵を生成し�
 
 [![Image from Gyazo](https://i.gyazo.com/028f42bd433f1f772887d37ca9b3d62f.png)](https://gyazo.com/028f42bd433f1f772887d37ca9b3d62f)
 
+トークンと MOQT URI および MOQT DevTools の URL が表示されます。
+
+[![Image from Gyazo](https://i.gyazo.com/0cd7b1c2a7767d8cfdd5e64eeb0b314a.png)](https://gyazo.com/0cd7b1c2a7767d8cfdd5e64eeb0b314a)
+
+### moqt-js の MOQT DevTools を利用してブラウザで接続する
+
+[MOQT DevTools](https://moqt-devtools.shiguredo.app/) という moqt-js の開発者ツールを公開しています。
+
+Sora Labo では [MOQT DevTools](https://moqt-devtools.shiguredo.app/) で簡単に Sora MoQ に接続する仕組みを用意しています。
+
+#### 対応ブラウザについて
+
+WebTransport や WebCodecs の対応状況はブラウザによって異なります。Sora MoQ と moqt-js は Chrome と Safari の二つのブラウザをメインターゲットとしています。Edge、Firefox などその他のブラウザは優先度を下げています。
+
+#### MOQT DevTools から Sora MoQ に接続する
+
 MOQT DevTools の URL をコピーしてブラウザで開きます。MOQT URI を設定済みの MOQT DevTools が表示されます。
 
 [![Image from Gyazo](https://i.gyazo.com/4fd795b35b520c2a043c3f5c12e64d65.png)](https://gyazo.com/4fd795b35b520c2a043c3f5c12e64d65)
-
-#### MOQT DevTools から Sora MoQ に接続する
 
 MOQT Devtools では設定された MOQT URI やトークンの内容が確認できます。
 
@@ -94,6 +105,36 @@ MOQT Devtools では設定された MOQT URI やトークンの内容が確認�
 Sora MoQ に接続して映像の配信と視聴が行えます。
 
 [![Image from Gyazo](https://i.gyazo.com/be355d58e03f7ae7aed7e010e0554e6e.png)](https://gyazo.com/be355d58e03f7ae7aed7e010e0554e6e)
+
+### moqt-rs の MoQ サンプルを利用して CLI で接続する
+
+moqt-rs を利用した Media over QUIC の [publisher / subscriber クライアントのサンプル](https://github.com/shiguredo/moqt-rs/tree/develop/examples) を用意しています。
+
+リポジトリをクローン後、 examples ディレクトリに移動します。
+
+```bash
+git clone https://github.com/shiguredo/moqt-rs.git
+cd moqt-rs/examples
+```
+
+MOQT URI を Sora Labo ホーム画面から取得します。
+
+[![Image from Gyazo](https://i.gyazo.com/65f6556c3d45c67c770ebbe4c9f9fae3.png)](https://gyazo.com/65f6556c3d45c67c770ebbe4c9f9fae3)
+
+以下のコマンドでダミー映像を利用した配信ができます。
+
+```bash
+cargo run -p moq-pub -- \
+  --url '<MOQT URI>' \
+  --fake-capture-device
+```
+
+映像が配信されている場合、以下のコマンドで配信された映像の視聴ができます。
+
+```bash
+cargo run -p moq-sub -- \
+  --url '<MOQT URI>'
+```
 
 ## 時雨堂の MOQT ライブラリ
 
