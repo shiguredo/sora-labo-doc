@@ -39,12 +39,12 @@ Sora Labo の Sora MoQ では認可方式に C4M (CAT for MOQT) を採用して�
 利用できるアクション内容は 2026 年 10 月現時点では固定しています。
 
 - SETUP
-- PUBLISH / SUBSCRIBE: catalog
-- PUBLISH / SUBSCRIBE: audio
+- PUBLISH / SUBSCRIBE / FETCH: catalog
+- PUBLISH / SUBSCRIBE / FETCH: audio
 - PUBLISH / SUBSCRIBE / FETCH / REQUEST_UPDATE: video
 - PUBLISH / SUBSCRIBE: events
 
-Track Name も音声は audio で映像は video と固定しています。events は MOQT DevTools に合わせています。
+Track Name は音声を `audio`、映像を `video` に固定しています。音声や映像以外のデータを伝えるイベントタイムラインは MOQT DevTools に合わせて `events` としています。
 
 C4M を利用する場合は、MSF の URI フラグメントを利用します。
 
@@ -80,7 +80,7 @@ Sora MoQ へ接続するためのトークン署名用の秘密鍵を生成し�
 
 トークンと MOQT URI および MOQT DevTools の URL が表示されます。
 
-[![Image from Gyazo](https://i.gyazo.com/0cd7b1c2a7767d8cfdd5e64eeb0b314a.png)](https://gyazo.com/0cd7b1c2a7767d8cfdd5e64eeb0b314a)
+[![Image from Gyazo](https://i.gyazo.com/1bf5df3d5eee89a7cd2321d5236db423.png)](https://gyazo.com/1bf5df3d5eee89a7cd2321d5236db423)
 
 ### moqt-js の MOQT DevTools を利用してブラウザで接続する
 
@@ -119,7 +119,7 @@ cd moqt-rs/examples
 
 MOQT URI を Sora Labo ホーム画面から取得します。
 
-[![Image from Gyazo](https://i.gyazo.com/65f6556c3d45c67c770ebbe4c9f9fae3.png)](https://gyazo.com/65f6556c3d45c67c770ebbe4c9f9fae3)
+[![Image from Gyazo](https://i.gyazo.com/9fab777d5b3a62d66b833438e1b1d6c3.png)](https://gyazo.com/9fab777d5b3a62d66b833438e1b1d6c3)
 
 以下のコマンドでダミー映像を利用した配信ができます。
 
