@@ -70,7 +70,7 @@ Sora MoQ へ接続するためのトークン署名用の秘密鍵を生成し�
 ダウンロードした秘密鍵は自分でトークンを発行する場合に使用します。
 この手順では Sora Labo 側で秘密鍵で署名したトークンを発行するため、ダウンロードした秘密鍵は使用しません。
 
-[![Image from Gyazo](https://i.gyazo.com/f96f0e433f2c5a9d1ebb0fe9d3e075dd.png)](https://gyazo.com/f96f0e433f2c5a9d1ebb0fe9d3e075dd)
+[![Image from Gyazo](https://i.gyazo.com/77cb84fe2f1277a8ffc9d0c54f8e69c9.png)](https://gyazo.com/77cb84fe2f1277a8ffc9d0c54f8e69c9)
 
 #### トークンと MOQT URI を発行する
 
