@@ -57,7 +57,7 @@ MOQT DevTools を利用する場合は、これを MOQT URI に指定してく�
 Sora Labo では [MOQT DevTools](https://moqt-devtools.shiguredo.app/) を利用して簡単に Sora MoQ に接続する仕組みを用意しています。
 
 Sora Labo のホーム画面から接続に必要な署名鍵の生成やトークン、MOQT URI の発行を行えます。
-これらをもとに、ブラウザ (moqt-js) および CLI (moqt-rs) で Sora Moq に接続する方法を説明します。
+ここではブラウザ (moqt-js) を利用して Sora Moq に接続する方法を説明します。
 
 ### Sora MoQ に接続するための情報を生成する
 
@@ -105,36 +105,6 @@ MOQT Devtools では設定された MOQT URI やトークンの内容が確認�
 Sora MoQ に接続して映像の配信と視聴が行えます。
 
 [![Image from Gyazo](https://i.gyazo.com/be355d58e03f7ae7aed7e010e0554e6e.png)](https://gyazo.com/be355d58e03f7ae7aed7e010e0554e6e)
-
-### moqt-rs の MoQ サンプルを利用して CLI で接続する
-
-moqt-rs を利用した Media over QUIC の [publisher / subscriber クライアントのサンプル](https://github.com/shiguredo/moqt-rs/tree/develop/examples) を用意しています。
-
-リポジトリをクローン後、 examples ディレクトリに移動します。
-
-```bash
-git clone https://github.com/shiguredo/moqt-rs.git
-cd moqt-rs/examples
-```
-
-MOQT URI を Sora Labo ホーム画面から取得します。
-
-[![Image from Gyazo](https://i.gyazo.com/9fab777d5b3a62d66b833438e1b1d6c3.png)](https://gyazo.com/9fab777d5b3a62d66b833438e1b1d6c3)
-
-以下のコマンドでダミー映像を利用した配信ができます。
-
-```bash
-cargo run -p moq-pub -- \
-  --url '<MOQT URI>' \
-  --fake-capture-device
-```
-
-映像が配信されている場合、以下のコマンドで配信された映像の視聴ができます。
-
-```bash
-cargo run -p moq-sub -- \
-  --url '<MOQT URI>'
-```
 
 ## 時雨堂の MOQT ライブラリ
 
