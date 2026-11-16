@@ -2,7 +2,7 @@
 
 Sora Labo では Sora の Media over QUIC 機能である Sora MoQ を検証することができます。
 
-2026 年 10 月現時点では Sora MoQ は以下のライブラリとの接続検証を行っています。
+2026 年 11 月現時点では Sora MoQ は以下のライブラリとの接続検証を行っています。
 
 - [shiguredo/moqt-js](https://github.com/shiguredo/moqt-js)
 - [shiguredo/moqt-rs](https://github.com/shiguredo/moqt-rs)
@@ -36,9 +36,10 @@ MOQT では Sora のチャネル ID のような仕組みを `Namespace` と呼�
 
 Sora Labo の Sora MoQ では認可方式に C4M (CAT for MOQT) を採用しています。
 
-利用できるアクション内容は 2026 年 10 月現時点では固定しています。
+利用できるアクション内容は 2026 年 11 月現時点では固定しています。
 
 - SETUP
+- PUBLISH_NAMESPACE, SUBSCRIBE_TRACKS
 - PUBLISH / SUBSCRIBE / FETCH: catalog
 - PUBLISH / SUBSCRIBE / FETCH: audio
 - PUBLISH / SUBSCRIBE / FETCH / REQUEST_UPDATE: video
