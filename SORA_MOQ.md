@@ -15,16 +15,16 @@ Media over QUIC の主な仕様は全て Internet-Draft (I-D) のため、仕様
 
 ### Media over QUIC Transport (MOQT)
 
-- [draft-ietf-moq-transport-22](https://datatracker.ietf.org/doc/html/draft-ietf-moq-transport-22)
-- [draft-ietf-moq-loc-04](https://datatracker.ietf.org/doc/html/draft-ietf-moq-loc-04)
+- [draft-ietf-moq-transport-23](https://datatracker.ietf.org/doc/html/draft-ietf-moq-transport-23)
+- [draft-ietf-moq-loc-05](https://datatracker.ietf.org/doc/html/draft-ietf-moq-loc-05)
 - [draft-ietf-moq-msf-01](https://datatracker.ietf.org/doc/html/draft-ietf-moq-msf-01)
-- [draft-ietf-moq-c4m-01](https://datatracker.ietf.org/doc/html/draft-ietf-moq-c4m-01)
+- [draft-ietf-moq-c4m-02](https://datatracker.ietf.org/doc/html/draft-ietf-moq-c4m-02)
 
 ### WebTransport
 
-- [draft-ietf-webtrans-overview-13](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-overview-13)
-- [draft-ietf-webtrans-http3-16](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3-16)
-- [draft-ietf-webtrans-http2-15](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http2-15)
+- [draft-ietf-webtrans-overview-14](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-overview-14)
+- [draft-ietf-webtrans-http3-17](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3-17)
+- [draft-ietf-webtrans-http2-16](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http2-16)
 
 ## Namespace
 
