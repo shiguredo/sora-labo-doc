@@ -137,6 +137,8 @@ cd moqt-rs
 cargo run -p moq-pub -- --url '<取得した MOQT URI>' --fake-capture-device
 ```
 
+moq-pub のオプション一覧は、[moq-pub の README](https://github.com/shiguredo/moqt-rs/tree/develop/crates/moq-pub) をご確認ください。
+
 #### moq-sub を起動して映像と音声を購読する
 
 取得した MOQT URI を moq-sub の `--url` オプションに指定して購読を開始します。
@@ -150,6 +152,8 @@ cargo run -p moq-pub -- --url '<取得した MOQT URI>' --fake-capture-device
 ```sh
 cargo run -p moq-sub -- --url '<取得した MOQT URI>'
 ```
+
+moq-sub のオプション一覧は、[moq-sub の README](https://github.com/shiguredo/moqt-rs/tree/develop/crates/moq-sub) をご確認ください。
 
 ## 時雨堂の MOQT ライブラリ
 
