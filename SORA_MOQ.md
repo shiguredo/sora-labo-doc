@@ -56,8 +56,9 @@ MOQT DevTools を利用する場合は、これを MOQT URI に指定してく�
 
 Sora Labo では [MOQT DevTools](https://moqt-devtools.shiguredo.app/) を利用して簡単に Sora MoQ に接続する仕組みを用意しています。
 
-Sora Labo のホーム画面から接続に必要な署名鍵の生成やトークン、MOQT URI の発行を行えます。
-ここではブラウザ (moqt-js) を利用して Sora Moq に接続する方法を説明します。
+Sora Labo のホーム画面から Sora Moq への接続に必要な署名鍵の生成やトークン、MOQT URI、MOQT DevTools の URL の発行を行い、簡単に Sora MoQ に接続する仕組みを用意しています。
+
+ここではブラウザ (moqt-js) および RUST を利用したクライアントアプリを利用して Sora Moq に接続する方法を説明します。
 
 ### Sora MoQ に接続するための情報を生成する
 
@@ -84,9 +85,7 @@ Sora MoQ へ接続するためのトークン署名用の秘密鍵を生成し�
 
 ### moqt-js の MOQT DevTools を利用してブラウザで接続する
 
-[MOQT DevTools](https://moqt-devtools.shiguredo.app/) という moqt-js の開発者ツールを公開しています。
-
-Sora Labo では [MOQT DevTools](https://moqt-devtools.shiguredo.app/) で簡単に Sora MoQ に接続する仕組みを用意しています。
+moqt-js の検証ツール [MOQT DevTools](https://moqt-devtools.shiguredo.app/) を利用して Sora MoQ に接続します。
 
 #### 対応ブラウザについて
 
@@ -102,9 +101,49 @@ MOQT Devtools では設定された MOQT URI やトークンの内容が確認�
 
 [![Image from Gyazo](https://i.gyazo.com/328e65e62c6f9994abda034ca6bfeb29.png)](https://gyazo.com/328e65e62c6f9994abda034ca6bfeb29)
 
-Sora MoQ に接続して映像の配信と視聴が行えます。
+Sora MoQ に接続して映像の配信と購読が行えます。
 
 [![Image from Gyazo](https://i.gyazo.com/be355d58e03f7ae7aed7e010e0554e6e.png)](https://gyazo.com/be355d58e03f7ae7aed7e010e0554e6e)
+
+### moqt-rs の moq-pub / moq-sub を利用して接続する
+
+moqt-rs を利用した Media over QUIC で配信・購読クライアントのサンプルである [MoQ サンプル](https://github.com/shiguredo/moqt-rs/blob/develop/crates/README.md) を利用して Sora MoQ に接続します。
+
+#### 実行環境について
+
+Rust 1.95 以降が必要です。Windows / macOS / Ubuntu Desktop で動作を確認しています。
+
+#### Sora Labo ホーム画面 から MOQT URI を取得する
+
+Sora Labo ホーム画面に表示された MOQT URI を取得します。
+
+[![Image from Gyazo](https://i.gyazo.com/663387a1cc2b9d37688e06a50eafff05.png)](https://gyazo.com/663387a1cc2b9d37688e06a50eafff05)
+
+#### moq-pub を起動して Sora Moq へ配信する
+
+取得した MOQT URI を moq-pub の `--url` オプションに指定して配信処理を起動します。
+
+以下の例では、 `--fake-capture-device` オプションを指定して、ダミー映像、ダミー音声を送信しています。
+
+ログに "Running" と出ていれば配信中の状態です。
+
+```sh
+git clone https://github.com/shiguredo/moqt-rs.git
+cargo run -p moq-pub -- --url 'moqt://sora-moq.sora-labo.shiguredo.app/#msf:0-moq.2dsample--catalog&cat=xxxxxxxx' --fake-capture-device
+```
+
+#### moq-sub を起動して Sora Moq から購読をする
+
+取得した MOQT URI を moq-pub の `--url` オプションに指定して配信処理を起動します。
+
+配信されている映像がない場合はエラーで終了します。
+
+画面が起動し、購読した映像と音声が再生されます。
+
+```sh
+git clone https://github.com/shiguredo/moqt-rs.git
+cargo run -p moq-sub -- --url 'moqt://sora-moq.sora-labo.shiguredo.app/#msf:0-moq.2dsample--catalog&cat=xxxxxxxx'
+```
 
 ## 時雨堂の MOQT ライブラリ
 
