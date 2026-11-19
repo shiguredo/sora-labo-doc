@@ -115,7 +115,7 @@ Rust 1.95 以降が必要です。Windows / macOS / Ubuntu Desktop で動作を�
 
 Sora Labo ホーム画面に表示された MOQT URI を取得します。
 
-[![Image from Gyazo](https://i.gyazo.com/663387a1cc2b9d37688e06a50eafff05.png)](https://gyazo.com/663387a1cc2b9d37688e06a50eafff05)
+[![Image from Gyazo](https://i.gyazo.com/d58228a4981fd114740eafd78e2911ac.png)](https://gyazo.com/d58228a4981fd114740eafd78e2911ac)
 
 #### moqt-rs のリポジトリを clone する
 
