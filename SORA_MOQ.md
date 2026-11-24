@@ -2,7 +2,7 @@
 
 Sora Labo では Sora の Media over QUIC 機能である Sora MoQ を検証することができます。
 
-2026 年 10 月現時点では Sora MoQ は以下のライブラリとの接続検証を行っています。
+2026 年 11 月現時点では Sora MoQ は以下のライブラリとの接続検証を行っています。
 
 - [shiguredo/moqt-js](https://github.com/shiguredo/moqt-js)
 - [shiguredo/moqt-rs](https://github.com/shiguredo/moqt-rs)
@@ -15,16 +15,16 @@ Media over QUIC の主な仕様は全て Internet-Draft (I-D) のため、仕様
 
 ### Media over QUIC Transport (MOQT)
 
-- [draft-ietf-moq-transport-22](https://datatracker.ietf.org/doc/html/draft-ietf-moq-transport-22)
-- [draft-ietf-moq-loc-04](https://datatracker.ietf.org/doc/html/draft-ietf-moq-loc-04)
-- [draft-ietf-moq-msf-01](https://datatracker.ietf.org/doc/html/draft-ietf-moq-msf-01)
-- [draft-ietf-moq-c4m-01](https://datatracker.ietf.org/doc/html/draft-ietf-moq-c4m-01)
+- [draft-ietf-moq-transport-23](https://datatracker.ietf.org/doc/html/draft-ietf-moq-transport-23)
+- [draft-ietf-moq-loc-05](https://datatracker.ietf.org/doc/html/draft-ietf-moq-loc-05)
+- [draft-ietf-moq-msf-02](https://datatracker.ietf.org/doc/html/draft-ietf-moq-msf-02)
+- [draft-ietf-moq-c4m-02](https://datatracker.ietf.org/doc/html/draft-ietf-moq-c4m-02)
 
 ### WebTransport
 
-- [draft-ietf-webtrans-overview-13](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-overview-13)
-- [draft-ietf-webtrans-http3-16](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3-16)
-- [draft-ietf-webtrans-http2-15](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http2-15)
+- [draft-ietf-webtrans-overview-14](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-overview-14)
+- [draft-ietf-webtrans-http3-17](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3-17)
+- [draft-ietf-webtrans-http2-16](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http2-16)
 
 ## Namespace
 
@@ -36,9 +36,10 @@ MOQT では Sora のチャネル ID のような仕組みを `Namespace` と呼�
 
 Sora Labo の Sora MoQ では認可方式に C4M (CAT for MOQT) を採用しています。
 
-利用できるアクション内容は 2026 年 10 月現時点では固定しています。
+利用できるアクション内容は 2026 年 11 月現時点では固定しています。
 
-- SETUP
+- SETUP: 接続時
+- PUBLISH_NAMESPACE / SUBSCRIBE_TRACKS: namespace 単位
 - PUBLISH / SUBSCRIBE / FETCH: catalog
 - PUBLISH / SUBSCRIBE / FETCH: audio
 - PUBLISH / SUBSCRIBE / FETCH / REQUEST_UPDATE: video
@@ -48,16 +49,16 @@ Track Name は音声を `audio`、映像を `video` に固定しています。�
 
 C4M を利用する場合は、MSF の URI フラグメントを利用します。
 
-`moqt://sora-moq.sora-labo.shiguredo.app/#msf:<namespace>--catalog&c4m=<token>`
+`moqt://sora-moq.sora-labo.shiguredo.app/#msf:<namespace>--catalog&cat=<token>`
 
 MOQT DevTools を利用する場合は、これを MOQT URI に指定してください。
 
 ## Sora Labo で Sora MoQ に接続する
 
-Sora Labo では [MOQT DevTools](https://moqt-devtools.shiguredo.app/) を利用して簡単に Sora MoQ に接続する仕組みを用意しています。
+Sora Labo のホーム画面から Sora MoQ への接続に必要な署名鍵を生成し、トークンと MOQT URI を発行できます。
+MOQT URI を設定済みの MOQT DevTools の URL も表示されます。
 
-Sora Labo のホーム画面から接続に必要な署名鍵の生成やトークン、MOQT URI の発行を行えます。
-ここではブラウザ (moqt-js) を利用して Sora Moq に接続する方法を説明します。
+ここではブラウザ (moqt-js) および moqt-rs のサンプルを利用して Sora MoQ に接続する方法を説明します。
 
 ### Sora MoQ に接続するための情報を生成する
 
@@ -78,15 +79,13 @@ Sora MoQ へ接続するためのトークン署名用の秘密鍵を生成し�
 
 [![Image from Gyazo](https://i.gyazo.com/028f42bd433f1f772887d37ca9b3d62f.png)](https://gyazo.com/028f42bd433f1f772887d37ca9b3d62f)
 
-トークンと MOQT URI および MOQT DevTools の URL が表示されます。
+トークンと MOQT URI、MOQT DevTools の URL が表示されます。
 
 [![Image from Gyazo](https://i.gyazo.com/1bf5df3d5eee89a7cd2321d5236db423.png)](https://gyazo.com/1bf5df3d5eee89a7cd2321d5236db423)
 
 ### moqt-js の MOQT DevTools を利用してブラウザで接続する
 
-[MOQT DevTools](https://moqt-devtools.shiguredo.app/) という moqt-js の開発者ツールを公開しています。
-
-Sora Labo では [MOQT DevTools](https://moqt-devtools.shiguredo.app/) で簡単に Sora MoQ に接続する仕組みを用意しています。
+moqt-js の検証ツール [MOQT DevTools](https://moqt-devtools.shiguredo.app/) を利用して Sora MoQ に接続します。
 
 #### 対応ブラウザについて
 
@@ -98,13 +97,71 @@ MOQT DevTools の URL をコピーしてブラウザで開きます。MOQT URI �
 
 [![Image from Gyazo](https://i.gyazo.com/4fd795b35b520c2a043c3f5c12e64d65.png)](https://gyazo.com/4fd795b35b520c2a043c3f5c12e64d65)
 
-MOQT Devtools では設定された MOQT URI やトークンの内容が確認できます。
+MOQT DevTools では設定された MOQT URI やトークンの内容が確認できます。
 
 [![Image from Gyazo](https://i.gyazo.com/328e65e62c6f9994abda034ca6bfeb29.png)](https://gyazo.com/328e65e62c6f9994abda034ca6bfeb29)
 
-Sora MoQ に接続して映像の配信と視聴が行えます。
+Sora MoQ に接続して映像を配信したり、配信を購読して視聴したりできます。
 
 [![Image from Gyazo](https://i.gyazo.com/be355d58e03f7ae7aed7e010e0554e6e.png)](https://gyazo.com/be355d58e03f7ae7aed7e010e0554e6e)
+
+### moqt-rs の moq-pub / moq-sub を利用して接続する
+
+[MoQ サンプル](https://github.com/shiguredo/moqt-rs/blob/develop/crates/README.md) は moqt-rs を利用した Media over QUIC の配信 / 購読クライアントのサンプルです。ここではこのサンプルを利用して Sora MoQ に接続します。
+
+`moq-pub` は `--url` に指定した MOQT URI のうち Track Namespace を利用し、catalog / audio / video の各トラックを PUBLISH します。
+`moq-sub` は `--url` に指定した MOQT URI の Track Namespace で catalog を購読し、catalog に従って audio / video を購読して再生します。
+
+#### 実行環境について
+
+Rust 1.95 以降が必要です。Windows / macOS / Ubuntu Desktop で動作を確認しています。
+
+#### Sora Labo ホーム画面から MOQT URI を取得する
+
+MOQT URI をコピーします。
+
+[![Image from Gyazo](https://i.gyazo.com/d58228a4981fd114740eafd78e2911ac.png)](https://gyazo.com/d58228a4981fd114740eafd78e2911ac)
+
+#### moqt-rs のリポジトリをクローンする
+
+moqt-rs のリポジトリをクローンして、ディレクトリを移動します。
+
+```bash
+git clone https://github.com/shiguredo/moqt-rs.git
+cd moqt-rs
+```
+
+#### moq-pub を起動して Sora MoQ へ配信する
+
+MOQT URI を moq-pub の `--url` オプションに指定して配信処理を起動します。
+
+以下の例では、`--fake-capture-device` オプションを指定して、疑似映像と疑似音声を送信しています。
+
+```bash
+cargo run -p moq-pub -- --url '<MOQT URI>' --fake-capture-device
+```
+
+moq-pub のオプション一覧は、[moq-pub の README](https://github.com/shiguredo/moqt-rs/blob/develop/crates/moq-pub/README.md) をご確認ください。
+
+#### moq-sub を起動して映像と音声を購読する
+
+MOQT URI を moq-sub の `--url` オプションに指定して購読を開始します。
+
+moq-sub は配信されている映像と音声を購読して再生します。そのため、先に配信を開始しておいてください。
+
+すでに配信を開始している場合は、別のターミナルを開いて購読してください。
+
+配信が開始されていない場合、moq-sub はエラー終了します。
+
+映像が配信されている場合、映像フレームを受信するとウィンドウが開き、映像と音声が再生されます。
+
+映像が配信されていない場合はウィンドウは開かず、音声のみが再生されます。
+
+```bash
+cargo run -p moq-sub -- --url '<MOQT URI>'
+```
+
+moq-sub のオプション一覧は、[moq-sub の README](https://github.com/shiguredo/moqt-rs/blob/develop/crates/moq-sub/README.md) をご確認ください。
 
 ## 時雨堂の MOQT ライブラリ
 
